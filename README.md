@@ -1,5 +1,5 @@
 # fsc-ddo-datastandards
-This Repository contains the definitions of the Australian Financial Services DDO Data Standards
+This Repository contains the definitions of the Australian Financial Services Council DDO Data Standards
    
 ## Defined Data Standards
 This repository defines three Data Standards:
