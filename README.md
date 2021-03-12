@@ -10,4 +10,4 @@ This repository defines three Data Standards:
 
 ## Repo Structure
  - The Canonical Folder contains the logical data definitions
- - The other folders (ie Xml) contain the format specific implementations of the logical data definition
+ - The Implementation Folder contains the format specific implementations of the logical data definition
