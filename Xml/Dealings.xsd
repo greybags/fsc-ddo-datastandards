@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/Dealings/0.1"
+           elementFormDefault="qualified"
+           xmlns="urn://www.fsc.org.au/DDO/Dealings/0.1"
+           xmlns:mstns="urn://www.fsc.org.au/DDO/Dealings/0.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="DealingsReport"
+              type="mstns:DealingsReportType">
+    <xs:annotation>
+      <xs:documentation>This element defines the root element of the report</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <!-- Complex Types -->
+  <xs:complexType name="DealingsReportType">
+    <xs:annotation>
+      <xs:documentation>This type defines the structure of the report</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReportHeader"
+                  type="mstns:ReportHeaderType"
+                  minOccurs="1"
+                  maxOccurs="1"></xs:element>
+      <xs:element name="DealingEntities"
+                  type="mstns:DealingEntityCollectionType"
+                  minOccurs="1"
+                  maxOccurs="1"></xs:element>
+      <xs:element name="ReportFooter"
+                  type="mstns:DealingsReportFooterType"
+                  minOccurs="1"
+                  maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ReportHeaderType">
+    <xs:sequence>
+      <xs:element name="ReportIdentifier"
+                  type="xs:string"
+                  nillable="false">
+        <xs:annotation>
+          <xs:documentation>Report ID – unique to distributor. Can be combined with distributor ID to have industry-wide unique ID</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportExtractionDateTime"
+                  type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>
+            Date that transaction report was made.
+            If report is reissued, the new information replaces any reports within the defined report start and end period.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportSelectionRange"
+                  type="mstns:DealingsSelectionRange"
+                  nillable="false"
+                  maxOccurs="1"
+                  minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            included if the DealingsSelectionType is by date
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+
+    <!-- Attributes -->
+    <xs:attribute name="StandardVersion"
+                  type="mstns:MajorMinorVersion"
+                  fixed="0.1">
+      <xs:annotation>
+        <xs:documentation>Note: the fixed value must allign to the Target Namespace version</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ReportType"
+                  type="DealingsSelectionType">
+      <xs:annotation>
+        <xs:documentation>Mechanism by which the delaings were selected</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="DealingsSelectionRange">
+    <xs:sequence>
+      <xs:element name="SelectionStart"
+                  type="xs:date"></xs:element>
+      <xs:element name="SelectionEnd"
+                  type="xs:date"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DealingEntityCollectionType">
+    <xs:sequence>
+      <xs:element name="DealingEntity"
+                  type="mstns:DealingEntityType"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DealingEntityType">
+    <xs:annotation>
+      <xs:documentation>defines the information about a dealing entity</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EntityName"
+                  type="xs:string"></xs:element>
+      <xs:element name="ReportingEntityType"
+                  type="mstns:DealingEntityTypeEnum"></xs:element>
+      <xs:element name="ACL"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reporting entity Australian Credit License (ACL). Must be used if exists</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AFSL"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reporting entity AFSL. Must be used if exists</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ABN"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reporting entity ABN. Must be used if exists</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContactName"
+                  type="xs:string"/>
+      <xs:element name="ContactTitle"
+                  type="xs:string"/>
+      <xs:element name="ContactPhone"
+                  type="xs:string"/>
+      <xs:element name="ContactEmail"
+                  type="xs:string"/>
+
+      <xs:element name="DealingEntity"
+                  type="mstns:DealingEntityType"
+                  minOccurs="0"
+                  maxOccurs="1"></xs:element>
+      <xs:element name="Dealings"
+                  type="mstns:TransactionSetType"
+                  minOccurs="0"
+                  maxOccurs="1"></xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TransactionSetType">
+    <xs:sequence>
+      <xs:element name="TransctionDetail"
+                  type="mstns:TransactionDetailType"
+                  minOccurs="1"
+                  maxOccurs="unbounded"
+                  nillable="false"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TransactionDetailType">
+    <xs:sequence>
+      <xs:element name="DistributorType"
+                  type="mstns:DistributorTypeEnum"></xs:element>
+      <xs:element name="DistributorIdentifierType"
+                  type="mstns:DistributorUniqueIdentifierTypeEnum"  />
+      <xs:element name="DistributorIdentifier"
+                  type="xs:string"/>
+      <xs:element name="IsDealingInsideTMD"
+                  type="xs:boolean"/>
+      <xs:element name="IsPersonalAdvice"
+                  type="xs:boolean"/>
+      <xs:element name="OutsideTMDReason"
+                  type="xs:string"/>
+      <xs:element name="DateOfDealing"
+                  type="xs:date"/>
+      <xs:element name="SizeOfDealing"
+                  type="xs:decimal"/>
+      <xs:element name="UnitsOfDealing"
+                  type="xs:decimal"/>
+      <xs:element name="ProductAPIR"
+                  type="xs:string"/>
+      <xs:element name="ProductSPIN"
+                  type="xs:string"/>
+      <xs:element name="ExchangeIdentifier"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Exchange standard code eg ASX, NZX etc</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExchangeCode">
+        <xs:annotation>
+          <xs:documentation>Identifier of the exhange traded asset eg AMP, AGL</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProductName"
+                  type="xs:string"></xs:element>
+      <xs:element name="TMDVersion"
+                  type="xs:integer" />
+      <xs:element name="DataStandardType"
+                  type="mstns:TMDDataStandardTypeEnum" />
+      <xs:element name="DataStandardVersionUsed"
+                  type="mstns:MajorMinorVersion"/>
+      <xs:element name="Assessments"
+                  type="mstns:TMDCharacteristicAssessmentCollectionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TMDCharacteristicAssessmentCollectionType">
+    <xs:sequence >
+      <xs:element name="Assessment"
+                  type="TMDCharacteristicAssessmentType"
+                  minOccurs="1"
+                  maxOccurs="unbounded">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TMDCharacteristicAssessmentType">
+    <xs:sequence >
+      <xs:element name="TMDCharacteristic"
+                  type="mstns:TMDCharacteristicEnum"></xs:element>
+      <xs:element name="AssessedValue"
+                  type="mstns:TMDIndicatorReasonEnum"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DealingsReportFooterType">
+    <xs:annotation>
+      <xs:documentation>Provides a simple Checksum-like capability to ensure the report is complete</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="CountOfDealings"
+                  type="xs:integer"/>
+    <xs:attribute name="TotalDealingsValue"
+                  type="xs:decimal"/>
+  </xs:complexType>
+
+  <!-- Simple Types-->
+  <xs:simpleType name="MajorMinorVersion">
+    <xs:restriction base="xs:string">
+      <xs:annotation>
+        <xs:documentation>enforce a major.minor structure</xs:documentation>
+      </xs:annotation>
+      <xs:pattern value="([1-9]+[0-9]*|0)\.[0-9]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Enums -->
+  <xs:simpleType name="DealingsSelectionType">
+    <xs:annotation>
+      <xs:documentation>
+        Is report all transactions by date range or transactions by unique identifier?
+        If transactions by date range, then expectation is there will only be one report for the particular date range.
+        If transactions by unique ID, then there may be any number of reports for a date range
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value = "ByDate">
+        <xs:annotation>
+          <xs:documentation>All dealings known between these dates</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value = "ById">
+        <xs:annotation>
+          <xs:documentation>All dealings with specified identifiers</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DealingEntityTypeEnum">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AdviceAFSL"></xs:enumeration>
+      <xs:enumeration value="Platform"></xs:enumeration>
+      <xs:enumeration value="NonAdviceAFSL"></xs:enumeration>
+      <xs:enumeration value="CreditLicensee"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TMDCharacteristicEnum">
+    <xs:annotation>
+      <xs:documentation>the list of TMD Characteristics </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!-- Investment Objective-->
+      <xs:enumeration value="InvestmentObjective_CapitalGrowth"></xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_CapitalPreservation"></xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_CapitalGuaranteed"></xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_RegularIncome"></xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_Specialist"></xs:enumeration>
+      <!-- Product Use -->
+      <xs:enumeration value="ProductUse_SolutionStandalone"></xs:enumeration>
+      <xs:enumeration value="ProductUse_CoreComponent"></xs:enumeration>
+      <xs:enumeration value="ProductUse_Satellite"></xs:enumeration>
+      <!-- NOTE: LIST INCOMPLETE AT THIS STAGE -->
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TMDIndicatorEnum" >
+    <xs:annotation>
+      <xs:documentation>the list of TMD Characteristics </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InTargetMarket"></xs:enumeration>
+      <xs:enumeration value="PotentiallyInTargetMarket"></xs:enumeration>
+      <xs:enumeration value="NotConsideredInTargetMarket"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TMDIndicatorReasonEnum" >
+    <xs:annotation>
+      <xs:documentation>the list of TMD Characteristics </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InTargetMarket"></xs:enumeration>
+      <xs:enumeration value="PotentiallyInTargetMarket"></xs:enumeration>
+      <xs:enumeration value="NotConsideredInTargetMarket"></xs:enumeration>
+      <xs:enumeration value="NoAssessment"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TMDDataStandardTypeEnum" >
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FundsManagement"></xs:enumeration>
+      <xs:enumeration value="Superannuation"></xs:enumeration>
+      <xs:enumeration value="LifeInsurance"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+  <xs:simpleType name="DistributorUniqueIdentifierTypeEnum" >
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FAR"></xs:enumeration>
+      <xs:enumeration value="AFSL"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DistributorTypeEnum" >
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Adviser"></xs:enumeration>
+      <xs:enumeration value="Platform"></xs:enumeration>
+      <xs:enumeration value="Aggregator"></xs:enumeration>
+      <xs:enumeration value="Promoter"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
