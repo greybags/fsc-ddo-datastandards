@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DealingsReport xmlns="urn://www.fsc.org.au/DDO/Dealings/0.1">
-  <ReportHeader StandardVersion="0.1" ReportType="ByDate">
+<DealingsReport xmlns="urn://www.fsc.org.au/DDO/Dealings/0.1"
+                xmlns:ddoc="urn://www.fsc.org.au/DDO/Common/0.1">
+  <ReportHeader StandardVersion="0.1"
+                ReportType="ByDate">
     <ReportIdentifier>ReportIdentifier1</ReportIdentifier>
     <ReportExtractionDateTime>1900-01-01T01:01:01+13:00</ReportExtractionDateTime>
     <ReportSelectionRange>
@@ -50,11 +52,17 @@
               <DateOfDealing>1900-01-01</DateOfDealing>
               <SizeOfDealing>1</SizeOfDealing>
               <UnitsOfDealing>1</UnitsOfDealing>
-              <ProductAPIR>ProductAPIR1</ProductAPIR>
-              <ProductSPIN>ProductSPIN1</ProductSPIN>
-              <ExchangeIdentifier>ExchangeIdentifier1</ExchangeIdentifier>
-              <ExchangeCode>anyType</ExchangeCode>
-              <ProductName>ProductName1</ProductName>
+              <ProductIdentifier>
+                <ddoc:ISIN >ISIN1</ddoc:ISIN>
+                <ddoc:SPIN >SPIN1</ddoc:SPIN>
+                <ddoc:APIR >APIR1</ddoc:APIR>
+                <ddoc:ExchangeId >
+                  <ddoc:ExchangeIdentifier>ExchangeIdentifier1</ddoc:ExchangeIdentifier>
+                  <ddoc:ExchangeCode>anyType</ddoc:ExchangeCode>
+                </ddoc:ExchangeId>
+                <ddoc:IssuerProvidedIdentifier >IssuerProvidedIdentifier1</ddoc:IssuerProvidedIdentifier>
+                <ddoc:ProductName >ProductName1</ddoc:ProductName>
+              </ProductIdentifier>
               <TMDVersion>1</TMDVersion>
               <DataStandardType>FundsManagement</DataStandardType>
               <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -83,11 +91,17 @@
               <DateOfDealing>0001-01-01</DateOfDealing>
               <SizeOfDealing>-79228162514264337593543950335</SizeOfDealing>
               <UnitsOfDealing>-79228162514264337593543950335</UnitsOfDealing>
-              <ProductAPIR>ProductAPIR2</ProductAPIR>
-              <ProductSPIN>ProductSPIN2</ProductSPIN>
-              <ExchangeIdentifier>ExchangeIdentifier2</ExchangeIdentifier>
-              <ExchangeCode>anyType</ExchangeCode>
-              <ProductName>ProductName2</ProductName>
+              <ProductIdentifier>
+                <ISIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN2</ISIN>
+                <SPIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN2</SPIN>
+                <APIR xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR2</APIR>
+                <ExchangeId xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+                  <ExchangeIdentifier>ExchangeIdentifier2</ExchangeIdentifier>
+                  <ExchangeCode>anyType</ExchangeCode>
+                </ExchangeId>
+                <IssuerProvidedIdentifier xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IssuerProvidedIdentifier2</IssuerProvidedIdentifier>
+                <ProductName xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ProductName2</ProductName>
+              </ProductIdentifier>
               <TMDVersion>-79228162514264337593543950335</TMDVersion>
               <DataStandardType>Superannuation</DataStandardType>
               <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -116,11 +130,17 @@
               <DateOfDealing>9999-12-31</DateOfDealing>
               <SizeOfDealing>79228162514264337593543950335</SizeOfDealing>
               <UnitsOfDealing>79228162514264337593543950335</UnitsOfDealing>
-              <ProductAPIR>ProductAPIR3</ProductAPIR>
-              <ProductSPIN>ProductSPIN3</ProductSPIN>
-              <ExchangeIdentifier>ExchangeIdentifier3</ExchangeIdentifier>
-              <ExchangeCode>anyType</ExchangeCode>
-              <ProductName>ProductName3</ProductName>
+              <ProductIdentifier>
+                <ISIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN3</ISIN>
+                <SPIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN3</SPIN>
+                <APIR xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR3</APIR>
+                <ExchangeId xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+                  <ExchangeIdentifier>ExchangeIdentifier3</ExchangeIdentifier>
+                  <ExchangeCode>anyType</ExchangeCode>
+                </ExchangeId>
+                <IssuerProvidedIdentifier xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IssuerProvidedIdentifier3</IssuerProvidedIdentifier>
+                <ProductName xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ProductName3</ProductName>
+              </ProductIdentifier>
               <TMDVersion>79228162514264337593543950335</TMDVersion>
               <DataStandardType>LifeInsurance</DataStandardType>
               <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -152,11 +172,17 @@
             <DateOfDealing>1899-11-30</DateOfDealing>
             <SizeOfDealing>0.9</SizeOfDealing>
             <UnitsOfDealing>0.9</UnitsOfDealing>
-            <ProductAPIR>ProductAPIR4</ProductAPIR>
-            <ProductSPIN>ProductSPIN4</ProductSPIN>
-            <ExchangeIdentifier>ExchangeIdentifier4</ExchangeIdentifier>
-            <ExchangeCode>anyType</ExchangeCode>
-            <ProductName>ProductName4</ProductName>
+            <ProductIdentifier>
+              <ISIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN4</ISIN>
+              <SPIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN4</SPIN>
+              <APIR xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR4</APIR>
+              <ExchangeId xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+                <ExchangeIdentifier>ExchangeIdentifier4</ExchangeIdentifier>
+                <ExchangeCode>anyType</ExchangeCode>
+              </ExchangeId>
+              <IssuerProvidedIdentifier xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IssuerProvidedIdentifier4</IssuerProvidedIdentifier>
+              <ProductName xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ProductName4</ProductName>
+            </ProductIdentifier>
             <TMDVersion>0</TMDVersion>
             <DataStandardType>FundsManagement</DataStandardType>
             <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -185,11 +211,17 @@
             <DateOfDealing>1900-02-02</DateOfDealing>
             <SizeOfDealing>1.1</SizeOfDealing>
             <UnitsOfDealing>1.1</UnitsOfDealing>
-            <ProductAPIR>ProductAPIR5</ProductAPIR>
-            <ProductSPIN>ProductSPIN5</ProductSPIN>
-            <ExchangeIdentifier>ExchangeIdentifier5</ExchangeIdentifier>
-            <ExchangeCode>anyType</ExchangeCode>
-            <ProductName>ProductName5</ProductName>
+            <ProductIdentifier>
+              <ISIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN5</ISIN>
+              <SPIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN5</SPIN>
+              <APIR xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR5</APIR>
+              <ExchangeId xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+                <ExchangeIdentifier>ExchangeIdentifier5</ExchangeIdentifier>
+                <ExchangeCode>anyType</ExchangeCode>
+              </ExchangeId>
+              <IssuerProvidedIdentifier xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IssuerProvidedIdentifier5</IssuerProvidedIdentifier>
+              <ProductName xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ProductName5</ProductName>
+            </ProductIdentifier>
             <TMDVersion>2</TMDVersion>
             <DataStandardType>Superannuation</DataStandardType>
             <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -218,11 +250,17 @@
             <DateOfDealing>0001-02-02</DateOfDealing>
             <SizeOfDealing>-79228162514264337593543950335</SizeOfDealing>
             <UnitsOfDealing>-79228162514264337593543950335</UnitsOfDealing>
-            <ProductAPIR>ProductAPIR6</ProductAPIR>
-            <ProductSPIN>ProductSPIN6</ProductSPIN>
-            <ExchangeIdentifier>ExchangeIdentifier6</ExchangeIdentifier>
-            <ExchangeCode>anyType</ExchangeCode>
-            <ProductName>ProductName6</ProductName>
+            <ProductIdentifier>
+              <ISIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN6</ISIN>
+              <SPIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN6</SPIN>
+              <APIR xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR6</APIR>
+              <ExchangeId xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+                <ExchangeIdentifier>ExchangeIdentifier6</ExchangeIdentifier>
+                <ExchangeCode>anyType</ExchangeCode>
+              </ExchangeId>
+              <IssuerProvidedIdentifier xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IssuerProvidedIdentifier6</IssuerProvidedIdentifier>
+              <ProductName xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ProductName6</ProductName>
+            </ProductIdentifier>
             <TMDVersion>-79228162514264337593543950334</TMDVersion>
             <DataStandardType>LifeInsurance</DataStandardType>
             <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -254,11 +292,17 @@
           <DateOfDealing>9999-11-29</DateOfDealing>
           <SizeOfDealing>79228162514264337593543950335</SizeOfDealing>
           <UnitsOfDealing>79228162514264337593543950335</UnitsOfDealing>
-          <ProductAPIR>ProductAPIR7</ProductAPIR>
-          <ProductSPIN>ProductSPIN7</ProductSPIN>
-          <ExchangeIdentifier>ExchangeIdentifier7</ExchangeIdentifier>
-          <ExchangeCode>anyType</ExchangeCode>
-          <ProductName>ProductName7</ProductName>
+          <ProductIdentifier>
+            <ISIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN7</ISIN>
+            <SPIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN7</SPIN>
+            <APIR xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR7</APIR>
+            <ExchangeId xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+              <ExchangeIdentifier>ExchangeIdentifier7</ExchangeIdentifier>
+              <ExchangeCode>anyType</ExchangeCode>
+            </ExchangeId>
+            <IssuerProvidedIdentifier xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IssuerProvidedIdentifier7</IssuerProvidedIdentifier>
+            <ProductName xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ProductName7</ProductName>
+          </ProductIdentifier>
           <TMDVersion>79228162514264337593543950334</TMDVersion>
           <DataStandardType>FundsManagement</DataStandardType>
           <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -287,11 +331,17 @@
           <DateOfDealing>1899-10-29</DateOfDealing>
           <SizeOfDealing>0.8</SizeOfDealing>
           <UnitsOfDealing>0.8</UnitsOfDealing>
-          <ProductAPIR>ProductAPIR8</ProductAPIR>
-          <ProductSPIN>ProductSPIN8</ProductSPIN>
-          <ExchangeIdentifier>ExchangeIdentifier8</ExchangeIdentifier>
-          <ExchangeCode>anyType</ExchangeCode>
-          <ProductName>ProductName8</ProductName>
+          <ProductIdentifier>
+            <ISIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN8</ISIN>
+            <SPIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN8</SPIN>
+            <APIR xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR8</APIR>
+            <ExchangeId xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+              <ExchangeIdentifier>ExchangeIdentifier8</ExchangeIdentifier>
+              <ExchangeCode>anyType</ExchangeCode>
+            </ExchangeId>
+            <IssuerProvidedIdentifier xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IssuerProvidedIdentifier8</IssuerProvidedIdentifier>
+            <ProductName xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ProductName8</ProductName>
+          </ProductIdentifier>
           <TMDVersion>-1</TMDVersion>
           <DataStandardType>Superannuation</DataStandardType>
           <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -320,11 +370,17 @@
           <DateOfDealing>1900-03-06</DateOfDealing>
           <SizeOfDealing>1.2</SizeOfDealing>
           <UnitsOfDealing>1.2</UnitsOfDealing>
-          <ProductAPIR>ProductAPIR9</ProductAPIR>
-          <ProductSPIN>ProductSPIN9</ProductSPIN>
-          <ExchangeIdentifier>ExchangeIdentifier9</ExchangeIdentifier>
-          <ExchangeCode>anyType</ExchangeCode>
-          <ProductName>ProductName9</ProductName>
+          <ProductIdentifier>
+            <ISIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN9</ISIN>
+            <SPIN xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN9</SPIN>
+            <APIR xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR9</APIR>
+            <ExchangeId xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+              <ExchangeIdentifier>ExchangeIdentifier9</ExchangeIdentifier>
+              <ExchangeCode>anyType</ExchangeCode>
+            </ExchangeId>
+            <IssuerProvidedIdentifier xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IssuerProvidedIdentifier9</IssuerProvidedIdentifier>
+            <ProductName xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ProductName9</ProductName>
+          </ProductIdentifier>
           <TMDVersion>3</TMDVersion>
           <DataStandardType>LifeInsurance</DataStandardType>
           <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
@@ -346,5 +402,6 @@
       </Dealings>
     </DealingEntity>
   </DealingEntities>
-  <ReportFooter CountOfDealings="1" TotalDealingsValue="1" />
+  <ReportFooter CountOfDealings="1"
+                TotalDealingsValue="1" />
 </DealingsReport>

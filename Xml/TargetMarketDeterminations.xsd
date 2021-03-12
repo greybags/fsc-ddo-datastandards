@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/TMD/0.1"
+           elementFormDefault="qualified"
+           xmlns="urn://www.fsc.org.au/DDO/TMD/0.1"
+           xmlns:mstns="urn://www.fsc.org.au/DDO/TMD/0.1"
+           xmlns:ddoc="urn://www.fsc.org.au/DDO/Common/0.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <!-- include the Common elements -->
+  <xs:import namespace="urn://www.fsc.org.au/DDO/Common/0.1"
+             schemaLocation="Common.xsd"/>
+
+  <xs:element name="TMDReport"
+              type="TMDReportType">
+    <xs:annotation>
+      <xs:documentation>This element defines the root element of the report</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <!-- Complex Types-->
+  <xs:complexType name="TMDReportType">
+    <xs:annotation>
+      <xs:documentation>This type defines the report body structure</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="header"
+                  type="mstns:TMDReportHeader"></xs:element>
+      <xs:element name="body"
+                  type="mstns:TMDReportHeader"></xs:element>
+      <xs:element name="footer"
+                  type="mstns:TMDReportHeader"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TMDReportHeader">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TMDReportBody">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TMDReportFooter">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

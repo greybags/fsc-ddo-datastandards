@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/Common/0.1"
+           elementFormDefault="qualified"
+           xmlns="urn://www.fsc.org.au/DDO/Common/0.1"
+           xmlns:mstns="urn://www.fsc.org.au/DDO/Common/0.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:complexType name="ProductIdentifierType">
+    <xs:annotation >
+      <xs:documentation>
+        This type defines the mechanism for identifying a Financial Product.
+        At least one of these elements must be provided.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ISIN"
+                  type="xs:string"></xs:element>
+      <xs:element name="SPIN"
+                  type="xs:string"></xs:element>
+      <xs:element name="APIR"
+                  type="xs:string"></xs:element>
+      <xs:element name="ExchangeId"
+                  type="mstns:ExchageTradedIdentifierType"></xs:element>
+      <xs:element name="IssuerProvidedIdentifier"
+                  type="xs:string"></xs:element>
+      <xs:element name="ProductName"
+                  type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ExchageTradedIdentifierType">
+    <xs:annotation>
+      <xs:documentation>Thes type defines how exchange traded products are identified</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ExchangeIdentifier"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Exchange standard code eg ASX, NZX etc</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExchangeCode">
+        <xs:annotation>
+          <xs:documentation>Identifier of the exhange traded asset eg AMP, AGL</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Simple Types-->
+  <xs:simpleType name="MajorMinorVersion">
+    <xs:restriction base="xs:string">
+      <xs:annotation>
+        <xs:documentation>enforce a major.minor structure</xs:documentation>
+      </xs:annotation>
+      <xs:pattern value="([1-9]+[0-9]*|0)\.[0-9]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <!-- Enums -->
+  <xs:simpleType name="TMDCharacteristicEnum">
+    <xs:annotation>
+      <xs:documentation>the list of TMD Characteristics </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!-- Investment Objective-->
+      <xs:enumeration value="InvestmentObjective_CapitalGrowth"></xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_CapitalPreservation"></xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_CapitalGuaranteed"></xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_RegularIncome"></xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_Specialist"></xs:enumeration>
+      <!-- Product Use -->
+      <xs:enumeration value="ProductUse_SolutionStandalone"></xs:enumeration>
+      <xs:enumeration value="ProductUse_CoreComponent"></xs:enumeration>
+      <xs:enumeration value="ProductUse_Satellite"></xs:enumeration>
+      <!-- NOTE: LIST INCOMPLETE AT THIS STAGE -->
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="TMDIndicatorEnum" >
+    <xs:annotation>
+      <xs:documentation>the list of TMD Characteristic's potentially assessed values</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InTargetMarket"></xs:enumeration>
+      <xs:enumeration value="PotentiallyInTargetMarket"></xs:enumeration>
+      <xs:enumeration value="NotConsideredInTargetMarket"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DistributorTypeEnum" >
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Adviser"></xs:enumeration>
+      <xs:enumeration value="Platform"></xs:enumeration>
+      <xs:enumeration value="Aggregator"></xs:enumeration>
+      <xs:enumeration value="Promoter"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
