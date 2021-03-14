@@ -47,6 +47,16 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="ReportSelectionRangeType">
+    <xs:sequence>
+      <xs:element name="SelectionStart"
+                  type="xs:date"></xs:element>
+      <xs:element name="SelectionEnd"
+                  type="xs:date"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
   <!-- Simple Types-->
   <xs:simpleType name="MajorMinorVersion">
     <xs:restriction base="xs:string">
@@ -102,4 +112,15 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="TMDDataStandardTypeEnum" >
+    <xs:annotation>
+      <xs:documentation>The type of TMD Data standard required based on Financial Services entity type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FundsManagement"></xs:enumeration>
+      <xs:enumeration value="Superannuation"></xs:enumeration>
+      <xs:enumeration value="LifeInsurance"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  
 </xs:schema>

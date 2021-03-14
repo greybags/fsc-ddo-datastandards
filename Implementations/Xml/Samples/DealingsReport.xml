@@ -6,8 +6,8 @@
     <ReportIdentifier>ReportIdentifier1</ReportIdentifier>
     <ReportExtractionDateTime>1900-01-01T01:01:01+13:00</ReportExtractionDateTime>
     <ReportSelectionRange>
-      <SelectionStart>1900-01-01</SelectionStart>
-      <SelectionEnd>1900-01-01</SelectionEnd>
+      <ddoc:SelectionStart>1900-01-01</ddoc:SelectionStart>
+      <ddoc:SelectionEnd>1900-01-01</ddoc:SelectionEnd>
     </ReportSelectionRange>
   </ReportHeader>
   <DealingEntities>
