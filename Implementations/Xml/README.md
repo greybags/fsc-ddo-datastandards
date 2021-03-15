@@ -10,3 +10,12 @@ It consists of three Data Standards
   - Create a new target branch referencing to the new version
   - increment the version numbers in the schemas
   - complete version consistency checks
+
+## Data Standards
+ - Suffix all enum types with *Enum
+ - Suffix all Global Complex Types with *Type 
+ - Suffix all arrays/lists with "*CollectionType"
+
+
+ ## XSD Structure Overview
+ ![Dealings Structure](Dealings.png)
