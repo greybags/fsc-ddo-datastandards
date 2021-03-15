@@ -16,6 +16,7 @@ It consists of three Data Standards
  - Suffix all Global Complex Types with *Type 
  - Suffix all arrays/lists with "*CollectionType"
 
-
+ ***
  ## XSD Structure Overview
+ ### Dealings Diagram
  ![Dealings Structure](Dealings.png)
