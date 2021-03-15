@@ -23,11 +23,11 @@
       <xs:documentation>This type defines the report body structure</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="header"
+      <xs:element name="Header"
                   type="mstns:ComplaintsReportHeaderType"></xs:element>
-      <xs:element name="body"
+      <xs:element name="Body"
                   type="mstns:ComplaintsReportBodyType"></xs:element>
-      <xs:element name="footer"
+      <xs:element name="Footer"
                   type="mstns:ComplaintsReportFooterType"></xs:element>
     </xs:sequence>
   </xs:complexType>

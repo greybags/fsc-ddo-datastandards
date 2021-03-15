@@ -22,15 +22,15 @@
       <xs:documentation>This type defines the structure of the report</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="ReportHeader"
+      <xs:element name="Header"
                   type="mstns:ReportHeaderType"
                   minOccurs="1"
                   maxOccurs="1"></xs:element>
-      <xs:element name="DealingEntities"
-                  type="mstns:DealingEntityCollectionType"
+      <xs:element name="Body"
+                  type="mstns:ReportBodyType"
                   minOccurs="1"
-                  maxOccurs="1"></xs:element>
-      <xs:element name="ReportFooter"
+                  maxOccurs="1"/>
+      <xs:element name="Footer"
                   type="mstns:DealingsReportFooterType"
                   minOccurs="1"
                   maxOccurs="1"/>
@@ -87,80 +87,53 @@
     </xs:attribute>
   </xs:complexType>
 
+  <xs:complexType name="ReportBodyType">
+    <xs:annotation>
+      <xs:documentation>
+        This type defines the body of the report
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DealingEntities"
+                  type="ddoc:EntityCollectionType"
+                  minOccurs="1"
+                  maxOccurs="1"></xs:element>
+      <xs:element name="EntityRelationships"
+                  type="ddoc:EntityRelationshipCollectionType"
+                  minOccurs="1"
+                  maxOccurs="1"></xs:element>
+      <xs:element name="Dealings"
+                  type="mstns:DealingCollectionType"
+                  minOccurs="0"
+                  maxOccurs="1"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
+  
+  
   <xs:complexType name="DealingEntityCollectionType">
     <xs:sequence>
       <xs:element name="DealingEntity"
-                  type="mstns:DealingEntityType"></xs:element>
+                  type="ddoc:EntityDetailType"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="DealingEntityType">
-    <xs:annotation>
-      <xs:documentation>defines the information about a dealing entity</xs:documentation>
-    </xs:annotation>
+  <xs:complexType name="DealingCollectionType">
     <xs:sequence>
-      <xs:element name="EntityName"
-                  type="xs:string"></xs:element>
-      <xs:element name="ReportingEntityType"
-                  type="mstns:DealingEntityTypeEnum"></xs:element>
-      <xs:element name="ACL"
-                  type="xs:string">
-        <xs:annotation>
-          <xs:documentation>Reporting entity Australian Credit License (ACL). Must be used if exists</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="AFSL"
-                  type="xs:string">
-        <xs:annotation>
-          <xs:documentation>Reporting entity AFSL. Must be used if exists</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ABN"
-                  type="xs:string">
-        <xs:annotation>
-          <xs:documentation>Reporting entity ABN. Must be used if exists</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="ContactName"
-                  type="xs:string"/>
-      <xs:element name="ContactTitle"
-                  type="xs:string"/>
-      <xs:element name="ContactPhone"
-                  type="xs:string"/>
-      <xs:element name="ContactEmail"
-                  type="xs:string"/>
-
-      <xs:element name="DealingEntity"
-                  type="mstns:DealingEntityType"
-                  minOccurs="0"
-                  maxOccurs="1"></xs:element>
-      <xs:element name="Dealings"
-                  type="mstns:TransactionSetType"
-                  minOccurs="0"
-                  maxOccurs="1"></xs:element>
-
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="TransactionSetType">
-    <xs:sequence>
-      <xs:element name="TransctionDetail"
-                  type="mstns:TransactionDetailType"
+      <xs:element name="TransactionDetail"
+                  type="mstns:DealingDetailType"
                   minOccurs="1"
                   maxOccurs="unbounded"
                   nillable="false"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="TransactionDetailType">
+  <xs:complexType name="DealingDetailType">
     <xs:sequence>
       <xs:element name="DistributorType"
                   type="ddoc:DistributorTypeEnum"></xs:element>
-      <xs:element name="DistributorIdentifierType"
-                  type="mstns:DistributorUniqueIdentifierTypeEnum"  />
       <xs:element name="DistributorIdentifier"
-                  type="xs:string"/>
+                  type="ddoc:EntityIdentifierType"/>
       <xs:element name="IsDealingInsideTMD"
                   type="xs:boolean"/>
       <xs:element name="IsPersonalAdvice"
@@ -178,7 +151,7 @@
       <xs:element name="TMDVersion"
                   type="xs:integer" />
       <xs:element name="DataStandardType"
-                  type="ddoc:TMDDataStandardTypeEnum" />
+                  type="ddoc:TMDProductTypeEnum" />
       <xs:element name="DataStandardVersionUsed"
                   type="ddoc:MajorMinorVersion"/>
       <xs:element name="Assessments"
@@ -187,6 +160,9 @@
   </xs:complexType>
 
   <xs:complexType name="TMDCharacteristicAssessmentCollectionType">
+    <xs:annotation>
+      <xs:documentation>a collection or list of Assessments</xs:documentation>
+    </xs:annotation>
     <xs:sequence >
       <xs:element name="Assessment"
                   type="TMDCharacteristicAssessmentType"
@@ -240,17 +216,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="DealingEntityTypeEnum">
-    <xs:annotation>
-      <xs:documentation></xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="AdviceAFSL"></xs:enumeration>
-      <xs:enumeration value="Platform"></xs:enumeration>
-      <xs:enumeration value="NonAdviceAFSL"></xs:enumeration>
-      <xs:enumeration value="CreditLicensee"></xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
 
   <xs:simpleType name="TMDIndicatorReasonEnum" >
     <xs:annotation>
