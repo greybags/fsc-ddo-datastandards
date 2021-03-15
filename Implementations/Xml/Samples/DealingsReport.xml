@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DealingsReport xmlns="urn://www.fsc.org.au/DDO/Dealings/0.1">
-  <Header StandardVersion="0.1"
+<DealingsReport xmlns="urn://www.fsc.org.au/DDO/Dealings/1.0">
+  <Header StandardVersion="1.0"
           ReportType="ByDate">
     <ReportIdentifier>ReportIdentifier1</ReportIdentifier>
     <ReportExtractionDateTime>1900-01-01T01:01:01+13:00</ReportExtractionDateTime>
     <ReportSelectionRange>
-      <SelectionStart xmlns="urn://www.fsc.org.au/DDO/Common/0.1">1900-01-01</SelectionStart>
-      <SelectionEnd xmlns="urn://www.fsc.org.au/DDO/Common/0.1">1900-01-01</SelectionEnd>
+      <SelectionStart xmlns="urn://www.fsc.org.au/DDO/Common/1.0">1900-01-01</SelectionStart>
+      <SelectionEnd xmlns="urn://www.fsc.org.au/DDO/Common/1.0">1900-01-01</SelectionEnd>
     </ReportSelectionRange>
   </Header>
   <Body>
     <DealingEntities>
-      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
         <PrimaryId>
           <EntityIdentifierType>FAR</EntityIdentifierType>
           <EntityIdentifierValue>EntityIdentifierValue1</EntityIdentifierValue>
@@ -36,12 +36,15 @@
         </AlternativeIds>
         <EntityName>EntityName1</EntityName>
         <EntityType>AdviceAFSL</EntityType>
-        <ContactName>ContactName1</ContactName>
-        <ContactTitle>ContactTitle1</ContactTitle>
-        <ContactPhone>ContactPhone1</ContactPhone>
-        <ContactEmail>ContactEmail1</ContactEmail>
+        <Contact>
+          <Name>Name1</Name>
+          <Title>Title1</Title>
+          <Phone>Phone1</Phone>
+          <Email>Email1</Email>
+          <Address>Address1</Address>
+        </Contact>
       </Entity>
-      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
         <PrimaryId>
           <EntityIdentifierType>ABN</EntityIdentifierType>
           <EntityIdentifierValue>EntityIdentifierValue2</EntityIdentifierValue>
@@ -66,12 +69,15 @@
         </AlternativeIds>
         <EntityName>EntityName2</EntityName>
         <EntityType>Platform</EntityType>
-        <ContactName>ContactName2</ContactName>
-        <ContactTitle>ContactTitle2</ContactTitle>
-        <ContactPhone>ContactPhone2</ContactPhone>
-        <ContactEmail>ContactEmail2</ContactEmail>
+        <Contact>
+          <Name>Name2</Name>
+          <Title>Title2</Title>
+          <Phone>Phone2</Phone>
+          <Email>Email2</Email>
+          <Address>Address2</Address>
+        </Contact>
       </Entity>
-      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
         <PrimaryId>
           <EntityIdentifierType>ASAL</EntityIdentifierType>
           <EntityIdentifierValue>EntityIdentifierValue3</EntityIdentifierValue>
@@ -96,14 +102,17 @@
         </AlternativeIds>
         <EntityName>EntityName3</EntityName>
         <EntityType>NonAdviceAFSL</EntityType>
-        <ContactName>ContactName3</ContactName>
-        <ContactTitle>ContactTitle3</ContactTitle>
-        <ContactPhone>ContactPhone3</ContactPhone>
-        <ContactEmail>ContactEmail3</ContactEmail>
+        <Contact>
+          <Name>Name3</Name>
+          <Title>Title3</Title>
+          <Phone>Phone3</Phone>
+          <Email>Email3</Email>
+          <Address>Address3</Address>
+        </Contact>
       </Entity>
     </DealingEntities>
     <EntityRelationships>
-      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
         <IssuerEntity>
           <EntityIdentifierType>FAR</EntityIdentifierType>
           <EntityIdentifierValue>EntityIdentifierValue1</EntityIdentifierValue>
@@ -115,7 +124,7 @@
           <SubUnit>SubUnit1</SubUnit>
         </DistributorEntity>
       </EntityRelationship>
-      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
         <IssuerEntity>
           <EntityIdentifierType>ABN</EntityIdentifierType>
           <EntityIdentifierValue>EntityIdentifierValue2</EntityIdentifierValue>
@@ -127,7 +136,7 @@
           <SubUnit>SubUnit2</SubUnit>
         </DistributorEntity>
       </EntityRelationship>
-      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/0.1">
+      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
         <IssuerEntity>
           <EntityIdentifierType>ASAL</EntityIdentifierType>
           <EntityIdentifierValue>EntityIdentifierValue3</EntityIdentifierValue>
@@ -144,9 +153,9 @@
       <TransactionDetail>
         <DistributorType>Adviser</DistributorType>
         <DistributorIdentifier>
-          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/0.1">FAR</EntityIdentifierType>
-          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/0.1">EntityIdentifierValue1</EntityIdentifierValue>
-          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SubUnit1</SubUnit>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">FAR</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue1</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit1</SubUnit>
         </DistributorIdentifier>
         <IsDealingInsideTMD>true</IsDealingInsideTMD>
         <IsPersonalAdvice>true</IsPersonalAdvice>
@@ -155,13 +164,13 @@
         <SizeOfDealing>1</SizeOfDealing>
         <UnitsOfDealing>1</UnitsOfDealing>
         <ProductIdentifier>
-          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ISIN</IdentifierType>
-          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IdentifierValue1</IdentifierValue>
-          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/0.1">Disambiguation1</Disambiguation>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ISIN</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue1</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation1</Disambiguation>
         </ProductIdentifier>
         <TMDVersion>1</TMDVersion>
         <DataStandardType>FundsManagement</DataStandardType>
-        <DataStandardVersionUsed>0.1</DataStandardVersionUsed>
+        <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
         <Assessments>
           <Assessment>
             <TMDCharacteristic>InvestmentObjective_CapitalGrowth</TMDCharacteristic>
@@ -180,9 +189,9 @@
       <TransactionDetail>
         <DistributorType>Platform</DistributorType>
         <DistributorIdentifier>
-          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ABN</EntityIdentifierType>
-          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/0.1">EntityIdentifierValue2</EntityIdentifierValue>
-          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SubUnit2</SubUnit>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ABN</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue2</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit2</SubUnit>
         </DistributorIdentifier>
         <IsDealingInsideTMD>false</IsDealingInsideTMD>
         <IsPersonalAdvice>false</IsPersonalAdvice>
@@ -191,13 +200,13 @@
         <SizeOfDealing>-79228162514264337593543950335</SizeOfDealing>
         <UnitsOfDealing>-79228162514264337593543950335</UnitsOfDealing>
         <ProductIdentifier>
-          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SPIN</IdentifierType>
-          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IdentifierValue2</IdentifierValue>
-          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/0.1">Disambiguation2</Disambiguation>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SPIN</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue2</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation2</Disambiguation>
         </ProductIdentifier>
         <TMDVersion>-79228162514264337593543950335</TMDVersion>
         <DataStandardType>Superannuation</DataStandardType>
-        <DataStandardVersionUsed>0.1</DataStandardVersionUsed>
+        <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
         <Assessments>
           <Assessment>
             <TMDCharacteristic>InvestmentObjective_RegularIncome</TMDCharacteristic>
@@ -216,9 +225,9 @@
       <TransactionDetail>
         <DistributorType>Aggregator</DistributorType>
         <DistributorIdentifier>
-          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/0.1">ASAL</EntityIdentifierType>
-          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/0.1">EntityIdentifierValue3</EntityIdentifierValue>
-          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/0.1">SubUnit3</SubUnit>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ASAL</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue3</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit3</SubUnit>
         </DistributorIdentifier>
         <IsDealingInsideTMD>true</IsDealingInsideTMD>
         <IsPersonalAdvice>true</IsPersonalAdvice>
@@ -227,13 +236,13 @@
         <SizeOfDealing>79228162514264337593543950335</SizeOfDealing>
         <UnitsOfDealing>79228162514264337593543950335</UnitsOfDealing>
         <ProductIdentifier>
-          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/0.1">APIR</IdentifierType>
-          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/0.1">IdentifierValue3</IdentifierValue>
-          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/0.1">Disambiguation3</Disambiguation>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">APIR</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue3</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation3</Disambiguation>
         </ProductIdentifier>
         <TMDVersion>79228162514264337593543950335</TMDVersion>
         <DataStandardType>LifeInsurance</DataStandardType>
-        <DataStandardVersionUsed>0.1</DataStandardVersionUsed>
+        <DataStandardVersionUsed>1.0</DataStandardVersionUsed>
         <Assessments>
           <Assessment>
             <TMDCharacteristic>ProductUse_CoreComponent</TMDCharacteristic>

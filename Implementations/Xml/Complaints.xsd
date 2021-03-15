@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/Complaints/0.1"
+<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/Complaints/1.0"
            elementFormDefault="qualified"
-           xmlns="urn://www.fsc.org.au/DDO/Complaints/0.1"
-           xmlns:mstns="urn://www.fsc.org.au/DDO/Complaints/0.1"
-           xmlns:ddoc="urn://www.fsc.org.au/DDO/Common/0.1"
+           xmlns="urn://www.fsc.org.au/DDO/Complaints/1.0"
+           xmlns:mstns="urn://www.fsc.org.au/DDO/Complaints/1.0"
+           xmlns:ddoc="urn://www.fsc.org.au/DDO/Common/1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
   <!-- include the Common elements -->
-  <xs:import namespace="urn://www.fsc.org.au/DDO/Common/0.1"
+  <xs:import namespace="urn://www.fsc.org.au/DDO/Common/1.0"
              schemaLocation="Common.xsd"/>
 
   <xs:element name="ComplaintsReport"
@@ -69,7 +69,7 @@
     <!-- Attributes -->
     <xs:attribute name="StandardVersion"
                   type="ddoc:MajorMinorVersion"
-                  fixed="0.1">
+                  fixed="1.0">
       <xs:annotation>
         <xs:documentation>Note: the fixed value must align to the Target Namespace version</xs:documentation>
       </xs:annotation>

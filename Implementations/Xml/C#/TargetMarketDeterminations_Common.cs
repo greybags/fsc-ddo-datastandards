@@ -20,8 +20,8 @@ using System.Xml.Serialization;
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/0.1")]
-[System.Xml.Serialization.XmlRootAttribute("TMDReport", Namespace="urn://www.fsc.org.au/DDO/TMD/0.1", IsNullable=false)]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+[System.Xml.Serialization.XmlRootAttribute("TMDReport", Namespace="urn://www.fsc.org.au/DDO/TMD/1.0", IsNullable=false)]
 public partial class TMDReportType {
     
     private TMDReportHeader headerField;
@@ -32,7 +32,7 @@ public partial class TMDReportType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public TMDReportHeader header {
+    public TMDReportHeader Header {
         get {
             return this.headerField;
         }
@@ -43,7 +43,7 @@ public partial class TMDReportType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-    public TMDReportBody body {
+    public TMDReportBody Body {
         get {
             return this.bodyField;
         }
@@ -54,7 +54,7 @@ public partial class TMDReportType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-    public TMDReportFooter footer {
+    public TMDReportFooter Footer {
         get {
             return this.footerField;
         }
@@ -69,7 +69,7 @@ public partial class TMDReportType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
 public partial class TMDReportHeader {
     
     private System.DateTime reportExtractionDateTimeField;
@@ -81,7 +81,7 @@ public partial class TMDReportHeader {
     private string standardVersionField;
     
     public TMDReportHeader() {
-        this.standardVersionField = "0.1";
+        this.standardVersionField = "1.0";
     }
     
     /// <remarks/>
@@ -108,7 +108,7 @@ public partial class TMDReportHeader {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-    [System.Xml.Serialization.XmlArrayItemAttribute("Identifier", Namespace="urn://www.fsc.org.au/DDO/Common/0.1", IsNullable=false)]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Identifier", Namespace="urn://www.fsc.org.au/DDO/Common/1.0", IsNullable=false)]
     public EntityIdentifierType[] IssuerAlternativeIdentifiers {
         get {
             return this.issuerAlternativeIdentifiersField;
@@ -135,7 +135,7 @@ public partial class TMDReportHeader {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
 public partial class EntityIdentifierType {
     
     private EntityIdentifierTypeEnum entityIdentifierType1Field;
@@ -181,7 +181,7 @@ public partial class EntityIdentifierType {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
 public enum EntityIdentifierTypeEnum {
     
     /// <remarks/>
@@ -205,7 +205,7 @@ public enum EntityIdentifierTypeEnum {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
 public partial class TMDReportFooter {
 }
 
@@ -214,7 +214,7 @@ public partial class TMDReportFooter {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
 public partial class TMDCharacteristicType {
     
     private TMDCharacteristicEnum characteristicField;
@@ -247,7 +247,7 @@ public partial class TMDCharacteristicType {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
 public enum TMDCharacteristicEnum {
     
     /// <remarks/>
@@ -278,7 +278,7 @@ public enum TMDCharacteristicEnum {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
 public enum TMDIndicatorEnum {
     
     /// <remarks/>
@@ -296,12 +296,16 @@ public enum TMDIndicatorEnum {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
 public partial class TMDCharacteristicsType {
     
     private string investmentObjectiveDescriptionField;
     
     private TMDCharacteristicsTypeInvestmentObjective_CapitalGrowth investmentObjective_CapitalGrowthField;
+    
+    private TMDCharacteristicsTypeInvestmentObjective_CapitalPreservation investmentObjective_CapitalPreservationField;
+    
+    private TMDCharacteristicsTypeInvestmentObjective_CapitalGuaranteed investmentObjective_CapitalGuaranteedField;
     
     private string productUseDescriptionField;
     
@@ -337,6 +341,28 @@ public partial class TMDCharacteristicsType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+    public TMDCharacteristicsTypeInvestmentObjective_CapitalPreservation InvestmentObjective_CapitalPreservation {
+        get {
+            return this.investmentObjective_CapitalPreservationField;
+        }
+        set {
+            this.investmentObjective_CapitalPreservationField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+    public TMDCharacteristicsTypeInvestmentObjective_CapitalGuaranteed InvestmentObjective_CapitalGuaranteed {
+        get {
+            return this.investmentObjective_CapitalGuaranteedField;
+        }
+        set {
+            this.investmentObjective_CapitalGuaranteedField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=4)]
     public string ProductUseDescription {
         get {
             return this.productUseDescriptionField;
@@ -347,7 +373,7 @@ public partial class TMDCharacteristicsType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+    [System.Xml.Serialization.XmlElementAttribute(Order=5)]
     public string InvestmentTimeframeDescription {
         get {
             return this.investmentTimeframeDescriptionField;
@@ -358,7 +384,7 @@ public partial class TMDCharacteristicsType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+    [System.Xml.Serialization.XmlElementAttribute(Order=6)]
     public string RiskAndReturnDescription {
         get {
             return this.riskAndReturnDescriptionField;
@@ -369,7 +395,7 @@ public partial class TMDCharacteristicsType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+    [System.Xml.Serialization.XmlElementAttribute(Order=7)]
     public string RedemptionFrequencyDescription {
         get {
             return this.redemptionFrequencyDescriptionField;
@@ -380,7 +406,7 @@ public partial class TMDCharacteristicsType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+    [System.Xml.Serialization.XmlElementAttribute(Order=8)]
     public string LiquidityDescription {
         get {
             return this.liquidityDescriptionField;
@@ -396,7 +422,7 @@ public partial class TMDCharacteristicsType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
 public partial class TMDCharacteristicsTypeInvestmentObjective_CapitalGrowth : TMDCharacteristicType {
 }
 
@@ -405,7 +431,25 @@ public partial class TMDCharacteristicsTypeInvestmentObjective_CapitalGrowth : T
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeInvestmentObjective_CapitalPreservation : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeInvestmentObjective_CapitalGuaranteed : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
 public partial class ContactDetailsType {
     
     private string nameField;
@@ -479,7 +523,7 @@ public partial class ContactDetailsType {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
 public partial class ProductIdentifierType {
     
     private ProductIdentifierTypeEnum identifierTypeField;
@@ -525,7 +569,7 @@ public partial class ProductIdentifierType {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
 public enum ProductIdentifierTypeEnum {
     
     /// <remarks/>
@@ -549,7 +593,7 @@ public enum ProductIdentifierTypeEnum {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
 public partial class TargetMarketDeterminationType {
     
     private ProductIdentifierType productPrimaryIdentifierField;
@@ -589,7 +633,7 @@ public partial class TargetMarketDeterminationType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
-    [System.Xml.Serialization.XmlArrayItemAttribute("ProductId", Namespace="urn://www.fsc.org.au/DDO/Common/0.1", IsNullable=false)]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ProductId", Namespace="urn://www.fsc.org.au/DDO/Common/1.0", IsNullable=false)]
     public ProductIdentifierType[] ProductAlternativeIdentifers {
         get {
             return this.productAlternativeIdentifersField;
@@ -623,7 +667,7 @@ public partial class TargetMarketDeterminationType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
-    [System.Xml.Serialization.XmlArrayItemAttribute("Identifier", Namespace="urn://www.fsc.org.au/DDO/Common/0.1", IsNullable=false)]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Identifier", Namespace="urn://www.fsc.org.au/DDO/Common/1.0", IsNullable=false)]
     public EntityIdentifierType[] IssuerAlternativeIdentifiers {
         get {
             return this.issuerAlternativeIdentifiersField;
@@ -714,7 +758,7 @@ public partial class TargetMarketDeterminationType {
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
 public enum TMDStatusEnum {
     
     /// <remarks/>
@@ -735,7 +779,7 @@ public enum TMDStatusEnum {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/0.1")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
 public partial class TMDReportBody {
     
     private TargetMarketDeterminationType[] tMDsField;

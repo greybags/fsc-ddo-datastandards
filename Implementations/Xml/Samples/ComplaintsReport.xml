@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ComplaintsReport xmlns="urn://www.fsc.org.au/DDO/Complaints/0.1">
-  <Header StandardVersion="0.1">
+<ComplaintsReport xmlns="urn://www.fsc.org.au/DDO/Complaints/1.0">
+  <Header StandardVersion="1.0">
     <ReportIdentifier>ReportIdentifier1</ReportIdentifier>
     <ReportExtractionDateTime>1900-01-01T01:01:01+13:00</ReportExtractionDateTime>
     <ReportSelectionRange>
-      <SelectionStart xmlns="urn://www.fsc.org.au/DDO/Common/0.1">1900-01-01</SelectionStart>
-      <SelectionEnd xmlns="urn://www.fsc.org.au/DDO/Common/0.1">1900-01-01</SelectionEnd>
+      <SelectionStart xmlns="urn://www.fsc.org.au/DDO/Common/1.0">1900-01-01</SelectionStart>
+      <SelectionEnd xmlns="urn://www.fsc.org.au/DDO/Common/1.0">1900-01-01</SelectionEnd>
     </ReportSelectionRange>
   </Header>
   <Body />
