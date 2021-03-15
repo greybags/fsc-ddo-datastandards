@@ -5,4 +5,6 @@ These files were created via:
 ```batch
 cd Xml
 xsd /c TargetMarketDeterminations.xsd Common.xsd /order /out:"C#"
+xsd /c Dealings.xsd Common.xsd /order /out:"C#"
+xsd /c Complaints.xsd Common.xsd /order /out:"C#"
 ```
