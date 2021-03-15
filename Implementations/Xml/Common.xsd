@@ -280,20 +280,140 @@
 
   <xs:simpleType name="TMDCharacteristicEnum">
     <xs:annotation>
-      <xs:documentation>the list of TMD Characteristics </xs:documentation>
+      <xs:documentation>The list of TMD Characteristics that Products should be assessed against</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <!-- Investment Objective-->
-      <xs:enumeration value="InvestmentObjective_CapitalGrowth"></xs:enumeration>
-      <xs:enumeration value="InvestmentObjective_CapitalPreservation"></xs:enumeration>
-      <xs:enumeration value="InvestmentObjective_CapitalGuaranteed"></xs:enumeration>
-      <xs:enumeration value="InvestmentObjective_RegularIncome"></xs:enumeration>
-      <xs:enumeration value="InvestmentObjective_Specialist"></xs:enumeration>
+      <!-- Investment Objective -->
+      <xs:enumeration value="InvestmentObjective_CapitalGrowth">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor seeking Capital Growth </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_CapitalPreservation">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor seeking Capital Preservation </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_CapitalGuaranteed">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor seeking Capital Guaranteed </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_RegularIncome">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor seeking Regular Income?</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_Specialist">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor with Specialist objectives?</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <!-- Product Use -->
-      <xs:enumeration value="ProductUse_SolutionStandalone"></xs:enumeration>
-      <xs:enumeration value="ProductUse_CoreComponent"></xs:enumeration>
-      <xs:enumeration value="ProductUse_Satellite"></xs:enumeration>
-      <!-- NOTE: LIST INCOMPLETE AT THIS STAGE -->
+      <xs:enumeration value="ProductUse_SolutionStandalone">
+        <xs:annotation>
+          <xs:documentation>Is the product intended to be used as a Solution / Standalone product</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProductUse_CoreComponent">
+        <xs:annotation>
+          <xs:documentation>Is the product intended to be used as a core component product</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProductUse_Satellite">
+        <xs:annotation>
+          <xs:documentation>Is the product intended to be used as a satellite product</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Investment Timeframe -->
+      <xs:enumeration value="InvestmentTimeframe_Short">
+        <xs:annotation>
+          <xs:documentation>Is it appropriate for investors to hold the product for 0-2 years before selling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentTimeframe_Medium">
+        <xs:annotation>
+          <xs:documentation>Is it appropriate for investors to hold the product for 2-6 years before selling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentTimeframe_Long">
+        <xs:annotation>
+          <xs:documentation>Is it appropriate for investors to hold the product for more than 6 years before selling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Risk and return -->
+      <xs:enumeration value="RiskAndReturn_VeryHigh">
+        <xs:annotation>
+          <xs:documentation>Does the product have very high risk and return attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RiskAndReturn_High">
+        <xs:annotation>
+          <xs:documentation>Does the product have high risk and return attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RiskAndReturn_Medium">
+        <xs:annotation>
+          <xs:documentation>Does the product have medium risk and return attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RiskAndReturn_Low">
+        <xs:annotation>
+          <xs:documentation>Does the product have low risk and return attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RiskAndReturn_CapitalGuaranteed">
+        <xs:annotation>
+          <xs:documentation>Does the product have capital guaranteed attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Redemption Frequency -->
+      <xs:enumeration value="RedemptionFrequency_Daily">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests daily</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RedemptionFrequency_Weekly">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests weekly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RedemptionFrequency_Monthly">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests monthly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RedemptionFrequency_Quarterly">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests quarterly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RedemptionFrequency_AnnuallyPlus">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests annually or longer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Liquidity -->
+      <xs:enumeration value="Liquidity_Low">
+        <xs:annotation>
+          <xs:documentation>Are the assets predominantly low liquidity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Liquidity_Moderate">
+        <xs:annotation>
+          <xs:documentation>Are the assets predominantly moderate liquidity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Liquidity_High">
+        <xs:annotation>
+          <xs:documentation>Are the assets predominantly high liquidity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Liquidity_VeryHigh">
+        <xs:annotation>
+          <xs:documentation>Are the assets predominantly very high liquidity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
