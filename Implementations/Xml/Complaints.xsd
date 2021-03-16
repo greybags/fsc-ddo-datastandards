@@ -67,7 +67,8 @@
     </xs:sequence>
 
     <!-- Attributes -->
-    <xs:attribute ref="ddoc:StandardVersion"  use="required">
+    <xs:attribute ref="ddoc:StandardVersion"
+                  use="required">
       <xs:annotation>
         <xs:documentation>Should automatically pick up the Standard's current version</xs:documentation>
       </xs:annotation>
@@ -79,13 +80,133 @@
       <xs:documentation></xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="ComplaintEntities"
+                  type="ddoc:EntityCollectionType"
+                  minOccurs="1"
+                  maxOccurs="1">
+        <xs:annotation >
+          <xs:documentation>List of all entities who are impacted by the Complaint report</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EntityRelationships"
+                  type="ddoc:EntityRelationshipCollectionType"
+                  minOccurs="1"
+                  maxOccurs="1">
+        <xs:annotation >
+          <xs:documentation>List of key relationships between entities in order to build the entity hierarchy</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingEntityIdentifier"
+                  type="ddoc:EntityIdentifierType">
+        <xs:annotation>
+          <xs:documentation>Identifier from the listed Complaint Entities that is filing this report</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Complaints"
+                  type="mstns:ComplaintDetailCollectionType"></xs:element>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="ComplaintsReportFooterType">
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
     <xs:sequence>
+    </xs:sequence>
+    <xs:attribute name="NilReportCount"
+                  type="xs:positiveInteger">
+      <xs:annotation>
+        <xs:documentation>Number of nil complaint records included in this file. Sum of this field and the NonNilReportCount attribute must equal number of complaint records in this file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="NonNilReportCount"
+                  type="xs:positiveInteger">
+      <xs:annotation>
+        <xs:documentation>Number of non-nil complaint records included in this file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ComplaintDetailCollectionType">
+    <xs:sequence>
+      <xs:element name="Complaint"
+                  type="mstns:ComplaintDetailType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComplaintDetailType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ComplaintId"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reporting entity internal code for complaint</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuerIdentifer"
+                  type="ddoc:EntityIdentifierType">
+        <xs:annotation>
+          <xs:documentation>A primary identifier from one of the ComplaintEntities</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuerProductIdentifier"
+                  type="ddoc:ProductIdentifierType">
+      </xs:element>
+      <xs:element name="IssuerProductAlternativeIdentifiers"
+                  type="ddoc:ProductIdentifierCollectionType"></xs:element>
+      <xs:element name="ProductName"
+                  type="xs:string"></xs:element>
+      <xs:element name="DistributorIdentifier"
+                  type="ddoc:EntityIdentifierType">
+        <xs:annotation >
+          <xs:documentation>A Primary identifer from an entity in the ComplaintEntities</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DistributorProductIdentifier"
+                  type="ddoc:ProductIdentifierType"></xs:element>
+      <xs:element name="DistributorProductAlternativeIdentifiers"
+                  type="ddoc:ProductIdentifierCollectionType"></xs:element>
+      <xs:element name="ComplaintType"
+                  type="xs:string">
+        <xs:annotation></xs:annotation>
+      </xs:element>
+      <xs:element name="IsSalesDistributionComplaint"
+                  type="xs:boolean"></xs:element>
+      <xs:element name="IsProductIssuerComplaint"
+                  type="xs:boolean"></xs:element>
+      <xs:element name="HasFinancialImpact"
+                  type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComplaintDate"
+                  type="xs:date"
+                  nillable="false"
+                  minOccurs="1"
+                  maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Date complaint was raised</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComplaintResolutionDate"
+                  type="xs:date"
+                  nillable="true"
+                  minOccurs="1"
+                  maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Leave blank (ie use xs:Nil) if not resolved or unknown</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComplaintContent"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>This should include all the relevant details so that the issuer can understand the nature of the complaint</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

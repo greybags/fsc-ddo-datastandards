@@ -28,4 +28,7 @@ It consists of three Data Standards
  
  ### Dealings Diagram
  ![Dealings Structure](Documentation/Dealings.png)
+
+ ### Complaints Diagram
+ ![Complaints Structure](Documentation/Complaints.png)
  
