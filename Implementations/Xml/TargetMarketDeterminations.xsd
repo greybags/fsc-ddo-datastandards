@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/TMD/0.1"
+<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/TMD/1.0"
            elementFormDefault="qualified"
-           xmlns="urn://www.fsc.org.au/DDO/TMD/0.1"
-           xmlns:mstns="urn://www.fsc.org.au/DDO/TMD/0.1"
-           xmlns:ddoc="urn://www.fsc.org.au/DDO/Common/0.1"
+           xmlns="urn://www.fsc.org.au/DDO/TMD/1.0"
+           xmlns:mstns="urn://www.fsc.org.au/DDO/TMD/1.0"
+           xmlns:ddoc="urn://www.fsc.org.au/DDO/Common/1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
   <!-- include the Common elements -->
-  <xs:import namespace="urn://www.fsc.org.au/DDO/Common/0.1"
+  <xs:import namespace="urn://www.fsc.org.au/DDO/Common/1.0"
              schemaLocation="Common.xsd"/>
 
   <xs:element name="TMDReport"
@@ -23,28 +23,58 @@
       <xs:documentation>This type defines the report body structure</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="header"
+      <xs:element name="Header"
                   type="mstns:TMDReportHeader"></xs:element>
-      <xs:element name="body"
-                  type="mstns:TMDReportHeader"></xs:element>
-      <xs:element name="footer"
-                  type="mstns:TMDReportHeader"></xs:element>
+      <xs:element name="Body"
+                  type="mstns:TMDReportBody"></xs:element>
+      <xs:element name="Footer"
+                  type="mstns:TMDReportFooter"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="TMDReportHeader">
     <xs:annotation>
-      <xs:documentation></xs:documentation>
+      <xs:documentation>This type provides the header data for a set of TMDs</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="ReportExtractionDateTime"
+                  type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>
+            Date that TMD report was generatet.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
 
+      <xs:element name="IssuerPrimaryIdentifier"
+                  type="ddoc:EntityIdentifierType"></xs:element>
+      <xs:element name="IssuerAlternativeIdentifiers"
+                  type="ddoc:EntityIdentifierCollectionType"></xs:element>
     </xs:sequence>
+
+    <!-- Attributes -->
+    <xs:attribute name="StandardVersion"
+                  type="ddoc:MajorMinorVersion"
+                  fixed="1.0">
+      <xs:annotation>
+        <xs:documentation>Note: the fixed value must align to the Target Namespace version</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
+
   <xs:complexType name="TMDReportBody">
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="TMDs"
+                  type="mstns:TargetMarketDeterminationCollectionType"
+                  minOccurs="1"
+                  maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>The  collection of TMDs in this report</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="TMDReportFooter">
@@ -52,6 +82,216 @@
       <xs:documentation></xs:documentation>
     </xs:annotation>
     <xs:sequence>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TargetMarketDeterminationCollectionType">
+    <xs:annotation>
+      <xs:documentation>A Collection of Target Market Determinsations</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TMD"
+                  type="mstns:TargetMarketDeterminationType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TargetMarketDeterminationType">
+    <xs:annotation>
+      <xs:documentation>The definition of an individual Target Market Determination (TMD)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ProductPrimaryIdentifier"
+                  type="ddoc:ProductIdentifierType"></xs:element>
+      <xs:element name="ProductAlternativeIdentifers"
+                  type="ddoc:ProductIdentifierCollectionType"></xs:element>
+      <xs:element name="ProductName"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Financial instrument (Product) name. Note name is subject to change over time, so recommended don’t rely on this over time</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuerIdentifier"
+                  type="ddoc:EntityIdentifierType">
+        <xs:annotation>
+          <xs:documentation>
+            A unique identifier of the Issuer
+            CHECK: this is not present in the Data standard
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssuerAlternativeIdentifiers"
+                  type="ddoc:EntityIdentifierCollectionType"></xs:element>
+      <xs:element name="ProductIssuerName"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A collection of of alternitive identifiers for the Issuer.
+            CHECK: this is not present in the Data standard
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DateApproved"
+                  type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Date that this TMD version was approved</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TMDVersion"
+                  type="ddoc:TMDVersionType">
+        <xs:annotation>
+          <xs:documentation>The version number of the TMD</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TMDStatus"
+                  type="ddoc:TMDStatusEnum">
+        <xs:annotation>
+          <xs:documentation>The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MandatoryReviewDate"
+                  type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Next mandatory review date for this TMD version. A review can occur before this date.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContactDeails"
+                  type="ddoc:ContactDetailsType"
+                  nillable="false"
+                  minOccurs="1"
+                  maxOccurs="1" >
+        <xs:annotation>
+          <xs:documentation>Mandatory contact details for mor informatin on this TMD</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TMDCharacteristics"
+                  type="mstns:TMDCharacteristicsType">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="TMDCharacteristicsType">
+    <xs:annotation>
+      <xs:documentation>Strongly typed object for storing TMD Characteristics</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="InvestmentObjectiveDescription"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A description of the investment objective of the product, including growth/ defensive split</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="InvestmentObjective_CapitalGrowth"                   >
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="InvestmentObjective_CapitalGrowth">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InvestmentObjective_CapitalPreservation">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="InvestmentObjective_CapitalPreservation">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InvestmentObjective_CapitalGuaranteed">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="InvestmentObjective_CapitalGuaranteed">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+
+
+      <xs:element name="ProductUseDescription"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A description of the investment objective of the product, including asset allocation and diversification information</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="InvestmentTimeframeDescription"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A description of the minimum suggested timeframe for holding the product</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="RiskAndReturnDescription"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A description of the product risk and return metrics, include risk band and the return hurdle rate</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="RedemptionFrequencyDescription"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A description of the intended frequency and mechanism for which investors redeem interests in the product</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="LiquidityDescription"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A description of the liquidity of the assets held by the fund</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TMDCharacteristicType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Characteristic"
+                  type="ddoc:TMDCharacteristicEnum">
+        <xs:annotation>
+          <xs:documentation>The Characteristic to be assessed for Target Market</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Value"
+                  type="ddoc:TMDIndicatorEnum">
+        <xs:annotation>
+          <xs:documentation>The assessed value of the product against the Characteristic</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

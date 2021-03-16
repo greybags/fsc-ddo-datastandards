@@ -1,10 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/Common/0.1"
+<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/Common/1.0"
            elementFormDefault="qualified"
-           xmlns="urn://www.fsc.org.au/DDO/Common/0.1"
-           xmlns:mstns="urn://www.fsc.org.au/DDO/Common/0.1"
+           xmlns="urn://www.fsc.org.au/DDO/Common/1.0"
+           xmlns:mstns="urn://www.fsc.org.au/DDO/Common/1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
+  <xs:complexType name="ProductIdentifierCollectionType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ProductId"
+                  type="mstns:ProductIdentifierType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ProductIdentifierType">
     <xs:annotation >
       <xs:documentation>
@@ -13,18 +24,18 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="ISIN"
-                  type="xs:string"></xs:element>
-      <xs:element name="SPIN"
-                  type="xs:string"></xs:element>
-      <xs:element name="APIR"
-                  type="xs:string"></xs:element>
-      <xs:element name="ExchangeId"
-                  type="mstns:ExchageTradedIdentifierType"></xs:element>
-      <xs:element name="IssuerProvidedIdentifier"
-                  type="xs:string"></xs:element>
-      <xs:element name="ProductName"
-                  type="xs:string"></xs:element>
+      <xs:element name="IdentifierType"
+                  type="mstns:ProductIdentifierTypeEnum"/>
+      <xs:element name="IdentifierValue"
+                  type="xs:string"/>
+      <xs:element name="Disambiguation"
+                  type="xs:string"
+                  minOccurs="0"
+                  maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Optional element to ensure global uniqueness i.e. the exchange on which a stock is traded if the IdentifierType is ExchangeTraded</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -47,6 +58,163 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="ReportSelectionRangeType">
+    <xs:sequence>
+      <xs:element name="SelectionStart"
+                  type="xs:date"></xs:element>
+      <xs:element name="SelectionEnd"
+                  type="xs:date"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EntityRelationshipCollectionType">
+    <xs:annotation>
+      <xs:documentation>defines a collection of entity relationships</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EntityRelationship"
+                  type="mstns:EntityRelationshipType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"
+                  nillable="false"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EntityCollectionType">
+    <xs:annotation>
+      <xs:documentation >A collection of entities</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Entity"
+                  type="mstns:EntityDetailType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EntityDetailType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PrimaryId"
+                  type="mstns:EntityIdentifierType"></xs:element>
+      <xs:element name="AlternativeIds"
+                  type="mstns:EntityIdentifierCollectionType"></xs:element>
+      <xs:element name="EntityName"
+                  type="xs:string"/>
+      <xs:element name="EntityType"
+                  type="mstns:EntityTypeEnum"></xs:element>
+      <xs:element name="Contact"
+                  type="mstns:ContactDetailsType"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EntityRelationshipType">
+    <xs:annotation>
+      <xs:documentation>This defines the parent/child relationship between entities</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IssuerEntity"
+                  type="mstns:EntityIdentifierType" />
+      <xs:element name="DistributorEntity"
+                  type="mstns:EntityIdentifierType" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EntityIdentifierCollectionType">
+    <xs:annotation>
+      <xs:documentation>A collection of EntityIdentifierTypes</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Identifier"
+                  type="mstns:EntityIdentifierType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EntityIdentifierType">
+    <xs:annotation>
+      <xs:documentation>
+        A re-useable type for identifying entities involved in the DDO data standards
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EntityIdentifierType"
+                  type="mstns:EntityIdentifierTypeEnum" >
+        <xs:annotation >
+          <xs:documentation>What source or form the identifier is</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EntityIdentifierValue"
+                  type="xs:string">
+        <xs:annotation >
+          <xs:documentation>The Value of hte identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubUnit"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>a disambiguator for subunits or multiple business units within a larger entity</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ContactDetailsType">
+    <xs:annotation >
+      <xs:documentation>Common definition of Contact Details</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Name"
+                  type="xs:string"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  nillable="false">
+        <xs:annotation>
+          <xs:documentation>Name of a person to contact</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Title"
+                  type="xs:string"
+                  minOccurs="0"
+                  maxOccurs="1"
+                  nillable="false">
+        <xs:annotation>
+          <xs:documentation>Contact position title (eg Senior Product Manager; Compliance Manager).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Phone"
+                  type="xs:string"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  nillable="false">
+        <xs:annotation>
+          <xs:documentation>Phone for contact person</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Email"
+                  type="xs:string"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  nillable="false">
+        <xs:annotation>
+          <xs:documentation>Email for contact person</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Address"
+                  type="xs:string"
+                  minOccurs="0"
+                  maxOccurs="1"
+                  nillable="false">
+        <xs:annotation>
+          <xs:documentation>Address for contact person. Street address or postal address</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
   <!-- Simple Types-->
   <xs:simpleType name="MajorMinorVersion">
     <xs:restriction base="xs:string">
@@ -57,24 +225,211 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="CurrentStandardVersion">
+    <xs:restriction base="mstns:DataStandardVersionEnum">
+      <xs:annotation>
+        <xs:documentation>Note: the fixed value must align to the Target Namespace version</xs:documentation>
+      </xs:annotation>
+      <xs:enumeration value="1.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TMDVersionType">
+    <xs:annotation>
+      <xs:documentation>Consistent type for storing TMD Versions. Version number of the TMD. CHECK: Data standard allows minor versions</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Attributes -->
+  <xs:attribute name="StandardVersion"
+                type="mstns:CurrentStandardVersion">
+    <xs:annotation>
+      <xs:documentation>Will pick up the Current Standard Version</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
 
   <!-- Enums -->
-  <xs:simpleType name="TMDCharacteristicEnum">
+  <xs:simpleType name="EntityTypeEnum">
     <xs:annotation>
-      <xs:documentation>the list of TMD Characteristics </xs:documentation>
+      <xs:documentation>The Financial Services Provider type</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <!-- Investment Objective-->
-      <xs:enumeration value="InvestmentObjective_CapitalGrowth"></xs:enumeration>
-      <xs:enumeration value="InvestmentObjective_CapitalPreservation"></xs:enumeration>
-      <xs:enumeration value="InvestmentObjective_CapitalGuaranteed"></xs:enumeration>
-      <xs:enumeration value="InvestmentObjective_RegularIncome"></xs:enumeration>
-      <xs:enumeration value="InvestmentObjective_Specialist"></xs:enumeration>
+      <xs:enumeration value="AdviceAFSL"></xs:enumeration>
+      <xs:enumeration value="Platform"></xs:enumeration>
+      <xs:enumeration value="NonAdviceAFSL"></xs:enumeration>
+      <xs:enumeration value="CreditLicensee"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+  <xs:simpleType name="EntityIdentifierTypeEnum">
+    <xs:annotation>
+      <xs:documentation>The set of supported Entity Identifier type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FAR"></xs:enumeration>
+      <xs:enumeration value="ABN">
+        <xs:annotation>
+          <xs:documentation>Australian Business Number (ABN)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ASAL">
+        <xs:annotation>
+          <xs:documentation>Australian Finance Services Licence (AFSL)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACL">
+        <xs:annotation>
+          <xs:documentation>Australian Credit License (ACL)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bespoke">
+        <xs:annotation>
+          <xs:documentation>An alternative identifier agreed between recipients of this data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TMDCharacteristicEnum">
+    <xs:annotation>
+      <xs:documentation>The list of TMD Characteristics that Products should be assessed against</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!-- Investment Objective -->
+      <xs:enumeration value="InvestmentObjective_CapitalGrowth">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor seeking Capital Growth </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_CapitalPreservation">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor seeking Capital Preservation </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_CapitalGuaranteed">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor seeking Capital Guaranteed </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_RegularIncome">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor seeking Regular Income?</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentObjective_Specialist">
+        <xs:annotation>
+          <xs:documentation>Do the product investment objectives align with those of an investor with Specialist objectives?</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <!-- Product Use -->
-      <xs:enumeration value="ProductUse_SolutionStandalone"></xs:enumeration>
-      <xs:enumeration value="ProductUse_CoreComponent"></xs:enumeration>
-      <xs:enumeration value="ProductUse_Satellite"></xs:enumeration>
-      <!-- NOTE: LIST INCOMPLETE AT THIS STAGE -->
+      <xs:enumeration value="ProductUse_SolutionStandalone">
+        <xs:annotation>
+          <xs:documentation>Is the product intended to be used as a Solution / Standalone product</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProductUse_CoreComponent">
+        <xs:annotation>
+          <xs:documentation>Is the product intended to be used as a core component product</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProductUse_Satellite">
+        <xs:annotation>
+          <xs:documentation>Is the product intended to be used as a satellite product</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Investment Timeframe -->
+      <xs:enumeration value="InvestmentTimeframe_Short">
+        <xs:annotation>
+          <xs:documentation>Is it appropriate for investors to hold the product for 0-2 years before selling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentTimeframe_Medium">
+        <xs:annotation>
+          <xs:documentation>Is it appropriate for investors to hold the product for 2-6 years before selling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InvestmentTimeframe_Long">
+        <xs:annotation>
+          <xs:documentation>Is it appropriate for investors to hold the product for more than 6 years before selling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Risk and return -->
+      <xs:enumeration value="RiskAndReturn_VeryHigh">
+        <xs:annotation>
+          <xs:documentation>Does the product have very high risk and return attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RiskAndReturn_High">
+        <xs:annotation>
+          <xs:documentation>Does the product have high risk and return attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RiskAndReturn_Medium">
+        <xs:annotation>
+          <xs:documentation>Does the product have medium risk and return attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RiskAndReturn_Low">
+        <xs:annotation>
+          <xs:documentation>Does the product have low risk and return attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RiskAndReturn_CapitalGuaranteed">
+        <xs:annotation>
+          <xs:documentation>Does the product have capital guaranteed attributes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Redemption Frequency -->
+      <xs:enumeration value="RedemptionFrequency_Daily">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests daily</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RedemptionFrequency_Weekly">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests weekly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RedemptionFrequency_Monthly">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests monthly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RedemptionFrequency_Quarterly">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests quarterly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RedemptionFrequency_AnnuallyPlus">
+        <xs:annotation>
+          <xs:documentation>Product suitable for investors that redeem interests annually or longer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Liquidity -->
+      <xs:enumeration value="Liquidity_Low">
+        <xs:annotation>
+          <xs:documentation>Are the assets predominantly low liquidity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Liquidity_Moderate">
+        <xs:annotation>
+          <xs:documentation>Are the assets predominantly moderate liquidity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Liquidity_High">
+        <xs:annotation>
+          <xs:documentation>Are the assets predominantly high liquidity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Liquidity_VeryHigh">
+        <xs:annotation>
+          <xs:documentation>Are the assets predominantly very high liquidity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
@@ -84,9 +439,21 @@
       <xs:documentation>the list of TMD Characteristic's potentially assessed values</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="InTargetMarket"></xs:enumeration>
-      <xs:enumeration value="PotentiallyInTargetMarket"></xs:enumeration>
-      <xs:enumeration value="NotConsideredInTargetMarket"></xs:enumeration>
+      <xs:enumeration value="In">
+        <xs:annotation>
+          <xs:documentation>In Target Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Potentially">
+        <xs:annotation>
+          <xs:documentation>Potentially In Target Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotConsidered">
+        <xs:annotation>
+          <xs:documentation>Not Considered In Target Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
@@ -102,4 +469,63 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="TMDProductTypeEnum" >
+    <xs:annotation>
+      <xs:documentation>The type of TMD Data standard required based on Financial Services entity type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FundsManagement"></xs:enumeration>
+      <xs:enumeration value="Superannuation"></xs:enumeration>
+      <xs:enumeration value="LifeInsurance"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ProductIdentifierTypeEnum">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ISIN"/>
+      <xs:enumeration value="SPIN"/>
+      <xs:enumeration value="APIR"/>
+      <xs:enumeration value="ExchangeId"/>
+      <xs:enumeration value="IssuerProvided">
+        <xs:annotation>
+          <xs:documentation>Issuer determined product code – should be the type of last resort.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TMDStatusEnum">
+    <xs:annotation>
+      <xs:documentation>The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Available"/>
+      <xs:enumeration value="UnderReview"/>
+      <xs:enumeration value="StopDistribution"/>
+      <xs:enumeration value="Closed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DataStandardVersionEnum">
+    <xs:annotation>
+      <xs:documentation>Provides a history of versions of the DDO Data Standard issued by the FSC</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="mstns:MajorMinorVersion">
+      <!--
+      <xs:enumeration value="0.1">
+        <xs:annotation>
+          <xs:documentation>Alpha version, not to be used</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      -->
+      <xs:enumeration value="1.0">
+        <xs:annotation>
+          <xs:documentation>Initial Release</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>

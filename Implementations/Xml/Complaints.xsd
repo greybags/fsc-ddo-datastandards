@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/Complaints/0.1"
+<xs:schema targetNamespace="urn://www.fsc.org.au/DDO/Complaints/1.0"
            elementFormDefault="qualified"
-           xmlns="urn://www.fsc.org.au/DDO/Complaints/0.1"
-           xmlns:mstns="urn://www.fsc.org.au/DDO/Complaints/0.1"
-           xmlns:ddoc="urn://www.fsc.org.au/DDO/Common/0.1"
+           xmlns="urn://www.fsc.org.au/DDO/Complaints/1.0"
+           xmlns:mstns="urn://www.fsc.org.au/DDO/Complaints/1.0"
+           xmlns:ddoc="urn://www.fsc.org.au/DDO/Common/1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
   <!-- include the Common elements -->
-  <xs:import namespace="urn://www.fsc.org.au/DDO/Common/0.1"
+  <xs:import namespace="urn://www.fsc.org.au/DDO/Common/1.0"
              schemaLocation="Common.xsd"/>
 
   <xs:element name="ComplaintsReport"
@@ -23,31 +23,67 @@
       <xs:documentation>This type defines the report body structure</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="header"
-                  type="mstns:ComplaintsReportHeader"></xs:element>
-      <xs:element name="body"
-                  type="mstns:ComplaintsReportHeader"></xs:element>
-      <xs:element name="footer"
-                  type="mstns:ComplaintsReportHeader"></xs:element>
+      <xs:element name="Header"
+                  type="mstns:ComplaintsReportHeaderType"></xs:element>
+      <xs:element name="Body"
+                  type="mstns:ComplaintsReportBodyType"></xs:element>
+      <xs:element name="Footer"
+                  type="mstns:ComplaintsReportFooterType"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="ComplaintsReportHeader">
+  <xs:complexType name="ComplaintsReportHeaderType">
+    <xs:annotation>
+      <xs:documentation>This type provides the header data for a Complaints report</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReportIdentifier"
+                  type="xs:string"
+                  nillable="false">
+        <xs:annotation>
+          <xs:documentation>Report ID – unique to distributor. Can be combined with distributor ID to have industry-wide unique ID</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportExtractionDateTime"
+                  type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>
+            Date that transaction report was made.
+            If report is reissued, the new information replaces any reports within the defined report start and end period.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportSelectionRange"
+                  type="ddoc:ReportSelectionRangeType"
+                  nillable="false"
+                  maxOccurs="1"
+                  minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Defines the range the complaints report covers
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+
+    <!-- Attributes -->
+    <xs:attribute name="StandardVersion"
+                  type="ddoc:MajorMinorVersion"
+                  fixed="1.0">
+      <xs:annotation>
+        <xs:documentation>Note: the fixed value must align to the Target Namespace version</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ComplaintsReportBodyType">
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
     <xs:sequence>
-
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ComplaintsReportBody">
-    <xs:annotation>
-      <xs:documentation></xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ComplaintsReportFooter">
+  <xs:complexType name="ComplaintsReportFooterType">
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
