@@ -23,5 +23,9 @@ It consists of three Data Standards
 
  ***
  ## XSD Structure Overview
+ ### Target Market Determinations Diagram
+ ![TMDs Structure](Documentation/TargetMarketDeterminations.png)
+ 
  ### Dealings Diagram
  ![Dealings Structure](Documentation/Dealings.png)
+ 
