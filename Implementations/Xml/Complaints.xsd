@@ -67,11 +67,9 @@
     </xs:sequence>
 
     <!-- Attributes -->
-    <xs:attribute name="StandardVersion"
-                  type="ddoc:MajorMinorVersion"
-                  fixed="1.0">
+    <xs:attribute ref="ddoc:StandardVersion"  use="required">
       <xs:annotation>
-        <xs:documentation>Note: the fixed value must align to the Target Namespace version</xs:documentation>
+        <xs:documentation>Should automatically pick up the Standard's current version</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>

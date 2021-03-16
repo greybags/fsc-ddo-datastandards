@@ -78,11 +78,7 @@ public partial class ComplaintsReportHeaderType {
     
     private ReportSelectionRangeType reportSelectionRangeField;
     
-    private string standardVersionField;
-    
-    public ComplaintsReportHeaderType() {
-        this.standardVersionField = "1.0";
-    }
+    private CurrentStandardVersion standardVersionField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -118,8 +114,8 @@ public partial class ComplaintsReportHeaderType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string StandardVersion {
+    [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
+    public CurrentStandardVersion StandardVersion {
         get {
             return this.standardVersionField;
         }
@@ -180,4 +176,15 @@ public partial class ComplaintsReportFooterType {
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Complaints/1.0")]
 public partial class ComplaintsReportBodyType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
+public enum CurrentStandardVersion {
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("1.0")]
+    Item10,
 }
