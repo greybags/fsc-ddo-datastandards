@@ -17,10 +17,10 @@ This data standard relates to reports by product distributors to product issuers
 | | Report period start | Initial date the extract report covers. Inclusive of day. Only complete if Report Type is &quot;transactions by date range&quot;. | Inclusive of the day. | MC | |
 | | Report period end | Final date the extract report covers. Inclusive of day. Only complete if Report Type is &quot;transactions by date range&quot;. | Inclusive of the day. | MC | |
 | | **Reporting entity – this entity may be reporting on behalf of multiple distributors. The list of distributors included in the report is included later** |
-| | _Reporting entity identifier – refer common data items_ |
-| | _Contact details (for this report) – refer common data items_ |
+| | _Reporting entity identifier – refer [Entity Identifier](Common/EntityIdentifier.md)_ |
+| | _Contact details (for this report) – refer [Contact Details](Common/ContactDetails.md)_ |
 | | **2: Intermediaries / Distributors covered by this report – can be multiple subrecords – only include entities/distributors involved in transactions** |
-| | _Distributor identifier – refer common data items_ |
+| | _Distributor identifier – refer [Entity Identifier](Common/EntityIdentifier.md)_ |
 | | **3: Reporting Dealings (Transactions)** | |
 | _**If the report relates to multiple dealings, then the following rows need one subrecord for each dealing (within the main record)**_ |
 | | Distributor type | The type of the distributor that was involved in the relevant dealing. This is the lowest level entity involved in distribution | Single choice of {adviser, platform, aggregator, promoter} | M | |
@@ -31,7 +31,7 @@ This data standard relates to reports by product distributors to product issuers
 | 3.3 | Transaction dDate of dealing | Date the dealing occurred | YYYY-MM-DD | M | |
 | 3.4 | Transaction sSize of dealing | The $ value of the dealing included within the report should be sum insured for life, TPD and trauma and monthly benefit for IP. to &#39;match&#39; value of managed funds etc | ### | M if available | |
 | | Number | Number of units, shares etc involved in dealing | ### | O | |
-| | _Product identifier – see common data items_ |
+| | _Product identifier – refer [Product Identifier](Common/ProductIdentifier.md)_ |
 | | _ **Following is mandatory for dealings not subject to personal advice** _ |
 | | TMD version | The version of the TMD for the product that the customer was assessed against. | ### | M | |
 | | TMD data standard type | The type of the TMD data standard that is used for the following fields | Select one out of {Funds management/superannuation/life insurance} | | |

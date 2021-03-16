@@ -9,12 +9,7 @@ This document provides assistance in relation to the data required to implement 
 
 [Distributor Identifier](Common/EntityIdentifier.md)
 
-**Contact details**
-
 [Contact Details](Common/ContactDetails.md)
-
-##
-
 
 ## Data standard for DDO – TMDs for Investment Management
 
