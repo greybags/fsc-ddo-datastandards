@@ -8,7 +8,7 @@
 >
   <xs:import namespace="urn://www.fsc.org.au/DDO/Common/1.0"
              schemaLocation="Common.xsd"/>
-  
+
   <xs:element name="DealingsReport"
               type="mstns:DealingsReportType">
     <xs:annotation>
@@ -72,11 +72,10 @@
     </xs:sequence>
 
     <!-- Attributes -->
-    <xs:attribute name="StandardVersion"
-                  type="ddoc:MajorMinorVersion"
-                  fixed="1.0">
+    <xs:attribute ref="ddoc:StandardVersion"
+                  use="required">
       <xs:annotation>
-        <xs:documentation>Note: the fixed value must allign to the Target Namespace version</xs:documentation>
+        <xs:documentation>Should automatically pick up the Standard's current version</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="ReportType"
@@ -109,8 +108,8 @@
     </xs:sequence>
   </xs:complexType>
 
-  
-  
+
+
   <xs:complexType name="DealingEntityCollectionType">
     <xs:sequence>
       <xs:element name="DealingEntity"
@@ -153,7 +152,7 @@
       <xs:element name="DataStandardType"
                   type="ddoc:TMDProductTypeEnum" />
       <xs:element name="DataStandardVersionUsed"
-                  type="ddoc:MajorMinorVersion"/>
+                  type="ddoc:DataStandardVersionEnum"/>
       <xs:element name="Assessments"
                   type="mstns:TMDCharacteristicAssessmentCollectionType"/>
     </xs:sequence>
@@ -229,7 +228,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-  
+
 
   <xs:simpleType name="DistributorUniqueIdentifierTypeEnum" >
     <xs:annotation>

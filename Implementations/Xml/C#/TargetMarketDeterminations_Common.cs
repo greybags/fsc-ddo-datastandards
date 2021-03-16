@@ -24,15 +24,15 @@ using System.Xml.Serialization;
 [System.Xml.Serialization.XmlRootAttribute("TMDReport", Namespace="urn://www.fsc.org.au/DDO/TMD/1.0", IsNullable=false)]
 public partial class TMDReportType {
     
-    private TMDReportHeader headerField;
+    private TMDReportHeaderType headerField;
     
-    private TMDReportBody bodyField;
+    private TMDReportBodyType bodyField;
     
-    private TMDReportFooter footerField;
+    private TMDReportFooterType footerField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-    public TMDReportHeader Header {
+    public TMDReportHeaderType Header {
         get {
             return this.headerField;
         }
@@ -43,7 +43,7 @@ public partial class TMDReportType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-    public TMDReportBody Body {
+    public TMDReportBodyType Body {
         get {
             return this.bodyField;
         }
@@ -54,7 +54,7 @@ public partial class TMDReportType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-    public TMDReportFooter Footer {
+    public TMDReportFooterType Footer {
         get {
             return this.footerField;
         }
@@ -70,7 +70,7 @@ public partial class TMDReportType {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
-public partial class TMDReportHeader {
+public partial class TMDReportHeaderType {
     
     private System.DateTime reportExtractionDateTimeField;
     
@@ -78,11 +78,7 @@ public partial class TMDReportHeader {
     
     private EntityIdentifierType[] issuerAlternativeIdentifiersField;
     
-    private string standardVersionField;
-    
-    public TMDReportHeader() {
-        this.standardVersionField = "1.0";
-    }
+    private CurrentStandardVersion standardVersionField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -119,8 +115,8 @@ public partial class TMDReportHeader {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string StandardVersion {
+    [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
+    public CurrentStandardVersion StandardVersion {
         get {
             return this.standardVersionField;
         }
@@ -206,7 +202,290 @@ public enum EntityIdentifierTypeEnum {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
-public partial class TMDReportFooter {
+public partial class TMDReportFooterType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class DistributorReportingRequirementsType {
+    
+    private bool acquisitionOutsideTMField;
+    
+    private bool sFCDDOStandardRequiredField;
+    
+    private DataStandardVersionEnum sFCDDOStandardVersionRequiredField;
+    
+    private bool sFCDDOStandardVersionRequiredFieldSpecified;
+    
+    private string alternativeDataStandardField;
+    
+    private FrequencyOfReportEnum outsideTMDFrequencyOfReportField;
+    
+    private string outsideTMDReportDeadlineDaysField;
+    
+    private string complaintsReportingField;
+    
+    private FrequencyOfReportEnum complaintsFrequencyOfReportField;
+    
+    private string complaintsReportDeadlineDaysField;
+    
+    private bool requireSignificantDealingsReportField;
+    
+    private string appropriatenessField;
+    
+    public DistributorReportingRequirementsType() {
+        this.requireSignificantDealingsReportField = true;
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+    public bool AcquisitionOutsideTM {
+        get {
+            return this.acquisitionOutsideTMField;
+        }
+        set {
+            this.acquisitionOutsideTMField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+    public bool SFCDDOStandardRequired {
+        get {
+            return this.sFCDDOStandardRequiredField;
+        }
+        set {
+            this.sFCDDOStandardRequiredField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+    public DataStandardVersionEnum SFCDDOStandardVersionRequired {
+        get {
+            return this.sFCDDOStandardVersionRequiredField;
+        }
+        set {
+            this.sFCDDOStandardVersionRequiredField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    public bool SFCDDOStandardVersionRequiredSpecified {
+        get {
+            return this.sFCDDOStandardVersionRequiredFieldSpecified;
+        }
+        set {
+            this.sFCDDOStandardVersionRequiredFieldSpecified = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+    public string AlternativeDataStandard {
+        get {
+            return this.alternativeDataStandardField;
+        }
+        set {
+            this.alternativeDataStandardField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+    public FrequencyOfReportEnum OutsideTMDFrequencyOfReport {
+        get {
+            return this.outsideTMDFrequencyOfReportField;
+        }
+        set {
+            this.outsideTMDFrequencyOfReportField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger", Order=5)]
+    public string OutsideTMDReportDeadlineDays {
+        get {
+            return this.outsideTMDReportDeadlineDaysField;
+        }
+        set {
+            this.outsideTMDReportDeadlineDaysField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+    public string ComplaintsReporting {
+        get {
+            return this.complaintsReportingField;
+        }
+        set {
+            this.complaintsReportingField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+    public FrequencyOfReportEnum ComplaintsFrequencyOfReport {
+        get {
+            return this.complaintsFrequencyOfReportField;
+        }
+        set {
+            this.complaintsFrequencyOfReportField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger", Order=8)]
+    public string ComplaintsReportDeadlineDays {
+        get {
+            return this.complaintsReportDeadlineDaysField;
+        }
+        set {
+            this.complaintsReportDeadlineDaysField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+    public bool RequireSignificantDealingsReport {
+        get {
+            return this.requireSignificantDealingsReportField;
+        }
+        set {
+            this.requireSignificantDealingsReportField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+    public string Appropriateness {
+        get {
+            return this.appropriatenessField;
+        }
+        set {
+            this.appropriatenessField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
+public enum DataStandardVersionEnum {
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("1.0")]
+    Item10,
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public enum FrequencyOfReportEnum {
+    
+    /// <remarks/>
+    OnEvent,
+    
+    /// <remarks/>
+    EndOfMonth,
+    
+    /// <remarks/>
+    EndOfQuarter,
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class DistributionConditionsType {
+    
+    private bool availableDirectField;
+    
+    private string directConditionsField;
+    
+    private bool availableOnPlatformField;
+    
+    private string platformConditionsField;
+    
+    private bool availableAdvisedField;
+    
+    private string advisedConditionsField;
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+    public bool AvailableDirect {
+        get {
+            return this.availableDirectField;
+        }
+        set {
+            this.availableDirectField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+    public string DirectConditions {
+        get {
+            return this.directConditionsField;
+        }
+        set {
+            this.directConditionsField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+    public bool AvailableOnPlatform {
+        get {
+            return this.availableOnPlatformField;
+        }
+        set {
+            this.availableOnPlatformField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+    public string PlatformConditions {
+        get {
+            return this.platformConditionsField;
+        }
+        set {
+            this.platformConditionsField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+    public bool AvailableAdvised {
+        get {
+            return this.availableAdvisedField;
+        }
+        set {
+            this.availableAdvisedField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+    public string AdvisedConditions {
+        get {
+            return this.advisedConditionsField;
+        }
+        set {
+            this.advisedConditionsField = value;
+        }
+    }
 }
 
 /// <remarks/>
@@ -273,6 +552,57 @@ public enum TMDCharacteristicEnum {
     
     /// <remarks/>
     ProductUse_Satellite,
+    
+    /// <remarks/>
+    InvestmentTimeframe_Short,
+    
+    /// <remarks/>
+    InvestmentTimeframe_Medium,
+    
+    /// <remarks/>
+    InvestmentTimeframe_Long,
+    
+    /// <remarks/>
+    RiskAndReturn_VeryHigh,
+    
+    /// <remarks/>
+    RiskAndReturn_High,
+    
+    /// <remarks/>
+    RiskAndReturn_Medium,
+    
+    /// <remarks/>
+    RiskAndReturn_Low,
+    
+    /// <remarks/>
+    RiskAndReturn_CapitalGuaranteed,
+    
+    /// <remarks/>
+    RedemptionFrequency_Daily,
+    
+    /// <remarks/>
+    RedemptionFrequency_Weekly,
+    
+    /// <remarks/>
+    RedemptionFrequency_Monthly,
+    
+    /// <remarks/>
+    RedemptionFrequency_Quarterly,
+    
+    /// <remarks/>
+    RedemptionFrequency_AnnuallyPlus,
+    
+    /// <remarks/>
+    Liquidity_Low,
+    
+    /// <remarks/>
+    Liquidity_Moderate,
+    
+    /// <remarks/>
+    Liquidity_High,
+    
+    /// <remarks/>
+    Liquidity_VeryHigh,
 }
 
 /// <remarks/>
@@ -306,6 +636,50 @@ public partial class TMDCharacteristicsType {
     private TMDCharacteristicsTypeInvestmentObjective_CapitalPreservation investmentObjective_CapitalPreservationField;
     
     private TMDCharacteristicsTypeInvestmentObjective_CapitalGuaranteed investmentObjective_CapitalGuaranteedField;
+    
+    private TMDCharacteristicsTypeInvestmentObjective_RegularIncome investmentObjective_RegularIncomeField;
+    
+    private TMDCharacteristicsTypeInvestmentObjective_Specialist investmentObjective_SpecialistField;
+    
+    private TMDCharacteristicsTypeProductUse_SolutionStandalone productUse_SolutionStandaloneField;
+    
+    private TMDCharacteristicsTypeProductUse_CoreComponent productUse_CoreComponentField;
+    
+    private TMDCharacteristicsTypeProductUse_Satellite productUse_SatelliteField;
+    
+    private TMDCharacteristicsTypeInvestmentTimeframe_Short investmentTimeframe_ShortField;
+    
+    private TMDCharacteristicsTypeInvestmentTimeframe_Medium investmentTimeframe_MediumField;
+    
+    private TMDCharacteristicsTypeInvestmentTimeframe_Long investmentTimeframe_LongField;
+    
+    private TMDCharacteristicsTypeRiskAndReturn_VeryHigh riskAndReturn_VeryHighField;
+    
+    private TMDCharacteristicsTypeRiskAndReturn_High riskAndReturn_HighField;
+    
+    private TMDCharacteristicsTypeRiskAndReturn_Medium riskAndReturn_MediumField;
+    
+    private TMDCharacteristicsTypeRiskAndReturn_Low riskAndReturn_LowField;
+    
+    private TMDCharacteristicsTypeRiskAndReturn_CapitalGuaranteed riskAndReturn_CapitalGuaranteedField;
+    
+    private TMDCharacteristicsTypeRedemptionFrequency_Daily redemptionFrequency_DailyField;
+    
+    private TMDCharacteristicsTypeRedemptionFrequency_Weekly redemptionFrequency_WeeklyField;
+    
+    private TMDCharacteristicsTypeRedemptionFrequency_Monthly redemptionFrequency_MonthlyField;
+    
+    private TMDCharacteristicsTypeRedemptionFrequency_Quarterly redemptionFrequency_QuarterlyField;
+    
+    private TMDCharacteristicsTypeRedemptionFrequency_AnnuallyPlus redemptionFrequency_AnnuallyPlusField;
+    
+    private TMDCharacteristicsTypeLiquidity_Low liquidity_LowField;
+    
+    private TMDCharacteristicsTypeLiquidity_Moderate liquidity_ModerateField;
+    
+    private TMDCharacteristicsTypeLiquidity_High liquidity_HighField;
+    
+    private TMDCharacteristicsTypeLiquidity_VeryHigh liquidity_VeryHighField;
     
     private string productUseDescriptionField;
     
@@ -363,6 +737,248 @@ public partial class TMDCharacteristicsType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+    public TMDCharacteristicsTypeInvestmentObjective_RegularIncome InvestmentObjective_RegularIncome {
+        get {
+            return this.investmentObjective_RegularIncomeField;
+        }
+        set {
+            this.investmentObjective_RegularIncomeField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+    public TMDCharacteristicsTypeInvestmentObjective_Specialist InvestmentObjective_Specialist {
+        get {
+            return this.investmentObjective_SpecialistField;
+        }
+        set {
+            this.investmentObjective_SpecialistField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+    public TMDCharacteristicsTypeProductUse_SolutionStandalone ProductUse_SolutionStandalone {
+        get {
+            return this.productUse_SolutionStandaloneField;
+        }
+        set {
+            this.productUse_SolutionStandaloneField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+    public TMDCharacteristicsTypeProductUse_CoreComponent ProductUse_CoreComponent {
+        get {
+            return this.productUse_CoreComponentField;
+        }
+        set {
+            this.productUse_CoreComponentField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+    public TMDCharacteristicsTypeProductUse_Satellite ProductUse_Satellite {
+        get {
+            return this.productUse_SatelliteField;
+        }
+        set {
+            this.productUse_SatelliteField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+    public TMDCharacteristicsTypeInvestmentTimeframe_Short InvestmentTimeframe_Short {
+        get {
+            return this.investmentTimeframe_ShortField;
+        }
+        set {
+            this.investmentTimeframe_ShortField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+    public TMDCharacteristicsTypeInvestmentTimeframe_Medium InvestmentTimeframe_Medium {
+        get {
+            return this.investmentTimeframe_MediumField;
+        }
+        set {
+            this.investmentTimeframe_MediumField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+    public TMDCharacteristicsTypeInvestmentTimeframe_Long InvestmentTimeframe_Long {
+        get {
+            return this.investmentTimeframe_LongField;
+        }
+        set {
+            this.investmentTimeframe_LongField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+    public TMDCharacteristicsTypeRiskAndReturn_VeryHigh RiskAndReturn_VeryHigh {
+        get {
+            return this.riskAndReturn_VeryHighField;
+        }
+        set {
+            this.riskAndReturn_VeryHighField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+    public TMDCharacteristicsTypeRiskAndReturn_High RiskAndReturn_High {
+        get {
+            return this.riskAndReturn_HighField;
+        }
+        set {
+            this.riskAndReturn_HighField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+    public TMDCharacteristicsTypeRiskAndReturn_Medium RiskAndReturn_Medium {
+        get {
+            return this.riskAndReturn_MediumField;
+        }
+        set {
+            this.riskAndReturn_MediumField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+    public TMDCharacteristicsTypeRiskAndReturn_Low RiskAndReturn_Low {
+        get {
+            return this.riskAndReturn_LowField;
+        }
+        set {
+            this.riskAndReturn_LowField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+    public TMDCharacteristicsTypeRiskAndReturn_CapitalGuaranteed RiskAndReturn_CapitalGuaranteed {
+        get {
+            return this.riskAndReturn_CapitalGuaranteedField;
+        }
+        set {
+            this.riskAndReturn_CapitalGuaranteedField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+    public TMDCharacteristicsTypeRedemptionFrequency_Daily RedemptionFrequency_Daily {
+        get {
+            return this.redemptionFrequency_DailyField;
+        }
+        set {
+            this.redemptionFrequency_DailyField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+    public TMDCharacteristicsTypeRedemptionFrequency_Weekly RedemptionFrequency_Weekly {
+        get {
+            return this.redemptionFrequency_WeeklyField;
+        }
+        set {
+            this.redemptionFrequency_WeeklyField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+    public TMDCharacteristicsTypeRedemptionFrequency_Monthly RedemptionFrequency_Monthly {
+        get {
+            return this.redemptionFrequency_MonthlyField;
+        }
+        set {
+            this.redemptionFrequency_MonthlyField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+    public TMDCharacteristicsTypeRedemptionFrequency_Quarterly RedemptionFrequency_Quarterly {
+        get {
+            return this.redemptionFrequency_QuarterlyField;
+        }
+        set {
+            this.redemptionFrequency_QuarterlyField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+    public TMDCharacteristicsTypeRedemptionFrequency_AnnuallyPlus RedemptionFrequency_AnnuallyPlus {
+        get {
+            return this.redemptionFrequency_AnnuallyPlusField;
+        }
+        set {
+            this.redemptionFrequency_AnnuallyPlusField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+    public TMDCharacteristicsTypeLiquidity_Low Liquidity_Low {
+        get {
+            return this.liquidity_LowField;
+        }
+        set {
+            this.liquidity_LowField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+    public TMDCharacteristicsTypeLiquidity_Moderate Liquidity_Moderate {
+        get {
+            return this.liquidity_ModerateField;
+        }
+        set {
+            this.liquidity_ModerateField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+    public TMDCharacteristicsTypeLiquidity_High Liquidity_High {
+        get {
+            return this.liquidity_HighField;
+        }
+        set {
+            this.liquidity_HighField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+    public TMDCharacteristicsTypeLiquidity_VeryHigh Liquidity_VeryHigh {
+        get {
+            return this.liquidity_VeryHighField;
+        }
+        set {
+            this.liquidity_VeryHighField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=26)]
     public string ProductUseDescription {
         get {
             return this.productUseDescriptionField;
@@ -373,7 +989,7 @@ public partial class TMDCharacteristicsType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+    [System.Xml.Serialization.XmlElementAttribute(Order=27)]
     public string InvestmentTimeframeDescription {
         get {
             return this.investmentTimeframeDescriptionField;
@@ -384,7 +1000,7 @@ public partial class TMDCharacteristicsType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+    [System.Xml.Serialization.XmlElementAttribute(Order=28)]
     public string RiskAndReturnDescription {
         get {
             return this.riskAndReturnDescriptionField;
@@ -395,7 +1011,7 @@ public partial class TMDCharacteristicsType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+    [System.Xml.Serialization.XmlElementAttribute(Order=29)]
     public string RedemptionFrequencyDescription {
         get {
             return this.redemptionFrequencyDescriptionField;
@@ -406,7 +1022,7 @@ public partial class TMDCharacteristicsType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+    [System.Xml.Serialization.XmlElementAttribute(Order=30)]
     public string LiquidityDescription {
         get {
             return this.liquidityDescriptionField;
@@ -442,6 +1058,204 @@ public partial class TMDCharacteristicsTypeInvestmentObjective_CapitalPreservati
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
 public partial class TMDCharacteristicsTypeInvestmentObjective_CapitalGuaranteed : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeInvestmentObjective_RegularIncome : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeInvestmentObjective_Specialist : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeProductUse_SolutionStandalone : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeProductUse_CoreComponent : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeProductUse_Satellite : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeInvestmentTimeframe_Short : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeInvestmentTimeframe_Medium : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeInvestmentTimeframe_Long : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRiskAndReturn_VeryHigh : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRiskAndReturn_High : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRiskAndReturn_Medium : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRiskAndReturn_Low : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRiskAndReturn_CapitalGuaranteed : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRedemptionFrequency_Daily : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRedemptionFrequency_Weekly : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRedemptionFrequency_Monthly : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRedemptionFrequency_Quarterly : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeRedemptionFrequency_AnnuallyPlus : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeLiquidity_Low : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeLiquidity_Moderate : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeLiquidity_High : TMDCharacteristicType {
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
+public partial class TMDCharacteristicsTypeLiquidity_VeryHigh : TMDCharacteristicType {
 }
 
 /// <remarks/>
@@ -616,9 +1430,15 @@ public partial class TargetMarketDeterminationType {
     
     private System.DateTime mandatoryReviewDateField;
     
-    private ContactDetailsType contactDeailsField;
+    private ContactDetailsType contactDetailsField;
     
     private TMDCharacteristicsType tMDCharacteristicsField;
+    
+    private DistributionConditionsType distributionConditionsField;
+    
+    private string[] reviewTriggersField;
+    
+    private DistributorReportingRequirementsType distributorReportingField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -734,12 +1554,12 @@ public partial class TargetMarketDeterminationType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-    public ContactDetailsType ContactDeails {
+    public ContactDetailsType ContactDetails {
         get {
-            return this.contactDeailsField;
+            return this.contactDetailsField;
         }
         set {
-            this.contactDeailsField = value;
+            this.contactDetailsField = value;
         }
     }
     
@@ -751,6 +1571,40 @@ public partial class TargetMarketDeterminationType {
         }
         set {
             this.tMDCharacteristicsField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+    public DistributionConditionsType DistributionConditions {
+        get {
+            return this.distributionConditionsField;
+        }
+        set {
+            this.distributionConditionsField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlArrayAttribute(Order=13)]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ReviewTrigger", IsNullable=false)]
+    public string[] ReviewTriggers {
+        get {
+            return this.reviewTriggersField;
+        }
+        set {
+            this.reviewTriggersField = value;
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+    public DistributorReportingRequirementsType DistributorReporting {
+        get {
+            return this.distributorReportingField;
+        }
+        set {
+            this.distributorReportingField = value;
         }
     }
 }
@@ -780,7 +1634,7 @@ public enum TMDStatusEnum {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/TMD/1.0")]
-public partial class TMDReportBody {
+public partial class TMDReportBodyType {
     
     private TargetMarketDeterminationType[] tMDsField;
     
@@ -795,4 +1649,15 @@ public partial class TMDReportBody {
             this.tMDsField = value;
         }
     }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
+public enum CurrentStandardVersion {
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("1.0")]
+    Item10,
 }

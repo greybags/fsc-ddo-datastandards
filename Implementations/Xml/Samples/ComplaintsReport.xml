@@ -1,13 +1,359 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ComplaintsReport xmlns="urn://www.fsc.org.au/DDO/Complaints/1.0">
-  <Header StandardVersion="1.0">
+  <Header p2:StandardVersion="1.0"
+          xmlns:p2="urn://www.fsc.org.au/DDO/Common/1.0">
     <ReportIdentifier>ReportIdentifier1</ReportIdentifier>
     <ReportExtractionDateTime>1900-01-01T01:01:01+13:00</ReportExtractionDateTime>
     <ReportSelectionRange>
-      <SelectionStart xmlns="urn://www.fsc.org.au/DDO/Common/1.0">1900-01-01</SelectionStart>
-      <SelectionEnd xmlns="urn://www.fsc.org.au/DDO/Common/1.0">1900-01-01</SelectionEnd>
+      <p2:SelectionStart>1900-01-01</p2:SelectionStart>
+      <p2:SelectionEnd>1900-01-01</p2:SelectionEnd>
     </ReportSelectionRange>
   </Header>
-  <Body />
-  <Footer />
+  <Body>
+    <ComplaintEntities>
+      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+        <PrimaryId>
+          <EntityIdentifierType>FAR</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue1</EntityIdentifierValue>
+          <SubUnit>SubUnit1</SubUnit>
+        </PrimaryId>
+        <AlternativeIds>
+          <Identifier>
+            <EntityIdentifierType>FAR</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue1</EntityIdentifierValue>
+            <SubUnit>SubUnit1</SubUnit>
+          </Identifier>
+          <Identifier>
+            <EntityIdentifierType>ABN</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue2</EntityIdentifierValue>
+            <SubUnit>SubUnit2</SubUnit>
+          </Identifier>
+          <Identifier>
+            <EntityIdentifierType>ASAL</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue3</EntityIdentifierValue>
+            <SubUnit>SubUnit3</SubUnit>
+          </Identifier>
+        </AlternativeIds>
+        <EntityName>EntityName1</EntityName>
+        <EntityType>AdviceAFSL</EntityType>
+        <Contact>
+          <Name>Name1</Name>
+          <Title>Title1</Title>
+          <Phone>Phone1</Phone>
+          <Email>Email1</Email>
+          <Address>Address1</Address>
+        </Contact>
+      </Entity>
+      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+        <PrimaryId>
+          <EntityIdentifierType>ABN</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue2</EntityIdentifierValue>
+          <SubUnit>SubUnit2</SubUnit>
+        </PrimaryId>
+        <AlternativeIds>
+          <Identifier>
+            <EntityIdentifierType>ACL</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue4</EntityIdentifierValue>
+            <SubUnit>SubUnit4</SubUnit>
+          </Identifier>
+          <Identifier>
+            <EntityIdentifierType>Bespoke</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue5</EntityIdentifierValue>
+            <SubUnit>SubUnit5</SubUnit>
+          </Identifier>
+          <Identifier>
+            <EntityIdentifierType>FAR</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue6</EntityIdentifierValue>
+            <SubUnit>SubUnit6</SubUnit>
+          </Identifier>
+        </AlternativeIds>
+        <EntityName>EntityName2</EntityName>
+        <EntityType>Platform</EntityType>
+        <Contact>
+          <Name>Name2</Name>
+          <Title>Title2</Title>
+          <Phone>Phone2</Phone>
+          <Email>Email2</Email>
+          <Address>Address2</Address>
+        </Contact>
+      </Entity>
+      <Entity xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+        <PrimaryId>
+          <EntityIdentifierType>ASAL</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue3</EntityIdentifierValue>
+          <SubUnit>SubUnit3</SubUnit>
+        </PrimaryId>
+        <AlternativeIds>
+          <Identifier>
+            <EntityIdentifierType>ABN</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue7</EntityIdentifierValue>
+            <SubUnit>SubUnit7</SubUnit>
+          </Identifier>
+          <Identifier>
+            <EntityIdentifierType>ASAL</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue8</EntityIdentifierValue>
+            <SubUnit>SubUnit8</SubUnit>
+          </Identifier>
+          <Identifier>
+            <EntityIdentifierType>ACL</EntityIdentifierType>
+            <EntityIdentifierValue>EntityIdentifierValue9</EntityIdentifierValue>
+            <SubUnit>SubUnit9</SubUnit>
+          </Identifier>
+        </AlternativeIds>
+        <EntityName>EntityName3</EntityName>
+        <EntityType>NonAdviceAFSL</EntityType>
+        <Contact>
+          <Name>Name3</Name>
+          <Title>Title3</Title>
+          <Phone>Phone3</Phone>
+          <Email>Email3</Email>
+          <Address>Address3</Address>
+        </Contact>
+      </Entity>
+    </ComplaintEntities>
+    <EntityRelationships>
+      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+        <IssuerEntity>
+          <EntityIdentifierType>FAR</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue1</EntityIdentifierValue>
+          <SubUnit>SubUnit1</SubUnit>
+        </IssuerEntity>
+        <DistributorEntity>
+          <EntityIdentifierType>FAR</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue1</EntityIdentifierValue>
+          <SubUnit>SubUnit1</SubUnit>
+        </DistributorEntity>
+      </EntityRelationship>
+      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+        <IssuerEntity>
+          <EntityIdentifierType>ABN</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue2</EntityIdentifierValue>
+          <SubUnit>SubUnit2</SubUnit>
+        </IssuerEntity>
+        <DistributorEntity>
+          <EntityIdentifierType>ABN</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue2</EntityIdentifierValue>
+          <SubUnit>SubUnit2</SubUnit>
+        </DistributorEntity>
+      </EntityRelationship>
+      <EntityRelationship xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+        <IssuerEntity>
+          <EntityIdentifierType>ASAL</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue3</EntityIdentifierValue>
+          <SubUnit>SubUnit3</SubUnit>
+        </IssuerEntity>
+        <DistributorEntity>
+          <EntityIdentifierType>ASAL</EntityIdentifierType>
+          <EntityIdentifierValue>EntityIdentifierValue3</EntityIdentifierValue>
+          <SubUnit>SubUnit3</SubUnit>
+        </DistributorEntity>
+      </EntityRelationship>
+    </EntityRelationships>
+    <ReportingEntityIdentifier>
+      <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">FAR</EntityIdentifierType>
+      <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue1</EntityIdentifierValue>
+      <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit1</SubUnit>
+    </ReportingEntityIdentifier>
+    <Complaints>
+      <Complaint>
+        <ComplaintId>ComplaintId1</ComplaintId>
+        <IssuerIdentifer>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">FAR</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue1</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit1</SubUnit>
+        </IssuerIdentifer>
+        <IssuerProductIdentifier>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ISIN</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue1</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation1</Disambiguation>
+        </IssuerProductIdentifier>
+        <IssuerProductAlternativeIdentifiers>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>ISIN</IdentifierType>
+            <IdentifierValue>IdentifierValue1</IdentifierValue>
+            <Disambiguation>Disambiguation1</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>SPIN</IdentifierType>
+            <IdentifierValue>IdentifierValue2</IdentifierValue>
+            <Disambiguation>Disambiguation2</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>APIR</IdentifierType>
+            <IdentifierValue>IdentifierValue3</IdentifierValue>
+            <Disambiguation>Disambiguation3</Disambiguation>
+          </ProductId>
+        </IssuerProductAlternativeIdentifiers>
+        <ProductName>ProductName1</ProductName>
+        <DistributorIdentifier>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">FAR</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue1</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit1</SubUnit>
+        </DistributorIdentifier>
+        <DistributorProductIdentifier>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ISIN</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue1</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation1</Disambiguation>
+        </DistributorProductIdentifier>
+        <DistributorProductAlternativeIdentifiers>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>ExchangeId</IdentifierType>
+            <IdentifierValue>IdentifierValue4</IdentifierValue>
+            <Disambiguation>Disambiguation4</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>IssuerProvided</IdentifierType>
+            <IdentifierValue>IdentifierValue5</IdentifierValue>
+            <Disambiguation>Disambiguation5</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>ISIN</IdentifierType>
+            <IdentifierValue>IdentifierValue6</IdentifierValue>
+            <Disambiguation>Disambiguation6</Disambiguation>
+          </ProductId>
+        </DistributorProductAlternativeIdentifiers>
+        <ComplaintType>ComplaintType1</ComplaintType>
+        <IsSalesDistributionComplaint>true</IsSalesDistributionComplaint>
+        <IsProductIssuerComplaint>true</IsProductIssuerComplaint>
+        <HasFinancialImpact>true</HasFinancialImpact>
+        <ComplaintDate>1900-01-01</ComplaintDate>
+        <ComplaintResolutionDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                 xsi:nil="true" />
+        <ComplaintContent>ComplaintContent1</ComplaintContent>
+      </Complaint>
+      <Complaint>
+        <ComplaintId>ComplaintId2</ComplaintId>
+        <IssuerIdentifer>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ABN</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue2</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit2</SubUnit>
+        </IssuerIdentifer>
+        <IssuerProductIdentifier>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SPIN</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue2</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation2</Disambiguation>
+        </IssuerProductIdentifier>
+        <IssuerProductAlternativeIdentifiers>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>SPIN</IdentifierType>
+            <IdentifierValue>IdentifierValue7</IdentifierValue>
+            <Disambiguation>Disambiguation7</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>APIR</IdentifierType>
+            <IdentifierValue>IdentifierValue8</IdentifierValue>
+            <Disambiguation>Disambiguation8</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>ExchangeId</IdentifierType>
+            <IdentifierValue>IdentifierValue9</IdentifierValue>
+            <Disambiguation>Disambiguation9</Disambiguation>
+          </ProductId>
+        </IssuerProductAlternativeIdentifiers>
+        <ProductName>ProductName2</ProductName>
+        <DistributorIdentifier>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ABN</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue2</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit2</SubUnit>
+        </DistributorIdentifier>
+        <DistributorProductIdentifier>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SPIN</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue2</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation2</Disambiguation>
+        </DistributorProductIdentifier>
+        <DistributorProductAlternativeIdentifiers>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>IssuerProvided</IdentifierType>
+            <IdentifierValue>IdentifierValue10</IdentifierValue>
+            <Disambiguation>Disambiguation10</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>ISIN</IdentifierType>
+            <IdentifierValue>IdentifierValue11</IdentifierValue>
+            <Disambiguation>Disambiguation11</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>SPIN</IdentifierType>
+            <IdentifierValue>IdentifierValue12</IdentifierValue>
+            <Disambiguation>Disambiguation12</Disambiguation>
+          </ProductId>
+        </DistributorProductAlternativeIdentifiers>
+        <ComplaintType>ComplaintType2</ComplaintType>
+        <IsSalesDistributionComplaint>false</IsSalesDistributionComplaint>
+        <IsProductIssuerComplaint>false</IsProductIssuerComplaint>
+        <HasFinancialImpact>false</HasFinancialImpact>
+        <ComplaintDate>0001-01-01</ComplaintDate>
+        <ComplaintResolutionDate>1900-01-01</ComplaintResolutionDate>
+        <ComplaintContent>ComplaintContent2</ComplaintContent>
+      </Complaint>
+      <Complaint>
+        <ComplaintId>ComplaintId3</ComplaintId>
+        <IssuerIdentifer>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ASAL</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue3</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit3</SubUnit>
+        </IssuerIdentifer>
+        <IssuerProductIdentifier>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">APIR</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue3</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation3</Disambiguation>
+        </IssuerProductIdentifier>
+        <IssuerProductAlternativeIdentifiers>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>APIR</IdentifierType>
+            <IdentifierValue>IdentifierValue13</IdentifierValue>
+            <Disambiguation>Disambiguation13</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>ExchangeId</IdentifierType>
+            <IdentifierValue>IdentifierValue14</IdentifierValue>
+            <Disambiguation>Disambiguation14</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>IssuerProvided</IdentifierType>
+            <IdentifierValue>IdentifierValue15</IdentifierValue>
+            <Disambiguation>Disambiguation15</Disambiguation>
+          </ProductId>
+        </IssuerProductAlternativeIdentifiers>
+        <ProductName>ProductName3</ProductName>
+        <DistributorIdentifier>
+          <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">ASAL</EntityIdentifierType>
+          <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue3</EntityIdentifierValue>
+          <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit3</SubUnit>
+        </DistributorIdentifier>
+        <DistributorProductIdentifier>
+          <IdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">APIR</IdentifierType>
+          <IdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">IdentifierValue3</IdentifierValue>
+          <Disambiguation xmlns="urn://www.fsc.org.au/DDO/Common/1.0">Disambiguation3</Disambiguation>
+        </DistributorProductIdentifier>
+        <DistributorProductAlternativeIdentifiers>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>ISIN</IdentifierType>
+            <IdentifierValue>IdentifierValue16</IdentifierValue>
+            <Disambiguation>Disambiguation16</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>SPIN</IdentifierType>
+            <IdentifierValue>IdentifierValue17</IdentifierValue>
+            <Disambiguation>Disambiguation17</Disambiguation>
+          </ProductId>
+          <ProductId xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
+            <IdentifierType>APIR</IdentifierType>
+            <IdentifierValue>IdentifierValue18</IdentifierValue>
+            <Disambiguation>Disambiguation18</Disambiguation>
+          </ProductId>
+        </DistributorProductAlternativeIdentifiers>
+        <ComplaintType>ComplaintType3</ComplaintType>
+        <IsSalesDistributionComplaint>true</IsSalesDistributionComplaint>
+        <IsProductIssuerComplaint>true</IsProductIssuerComplaint>
+        <HasFinancialImpact>true</HasFinancialImpact>
+        <ComplaintDate>9999-12-31</ComplaintDate>
+        <ComplaintResolutionDate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                 xsi:nil="true" />
+        <ComplaintContent>ComplaintContent3</ComplaintContent>
+      </Complaint>
+    </Complaints>
+  </Body>
+  <Footer NilReportCount="1"
+          NonNilReportCount="1" />
 </ComplaintsReport>
