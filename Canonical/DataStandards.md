@@ -8,161 +8,65 @@ This document provides assistance in relation to the data required to implement 
 
 | **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
 | --- | --- | --- | --- | --- | --- |
-|
- | Product APIR code | The product&#39;s APIR code. Must include if available |
- | M if available |
- |
+| | Product APIR code | The product&#39;s APIR code. Must include if available | | M if available | |
 | --- | --- | --- | --- | --- | --- |
-|
- | Product ISIN code | The product&#39;s ISIN code. Must include if available |
- | M if available |
- |
-|
- | Listing exchange | Code of exchange the product is listed on, using ISO Market Identifier Code (MIC). Must include if product is listed.If | ISO MIC – 4 character alpha | M if available |
- |
-|
- | Product exchange code | The product&#39;s exchange code (for listed products). Must include if available. |
- | M if available |
- |
-|
- | Product ARSN | Product ARSN. Must include if available
- | Nine-digit numeric | M if available |
- |
-|
- | Product name | Financial instrument (Product) name. Note name is subject to change over time – not for machine analysis | Free text | M |
- |
-|
- | Issuer product code | Issuer determined product code – should be the type of last resort.Don&#39;t reuse industry wide codes. | Combination of code for issuer plus internal issuer determined product code? | M only if previous fields blank |
- |
+| | Product ISIN code | The product&#39;s ISIN code. Must include if available | | M if available | |
+| | Listing exchange | Code of exchange the product is listed on, using ISO Market Identifier Code (MIC). Must include if product is listed.If | ISO MIC – 4 character alpha | M if available | |
+| | Product exchange code | The product&#39;s exchange code (for listed products). Must include if available. | | M if available | |
+| | Product ARSN | Product ARSN. Must include if available | Nine-digit numeric | M if available | |
+| | Product name | Financial instrument (Product) name. Note name is subject to change over time – not for machine analysis | Free text | M | |
+| | Issuer product code | Issuer determined product code – should be the type of last resort.Don&#39;t reuse industry wide codes. | Combination of code for issuer plus internal issuer determined product code? | M only if previous fields blank | |
 
 **Reporting entity identifier**
 
 | **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/ conditional** | **Outstanding items** |
 | --- | --- | --- | --- | --- | --- |
-|
- | Reporting Entity Name | The name of the entity providing the report to the Issuer. May or may not be a product distributor. Not for machine analysis | Free text | ? |
- |
+| | Reporting Entity Name | The name of the entity providing the report to the Issuer. May or may not be a product distributor. Not for machine analysis | Free text | ? | |
 | --- | --- | --- | --- | --- | --- |
-|
- | Reporting Entity Type | Identifies the type of the entity providing the report to the Issuer | Single choice of {Adviser / Advice AFSL / non-advice AFSL / credit licensee / Other} | M |
- |
-|
- | Reporting Entity FAR | Financial Advice Register number of reporting entity. Must be used if reporting entity holds a FAR number. | FAR # | M if available/applicable |
- |
-|
- | Reporting Entity ACL | Australian Credit License (ACL) number of reporting entity. Must be used if reporting entity holds an ACL |
- | M if available |
- |
-|
- | Reporting Entity AFSL | Reporting entity AFSL. Must be used if reporting entity holds and AFSL |
- | M if available |
- |
-|
- | Reporting Entity ABN | Reporting entity ABN. Must be used if reporting entity holds an ABN |
- | M if available |
- |
+| | Reporting Entity Type | Identifies the type of the entity providing the report to the Issuer | Single choice of {Adviser / Advice AFSL / non-advice AFSL / credit licensee / Other} | M | |
+| | Reporting Entity FAR | Financial Advice Register number of reporting entity. Must be used if reporting entity holds a FAR number. | FAR # | M if available/applicable | |
+| | Reporting Entity ACL | Australian Credit License (ACL) number of reporting entity. Must be used if reporting entity holds an ACL | | M if available | |
+| | Reporting Entity AFSL | Reporting entity AFSL. Must be used if reporting entity holds and AFSL | | M if available | |
+| | Reporting Entity ABN | Reporting entity ABN. Must be used if reporting entity holds an ABN | | M if available | |
 
 **Distributor identifier**
 
 | **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/ conditional** | **Outstanding items** |
 | --- | --- | --- | --- | --- | --- |
-|
- | Distributor Type | Identifies the type of distributor included in this subrecord | Single choice of { Advice AFSL / Platform / non-advice AFSL/ACL} | M |
- |
+| | Distributor Type | Identifies the type of distributor included in this subrecord | Single choice of { Advice AFSL / Platform / non-advice AFSL/ACL} | M | |
 | --- | --- | --- | --- | --- | --- |
-|
- | **If distributor is advice AFSL:** |
-|
- | AFSL | AFSL of distributor included in subrecord Must be included | AFSL # | M |
- |
-|
- | ABN | ABN of distributor included in subrecord Must be included | ABN # | M |
- |
-|
- | Business Name | Not for machine analysis | Free text | M |
- |
-|
- | _Contact details (for advice AFSL) – refer standard data items_ |
-|
- | _For each business under above AFSL: (for transactions report, only include businesses involved in transaction)_ |
-|
- | ABN |
- |
- | M |
- |
-|
- | Business Name | Free text. Not for machine analysis |
- | M |
- |
-|
- | _For each adviser under each business: (for transactions report, only include advisers involved in transaction)_ |
-|
- | FAR |
- |
- | M |
- |
-|
- | _Contact details (for adviser) – refer standard data items –_ _do we need to include for every adviser?_ |
-|
- | **If distributor is non-Advice AFSL (fund managers, platforms, online stockbrokers, insurance aggregators, mortgage brokers)** |
-|
- | ACL | Australian Credit License (ACL) number of entity included in this subrecord. Must be used if entity holds an ACL |
- | M if available |
- |
-|
- | AFSL | AFSL of distributor included in subrecord Must be included |
- | M |
- |
-|
- | ABN | ABN of distributor included in subrecord Must be included |
- | M |
- |
-|
- | Business Name | Not for machine analysis |
- | M |
- |
-|
- | _Contact details (for non-advice AFSL) – refer standard data items_ |
-|
- | _For each promoter under non-advice AFSL (for transactions report, only include promoters involved in transaction)_ |
-|
- | AFSL |
- |
- | M |
- |
-|
- | ABN |
- |
- | M |
- |
-|
- | Business Name |
- |
- | M |
- |
-|
- | _Contact details (for promoter) – refer standard data items_ |
+| | **If distributor is advice AFSL:** || | AFSL | AFSL of distributor included in subrecord Must be included | AFSL # | M | |
+| | ABN | ABN of distributor included in subrecord Must be included | ABN # | M | |
+| | Business Name | Not for machine analysis | Free text | M | |
+| | _Contact details (for advice AFSL) – refer standard data items_ |
+| | _For each business under above AFSL: (for transactions report, only include businesses involved in transaction)_ |
+| | ABN | | | M | |
+| | Business Name | Free text. Not for machine analysis | | M | |
+| | _For each adviser under each business: (for transactions report, only include advisers involved in transaction)_ |
+| | FAR | | | M | |
+| | _Contact details (for adviser) – refer standard data items –_ _do we need to include for every adviser?_ |
+| | **If distributor is non-Advice AFSL (fund managers, platforms, online stockbrokers, insurance aggregators, mortgage brokers)** |
+| | ACL | Australian Credit License (ACL) number of entity included in this subrecord. Must be used if entity holds an ACL | | M if available | |
+| | AFSL | AFSL of distributor included in subrecord Must be included | | M | |
+| | ABN | ABN of distributor included in subrecord Must be included | | M | |
+| | Business Name | Not for machine analysis | | M | |
+| | _Contact details (for non-advice AFSL) – refer standard data items_ |
+| | _For each promoter under non-advice AFSL (for transactions report, only include promoters involved in transaction)_ |
+| | AFSL | | | M | |
+| | ABN | | | M | |
+| | Business Name | | | M | |
+| | _Contact details (for promoter) – refer standard data items_ |
 
 **Contact details**
 
 | **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
 | --- | --- | --- | --- | --- | --- |
-|
- | Contact name | Contact details for this record - name | Free text | M |
- |
+| | Contact name | Contact details for this record - name | Free text | M | |
 | --- | --- | --- | --- | --- | --- |
-|
- | Contact title | Contact position title (eg Senior Product Manager; Compliance Manager). | Free text | O |
- |
-|
- | Contact phone | Phone for contact person | Full international number format | M |
- |
-|
- | Contact email | Email for contact person | XXX@XXX | M |
- |
-|
- | Contact address | Address for contact person | Free text | O |
- |
+| | Contact title | Contact position title (eg Senior Product Manager; Compliance Manager). | Free text | O | |
+| | Contact phone | Phone for contact person | Full international number format | M | |
+| | Contact email | Email for contact person | XXX@XXX | M | |
+| | Contact address | Address for contact person | Free text | O | |
 
 ##
 
@@ -172,64 +76,26 @@ This document provides assistance in relation to the data required to implement 
 This data standard allows product issuers (under the DDO regime) to provide product distributors with the Target Market Determination(s) that issuers are required to make under the DDO regime.
 
 | **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
- |
-| --- | --- | --- | --- | --- | --- | --- |
-|
+ || --- | --- | --- | --- | --- | --- | --- ||
  | Version of standard | Version number of data standard. Can be non-integer. Major versions should increment by 1. Minor changes (backwards compatible) can increment by less than 1. (eg 2.1, 2.2, 2.3) | XXX | M |
+ | || | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M |
  |
  |
-|
- | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M |
- |
- |
-|
- | Date sent | Date that this TMD version report was sent | Format YYYY-MM-DD | OM |
- |
- |
-|
- | Issuer AFSL |
- |
- | O |
- |
+| | Date sent | Date that this TMD version report was sent | Format YYYY-MM-DD | OM | | |
+| | Issuer AFSL | | | O | |
 | --- | --- | --- | --- | --- | --- |
-|
- | Issuer ABN |
- | Nine-digit numeric | M |
- |
+| | Issuer ABN | | Nine-digit numeric | M | |
 | --- | --- | --- | --- | --- | --- |
-|
- | Issuer name |
- |
- |
- |
- |
+| | Issuer name | | | | |
 | --- | --- | --- | --- | --- | --- |
-|
- | _**Product TMD – Allow multiple subrecords, one for each product TMD (one TMD per product)**_ |
- |
+| | _**Product TMD – Allow multiple subrecords, one for each product TMD (one TMD per product)**_ | |
 | --- | --- | --- |
-|
- | _Product identifier – see common data items_ |
- |
-|
- | TMD Version | Version number of the TMD. Can be non-integer. Major versions increment by 1. Minor changes (backwards compatible) increment by less than 1 | XXX | M |
- |
- |
-|
- | TMD Status | The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing). | Single choice of {Available / Under review / Unavailable – stop distribution / closed} | M | Need to check rules about interaction with version number.
- |
- |
-|
- | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M |
- |
- |
-|
- | Mandatory review date | Next mandatory review date for this TMD version. A review can occur before this date. | Format YYYY-MM-DD | M |
- |
- |
-|
- | _Contact details (for TMD) – see common data items_ |
- |
+| | _Product identifier – see common data items_ | |
+| | TMD Version | Version number of the TMD. Can be non-integer. Major versions increment by 1. Minor changes (backwards compatible) increment by less than 1 | XXX | M | | |
+| | TMD Status | The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing). | Single choice of {Available / Under review / Unavailable – stop distribution / closed} | M | Need to check rules about interaction with version number. | |
+| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | | |
+| | Mandatory review date | Next mandatory review date for this TMD version. A review can occur before this date. | Format YYYY-MM-DD | M | | |
+| | _Contact details (for TMD) – see common data items_ | |
 
 | Data items specific to TMD |
 | --- |
@@ -239,222 +105,65 @@ This data standard allows product issuers (under the DDO regime) to provide prod
  | O | Revisit issues with mandatory/optional sections. EG if one part of a section is filled in, all of section must be filled in. |
  |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1.2: Capital Growth | Do the product investment objectives align with those of an investor seeking Capital Growth | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | Use key instead of text |
- |
-| 1.3: Capital Preservation | Do the product investment objectives align with those of an investor seeking Capital Preservation | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 1.4: Capital Guaranteed | Do the product investment objectives align with those of an investor seeking Capital Guaranteed | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 1.5: Regular Income | Do the product investment objectives align with those of an investor seeking Regular Income? | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 1.6: Specialist | Do the product investment objectives align with those of an investor with Specialist objectives? | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| **2: Product Use** | 2.1: Product Use Description | A description of the investment objective of the product, including asset allocation and diversification information | Free-text field | M |
- |
- |
-| 2.2: Solution / Standalone (75% - 100%) | Is the product intended to be used as a Solution / Standalone product | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 2.3: Core Component (25% -75%) | Is the product intended to be used as a core component product | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 2.4: Satellite (0% - 25%) | Is the product intended to be used as a satellite product | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| **3: Investment Timeframe** | 3.1: Investment Timeframe Description | A description of the minimum suggested timeframe for holding the product | Free-text field | M |
- |
- |
-| 3.2: Short (\&lt; 2 years) | Is it appropriate for investors to hold the product for 0-2 years before selling | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 3.3: Medium (2 – 6 years) | Is it appropriate for investors to hold the product for 2-6 years before selling | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 3.4: Long (\&gt; 6 years) | Is it appropriate for investors to hold the product for more than 6 years before selling | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| **4: Risk and return** | 4.1: Risk and Return description | A description of the product risk and return metrics, include risk band and the return hurdle rate | Free-text field | M |
- |
- |
-| 4.2: Very high risk &amp; return | Does the product have very high risk and return attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 4.3: High risk &amp; return | Does the product have high risk and return attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 4.4: Medium risk &amp; return | Does the product have medium risk and return attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 4.5: Low risk &amp; return | Does the product have low risk and return attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 4.6: Capital guaranteed | Does the product have capital guaranteed attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| **5: Redemption Frequency** | 5.1: Redemption Frequency description | A description of the intended frequency and mechanism for which investors redeem interests in the product | Free-text field | M |
- |
- |
-| 5.2: Daily | Product suitable for investors that redeem interests daily | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 5.3: Weekly | Product suitable for investors that redeem interests weekly | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 5.4: Monthly | Product suitable for investors that redeem interests monthly | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 5.5: Quarterly | Product suitable for investors that redeem interests quarterly | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 5.6: Annually or longer | Product suitable for investors that redeem interests annually or longer | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| **6: Liquidity** | 6.1: Liquidity description | A description of the liquidity of the assets held by the fund | Free-text field | M |
- |
- |
-| 6.2: Low | Are the assets predominantly low liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 6.3: Moderate | Are the assets predominantly moderate liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 6.4: High | Are the assets predominantly high liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| 6.5: Very high | Are the assets predominantly very high liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M |
- |
- |
-| **Distribution conditions** | Available Direct? | Is product available direct (non intermediated) retail? | Y/N | M |
- |
- |
-|
- | Direct conditions | Additional conditions on direct (non intermediated) retail. Only complete if previous is Y. | Free text | C |
- |
- |
-|
- | Available on broad based platform? | Is product available on platforms? | Y/N | M |
- |
- |
-|
- | Platform conditions | Additional conditions on distribution to platforms. Only complete if previous is Y. | Free text | C |
- |
- |
-|
- | Available advised? | Is product available to clients subject to personal advice?[row for general advice?] | Y/N | M |
- |
- |
-|
- | Advised distribution conditions | Additional conditions on distribution to clients subject to personal advice. Only complete if previous is Y. | Free text | C |
- |
- |
-| **Review triggers** | _ **The following one field can be multivalued** _ |
- |
-|
- | Review triggers | List one trigger per subrecord. As distributors don&#39;t need to action review triggers, there is no need for standardisation/ validation of the text | Free text | OM |
- |
- |
-|
- | **Distributor reporting requirements** |
- |
-|
- | How to send reports | Text indicating how distributors must send reports to issuer. Preference is for a URL link to instructions (must be permanent link) |
- | M |
- |
- |
-|
- | Acquisition outside TM | Is there requirement for distributors to report on ALL dealings outside target market? | Y/N | M |
- |
- |
-|
- |
- | If Y, should report follow FSC DDO data standard for transactions? Only complete if previous is Y | Y/N | C |
- |
- |
-|
- |
- | If N, name of alternative data standard | Free text | C |
- |
- |
-|
- | Report on some acquisitions outside TM | If report not required on all dealings outside target market, is a report required on some dealings outside target market other than significant dealings? | Y/N | C |
- |
- |
-|
- | _ **Only answer following three fields if a report on some acquisitions outside TM is required** _ |
- |
-|
- |
- | If Y, specify type of dealings outside target market requiring report | Free text | C |
- |
- |
-|
- |
- | Should report on some trans follow FSC DDO data standard for transactions? | Y/N | C |
- |
- |
-|
- |
- | If N, name of alternative data standard | Free text | C |
- |
- |
-|
- | Frequency of report | Required frequency of report by distributors on dealings outside target market. | Select one of: {point of sale / end of calendar month / end of calendar quarter} | C |
- |
- |
-|
- |
- | Required deadline for dealings report after end of relevant period (see previous field) – in number of days. Default is 10 days | XX | C |
- |
- |
-|
- | Use Ccomplaints reporting standard? | Are complaints reporting required to use FSC complaints standard? | Y/N | M |
- |
- |
-|
- | Minimum version of complaints standard | Distributor must submit complaints standard in this version of FSC standard or later. If blank, no requirement on version. Only complete if previous is Y. | X.X | O |
- |
- |
-|
- |
- | Required content of complaints report by distributors. | Free text | M |
- |
- |
-|
- |
- | Required frequency of report on complaints. Default is at time of complaint | Select one of: { time of complaint / end of calendar month / end of calendar quartermonthly/quarterly/half yearly/yearly} | M |
- |
- |
-|
- |
- | Required deadline for complaints report after end of relevant period (see previous field) – in number of days. Default is 10 days | XX | M |
- |
- |
-|
- | Significant dealing | As per statutory obligations s994F(6) |
- | M | Reporting on this is compulsory, with mandatory deadlines so unclear what to include in data standard |
- |
-| **Appropriateness** |
- | Explanation how issuer considers TMD performs against appropriateness test as required by ASIC RG | Free text | M |
- |
- |
-| **Footer record** |
- |
- |
- |
- |
- |
- |
-|
- |
- | Count of TMDs in report |
- |
- |
- |
- |
+| 1.2: Capital Growth | Do the product investment objectives align with those of an investor seeking Capital Growth | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | Use key instead of text | |
+| 1.3: Capital Preservation | Do the product investment objectives align with those of an investor seeking Capital Preservation | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M || |
+| 1.4: Capital Guaranteed | Do the product investment objectives align with those of an investor seeking Capital Guaranteed | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M || |
+| 1.5: Regular Income | Do the product investment objectives align with those of an investor seeking Regular Income? | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 1.6: Specialist | Do the product investment objectives align with those of an investor with Specialist objectives? | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | ||
+| **2: Product Use** | 2.1: Product Use Description | A description of the investment objective of the product, including asset allocation and diversification information | Free-text field | M | ||
+| 2.2: Solution / Standalone (75% - 100%) | Is the product intended to be used as a Solution / Standalone product | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 2.3: Core Component (25% -75%) | Is the product intended to be used as a core component product | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 2.4: Satellite (0% - 25%) | Is the product intended to be used as a satellite product | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| **3: Investment Timeframe** | 3.1: Investment Timeframe Description | A description of the minimum suggested timeframe for holding the product | Free-text field | M | | |
+| 3.2: Short (\&lt; 2 years) | Is it appropriate for investors to hold the product for 0-2 years before selling | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 3.3: Medium (2 – 6 years) | Is it appropriate for investors to hold the product for 2-6 years before selling | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 3.4: Long (\&gt; 6 years) | Is it appropriate for investors to hold the product for more than 6 years before selling | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| **4: Risk and return** | 4.1: Risk and Return description | A description of the product risk and return metrics, include risk band and the return hurdle rate | Free-text field | M | | |
+| 4.2: Very high risk &amp; return | Does the product have very high risk and return attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 4.3: High risk &amp; return | Does the product have high risk and return attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 4.4: Medium risk &amp; return | Does the product have medium risk and return attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 4.5: Low risk &amp; return | Does the product have low risk and return attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 4.6: Capital guaranteed | Does the product have capital guaranteed attributes | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| **5: Redemption Frequency** | 5.1: Redemption Frequency description | A description of the intended frequency and mechanism for which investors redeem interests in the product | Free-text field | M | | |
+| 5.2: Daily | Product suitable for investors that redeem interests daily | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 5.3: Weekly | Product suitable for investors that redeem interests weekly | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 5.4: Monthly | Product suitable for investors that redeem interests monthly | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 5.5: Quarterly | Product suitable for investors that redeem interests quarterly | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 5.6: Annually or longer | Product suitable for investors that redeem interests annually or longer | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| **6: Liquidity** | 6.1: Liquidity description | A description of the liquidity of the assets held by the fund | Free-text field | M | | |
+| 6.2: Low | Are the assets predominantly low liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 6.3: Moderate | Are the assets predominantly moderate liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 6.4: High | Are the assets predominantly high liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| 6.5: Very high | Are the assets predominantly very high liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
+| **Distribution conditions** | Available Direct? | Is product available direct (non intermediated) retail? | Y/N | M | | |
+| | Direct conditions | Additional conditions on direct (non intermediated) retail. Only complete if previous is Y. | Free text | C | | |
+| | Available on broad based platform? | Is product available on platforms? | Y/N | M | | |
+| | Platform conditions | Additional conditions on distribution to platforms. Only complete if previous is Y. | Free text | C | | |
+| | Available advised? | Is product available to clients subject to personal advice?[row for general advice?] | Y/N | M | | |
+| | Advised distribution conditions | Additional conditions on distribution to clients subject to personal advice. Only complete if previous is Y. | Free text | C | | |
+| **Review triggers** | _ **The following one field can be multivalued** _ | |
+| | Review triggers | List one trigger per subrecord. As distributors don&#39;t need to action review triggers, there is no need for standardisation/ validation of the text | Free text | OM | | |
+| | **Distributor reporting requirements** | |
+| | How to send reports | Text indicating how distributors must send reports to issuer. Preference is for a URL link to instructions (must be permanent link) | | M | | |
+| | Acquisition outside TM | Is there requirement for distributors to report on ALL dealings outside target market? | Y/N | M | | |
+| | | If Y, should report follow FSC DDO data standard for transactions? Only complete if previous is Y | Y/N | C | | |
+| | | If N, name of alternative data standard | Free text | C | | |
+| | Report on some acquisitions outside TM | If report not required on all dealings outside target market, is a report required on some dealings outside target market other than significant dealings? | Y/N | C | | |
+| | _ **Only answer following three fields if a report on some acquisitions outside TM is required** _ | |
+| | | If Y, specify type of dealings outside target market requiring report | Free text | C | | |
+| | | Should report on some trans follow FSC DDO data standard for transactions? | Y/N | C | | |
+| | | If N, name of alternative data standard | Free text | C | | |
+| | Frequency of report | Required frequency of report by distributors on dealings outside target market. | Select one of: {point of sale / end of calendar month / end of calendar quarter} | C | | |
+| | | Required deadline for dealings report after end of relevant period (see previous field) – in number of days. Default is 10 days | XX | C | | |
+| | Use Ccomplaints reporting standard? | Are complaints reporting required to use FSC complaints standard? | Y/N | M | | |
+| | Minimum version of complaints standard | Distributor must submit complaints standard in this version of FSC standard or later. If blank, no requirement on version. Only complete if previous is Y. | X.X | O | | |
+| | | Required content of complaints report by distributors. | Free text | M | | |
+| | | Required frequency of report on complaints. Default is at time of complaint | Select one of: { time of complaint / end of calendar month / end of calendar quartermonthly/quarterly/half yearly/yearly} | M | | |
+| | | Required deadline for complaints report after end of relevant period (see previous field) – in number of days. Default is 10 days | XX | M | | |
+| | Significant dealing | As per statutory obligations s994F(6) | | M | Reporting on this is compulsory, with mandatory deadlines so unclear what to include in data standard | |
+| **Appropriateness** | | Explanation how issuer considers TMD performs against appropriateness test as required by ASIC RG | Free text | M | | |
+| **Footer record** | | | | | | |
+| | | Count of TMDs in report | | | | |
 
 ## Data Standard for DDO – Complaints
 
