@@ -24,15 +24,15 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="Header"
-                  type="mstns:TMDReportHeader"></xs:element>
+                  type="mstns:TMDReportHeaderType"></xs:element>
       <xs:element name="Body"
-                  type="mstns:TMDReportBody"></xs:element>
+                  type="mstns:TMDReportBodyType"></xs:element>
       <xs:element name="Footer"
-                  type="mstns:TMDReportFooter"></xs:element>
+                  type="mstns:TMDReportFooterType"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="TMDReportHeader">
+  <xs:complexType name="TMDReportHeaderType">
     <xs:annotation>
       <xs:documentation>This type provides the header data for a set of TMDs</xs:documentation>
     </xs:annotation>
@@ -53,16 +53,15 @@
     </xs:sequence>
 
     <!-- Attributes -->
-    <xs:attribute name="StandardVersion"
-                  type="ddoc:MajorMinorVersion"
-                  fixed="1.0">
+    <xs:attribute ref="ddoc:StandardVersion"
+                  use="required">
       <xs:annotation>
-        <xs:documentation>Note: the fixed value must align to the Target Namespace version</xs:documentation>
+        <xs:documentation>Should automatically pick up the Standard's current version</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
 
-  <xs:complexType name="TMDReportBody">
+  <xs:complexType name="TMDReportBodyType">
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
@@ -77,7 +76,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="TMDReportFooter">
+  <xs:complexType name="TMDReportFooterType">
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
@@ -156,13 +155,15 @@
           <xs:documentation>Next mandatory review date for this TMD version. A review can occur before this date.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="ContactDeails"
+      <xs:element name="ContactDetails"
                   type="ddoc:ContactDetailsType"
                   nillable="false"
                   minOccurs="1"
                   maxOccurs="1" >
         <xs:annotation>
-          <xs:documentation>Mandatory contact details for mor informatin on this TMD</xs:documentation>
+          <xs:documentation>
+            Mandatory contact details for more information on this TMD
+          </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="TMDCharacteristics"
@@ -171,8 +172,155 @@
           <xs:documentation></xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="DistributionConditions"
+                  type="mstns:DistributionConditionsType"></xs:element>
+      <xs:element name="ReviewTriggers"
+                  type="mstns:ReviewTriggersCollectionType">
+        <xs:annotation>
+          <xs:documentation>List one trigger per subrecord. As distributors don’t need to action review triggers, there is no need for standardisation/ validation of the text</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DistributorReporting"
+                  type="mstns:DistributorReportingRequirementsType"></xs:element>
     </xs:sequence>
 
+  </xs:complexType>
+
+  <xs:complexType name="DistributorReportingRequirementsType">
+    <xs:sequence >
+      <xs:element name="AcquisitionOutsideTM"
+                  type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Is there requirement for distributors to report on ALL dealings outside target market?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SFCDDOStandardRequired"
+                  type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>If AcquisitionOutsideTM is true, should report follow FSC DDO data standard for transactions? Only complete if AcquisitionOutsideTM is true </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SFCDDOStandardVersionRequired"
+                  type="ddoc:DataStandardVersionEnum"
+                  minOccurs="0"
+                  maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>If AcquisitionOutsideTM is true, should report follow FSC DDO data standard for transactions? Only complete if AcquisitionOutsideTM is true </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AlternativeDataStandard"
+                  type="xs:string">
+
+      </xs:element>
+
+      <xs:element name="OutsideTMDFrequencyOfReport"
+                  type="mstns:FrequencyOfReportEnum">
+        <xs:annotation>
+          <xs:documentation>Required frequency of report by distributors on dealings outside target market. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="OutsideTMDReportDeadlineDays"
+                  type="xs:positiveInteger">
+        <xs:annotation>
+          <xs:documentation>Required deadline for dealings report after end of relevant period (see previous field) – in number of days. Default is 10 days</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:sequence>
+        <xs:annotation>
+          <xs:documentation>logically group the Complaints erporting info</xs:documentation>
+        </xs:annotation>
+        <xs:element name="ComplaintsReporting"
+                    type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Required content of complaints report by distributors</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ComplaintsFrequencyOfReport"
+                    type="mstns:FrequencyOfReportEnum">
+          <xs:annotation>
+            <xs:documentation>Required frequency of report on complaints. Default is at time of complaint.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ComplaintsReportDeadlineDays"
+                    type="xs:positiveInteger">
+          <xs:annotation>
+            <xs:documentation>Required deadline for complaints report after end of relevant period (see previous field) – in number of days. Default is 10 days</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+
+      <xs:element name="RequireSignificantDealingsReport"
+                  type="xs:boolean"
+                  fixed="true">
+        <xs:annotation>
+          <xs:documentation>
+            a constant value as a reminder the Significant Dealings is required
+            CHECK: should this include the other common fields ie stanards version etc.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Appropriateness"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Explanation how issuer considers TMD performs against appropriateness test as required by ASIC RG</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+
+  <xs:complexType name="DistributionConditionsType">
+    <xs:sequence>
+      <xs:element name="AvailableDirect"
+                  type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Is product available direct (non intermediated) retail?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DirectConditions"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Additional conditions on direct (non intermediated) retail. Only complete if AvailableDirect is true.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AvailableOnPlatform"
+                  type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Is product available on platforms? </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatformConditions"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Additional conditions on distribution to platforms. Only complete if AvailableOnPlatform is true.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AvailableAdvised"
+                  type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Is product available on platforms? </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdvisedConditions"
+                  type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Additional conditions on distribution to clients subject to personal advice. Only complete if AvailableAdvised is true.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ReviewTriggersCollectionType">
+    <xs:sequence>
+      <xs:element name="ReviewTrigger"
+                  type="xs:string"
+                  minOccurs="1"
+                  maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="TMDCharacteristicsType">
@@ -187,7 +335,7 @@
         </xs:annotation>
       </xs:element>
 
-      <xs:element name="InvestmentObjective_CapitalGrowth"                   >
+      <xs:element name="InvestmentObjective_CapitalGrowth">
         <xs:complexType>
           <xs:complexContent>
             <xs:restriction base="mstns:TMDCharacteristicType">
@@ -235,8 +383,358 @@
           </xs:complexContent>
         </xs:complexType>
       </xs:element>
-
-
+      <xs:element name="InvestmentObjective_RegularIncome">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="InvestmentObjective_RegularIncome">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InvestmentObjective_Specialist">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="InvestmentObjective_Specialist">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProductUse_SolutionStandalone">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="ProductUse_SolutionStandalone">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProductUse_CoreComponent">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="ProductUse_CoreComponent">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProductUse_Satellite">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="ProductUse_Satellite">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InvestmentTimeframe_Short">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="InvestmentTimeframe_Short">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InvestmentTimeframe_Medium">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="InvestmentTimeframe_Medium">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InvestmentTimeframe_Long">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="InvestmentTimeframe_Long">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RiskAndReturn_VeryHigh">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RiskAndReturn_VeryHigh">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RiskAndReturn_High">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RiskAndReturn_High">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RiskAndReturn_Medium">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RiskAndReturn_Medium">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RiskAndReturn_Low">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RiskAndReturn_Low">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RiskAndReturn_CapitalGuaranteed">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RiskAndReturn_CapitalGuaranteed">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RedemptionFrequency_Daily">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RedemptionFrequency_Daily">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RedemptionFrequency_Weekly">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RedemptionFrequency_Weekly">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RedemptionFrequency_Monthly">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RedemptionFrequency_Monthly">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RedemptionFrequency_Quarterly">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RedemptionFrequency_Quarterly">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RedemptionFrequency_AnnuallyPlus">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="RedemptionFrequency_AnnuallyPlus">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Liquidity_Low">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="Liquidity_Low">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Liquidity_Moderate">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="Liquidity_Moderate">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Liquidity_High">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="Liquidity_High">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Liquidity_VeryHigh">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:restriction base="mstns:TMDCharacteristicType">
+              <xs:sequence>
+                <xs:element name="Characteristic"
+                            type="ddoc:TMDCharacteristicEnum"
+                            fixed="Liquidity_VeryHigh">
+                </xs:element>
+                <xs:element name="Value"
+                            type="ddoc:TMDIndicatorEnum"></xs:element>
+              </xs:sequence>
+            </xs:restriction>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="ProductUseDescription"
                   type="xs:string">
         <xs:annotation>
@@ -294,4 +792,26 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+
+
+  <!-- Enums -->
+  <xs:simpleType name="FrequencyOfReportEnum" >
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OnEvent">
+        <xs:annotation>
+          <xs:documentation>indicates the repot should happen when the event occurs - ie at point of sale or when complaint raised</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EndOfMonth">
+        <xs:annotation>
+          <xs:documentation>end of calendar month</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EndOfQuarter">
+        <xs:annotation>
+          <xs:documentation>end of calendar quarter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>

@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TMDReport xmlns="urn://www.fsc.org.au/DDO/TMD/1.0">
-  <Header StandardVersion="1.0">
+  <Header p2:StandardVersion="1.0"
+          xmlns:p2="urn://www.fsc.org.au/DDO/Common/1.0">
     <ReportExtractionDateTime>1900-01-01T01:01:01+13:00</ReportExtractionDateTime>
     <IssuerPrimaryIdentifier>
-      <EntityIdentifierType xmlns="urn://www.fsc.org.au/DDO/Common/1.0">FAR</EntityIdentifierType>
-      <EntityIdentifierValue xmlns="urn://www.fsc.org.au/DDO/Common/1.0">EntityIdentifierValue1</EntityIdentifierValue>
-      <SubUnit xmlns="urn://www.fsc.org.au/DDO/Common/1.0">SubUnit1</SubUnit>
+      <p2:EntityIdentifierType>FAR</p2:EntityIdentifierType>
+      <p2:EntityIdentifierValue>EntityIdentifierValue1</p2:EntityIdentifierValue>
+      <p2:SubUnit>SubUnit1</p2:SubUnit>
     </IssuerPrimaryIdentifier>
     <IssuerAlternativeIdentifiers>
-      <Identifier xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
-        <EntityIdentifierType>FAR</EntityIdentifierType>
-        <EntityIdentifierValue>EntityIdentifierValue1</EntityIdentifierValue>
-        <SubUnit>SubUnit1</SubUnit>
-      </Identifier>
-      <Identifier xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
-        <EntityIdentifierType>ABN</EntityIdentifierType>
-        <EntityIdentifierValue>EntityIdentifierValue2</EntityIdentifierValue>
-        <SubUnit>SubUnit2</SubUnit>
-      </Identifier>
-      <Identifier xmlns="urn://www.fsc.org.au/DDO/Common/1.0">
-        <EntityIdentifierType>ASAL</EntityIdentifierType>
-        <EntityIdentifierValue>EntityIdentifierValue3</EntityIdentifierValue>
-        <SubUnit>SubUnit3</SubUnit>
-      </Identifier>
+      <p2:Identifier>
+        <p2:EntityIdentifierType>FAR</p2:EntityIdentifierType>
+        <p2:EntityIdentifierValue>EntityIdentifierValue1</p2:EntityIdentifierValue>
+        <p2:SubUnit>SubUnit1</p2:SubUnit>
+      </p2:Identifier>
+      <p2:Identifier>
+        <p2:EntityIdentifierType>ABN</p2:EntityIdentifierType>
+        <p2:EntityIdentifierValue>EntityIdentifierValue2</p2:EntityIdentifierValue>
+        <p2:SubUnit>SubUnit2</p2:SubUnit>
+      </p2:Identifier>
+      <p2:Identifier>
+        <p2:EntityIdentifierType>ASAL</p2:EntityIdentifierType>
+        <p2:EntityIdentifierValue>EntityIdentifierValue3</p2:EntityIdentifierValue>
+        <p2:SubUnit>SubUnit3</p2:SubUnit>
+      </p2:Identifier>
     </IssuerAlternativeIdentifiers>
   </Header>
   <Body>
@@ -99,12 +100,126 @@
             <Characteristic>InvestmentObjective_CapitalGuaranteed</Characteristic>
             <Value>In</Value>
           </InvestmentObjective_CapitalGuaranteed>
+          <InvestmentObjective_RegularIncome>
+            <Characteristic>InvestmentObjective_RegularIncome</Characteristic>
+            <Value>In</Value>
+          </InvestmentObjective_RegularIncome>
+          <InvestmentObjective_Specialist>
+            <Characteristic>InvestmentObjective_Specialist</Characteristic>
+            <Value>In</Value>
+          </InvestmentObjective_Specialist>
+          <ProductUse_SolutionStandalone>
+            <Characteristic>ProductUse_SolutionStandalone</Characteristic>
+            <Value>In</Value>
+          </ProductUse_SolutionStandalone>
+          <ProductUse_CoreComponent>
+            <Characteristic>ProductUse_CoreComponent</Characteristic>
+            <Value>In</Value>
+          </ProductUse_CoreComponent>
+          <ProductUse_Satellite>
+            <Characteristic>ProductUse_Satellite</Characteristic>
+            <Value>In</Value>
+          </ProductUse_Satellite>
+          <InvestmentTimeframe_Short>
+            <Characteristic>InvestmentTimeframe_Short</Characteristic>
+            <Value>In</Value>
+          </InvestmentTimeframe_Short>
+          <InvestmentTimeframe_Medium>
+            <Characteristic>InvestmentTimeframe_Medium</Characteristic>
+            <Value>In</Value>
+          </InvestmentTimeframe_Medium>
+          <InvestmentTimeframe_Long>
+            <Characteristic>InvestmentTimeframe_Long</Characteristic>
+            <Value>In</Value>
+          </InvestmentTimeframe_Long>
+          <RiskAndReturn_VeryHigh>
+            <Characteristic>RiskAndReturn_VeryHigh</Characteristic>
+            <Value>In</Value>
+          </RiskAndReturn_VeryHigh>
+          <RiskAndReturn_High>
+            <Characteristic>RiskAndReturn_High</Characteristic>
+            <Value>In</Value>
+          </RiskAndReturn_High>
+          <RiskAndReturn_Medium>
+            <Characteristic>RiskAndReturn_Medium</Characteristic>
+            <Value>In</Value>
+          </RiskAndReturn_Medium>
+          <RiskAndReturn_Low>
+            <Characteristic>RiskAndReturn_Low</Characteristic>
+            <Value>In</Value>
+          </RiskAndReturn_Low>
+          <RiskAndReturn_CapitalGuaranteed>
+            <Characteristic>RiskAndReturn_CapitalGuaranteed</Characteristic>
+            <Value>In</Value>
+          </RiskAndReturn_CapitalGuaranteed>
+          <RedemptionFrequency_Daily>
+            <Characteristic>RedemptionFrequency_Daily</Characteristic>
+            <Value>In</Value>
+          </RedemptionFrequency_Daily>
+          <RedemptionFrequency_Weekly>
+            <Characteristic>RedemptionFrequency_Weekly</Characteristic>
+            <Value>In</Value>
+          </RedemptionFrequency_Weekly>
+          <RedemptionFrequency_Monthly>
+            <Characteristic>RedemptionFrequency_Monthly</Characteristic>
+            <Value>In</Value>
+          </RedemptionFrequency_Monthly>
+          <RedemptionFrequency_Quarterly>
+            <Characteristic>RedemptionFrequency_Quarterly</Characteristic>
+            <Value>In</Value>
+          </RedemptionFrequency_Quarterly>
+          <RedemptionFrequency_AnnuallyPlus>
+            <Characteristic>RedemptionFrequency_AnnuallyPlus</Characteristic>
+            <Value>In</Value>
+          </RedemptionFrequency_AnnuallyPlus>
+          <Liquidity_Low>
+            <Characteristic>Liquidity_Low</Characteristic>
+            <Value>In</Value>
+          </Liquidity_Low>
+          <Liquidity_Moderate>
+            <Characteristic>Liquidity_Moderate</Characteristic>
+            <Value>In</Value>
+          </Liquidity_Moderate>
+          <Liquidity_High>
+            <Characteristic>Liquidity_High</Characteristic>
+            <Value>In</Value>
+          </Liquidity_High>
+          <Liquidity_VeryHigh>
+            <Characteristic>Liquidity_VeryHigh</Characteristic>
+            <Value>In</Value>
+          </Liquidity_VeryHigh>
           <ProductUseDescription>ProductUseDescription1</ProductUseDescription>
           <InvestmentTimeframeDescription>InvestmentTimeframeDescription1</InvestmentTimeframeDescription>
           <RiskAndReturnDescription>RiskAndReturnDescription1</RiskAndReturnDescription>
           <RedemptionFrequencyDescription>RedemptionFrequencyDescription1</RedemptionFrequencyDescription>
           <LiquidityDescription>LiquidityDescription1</LiquidityDescription>
         </TMDCharacteristics>
+        <DistributionConditions>
+          <AvailableDirect>true</AvailableDirect>
+          <DirectConditions>DirectConditions1</DirectConditions>
+          <AvailableOnPlatform>true</AvailableOnPlatform>
+          <PlatformConditions>PlatformConditions1</PlatformConditions>
+          <AvailableAdvised>true</AvailableAdvised>
+          <AdvisedConditions>AdvisedConditions1</AdvisedConditions>
+        </DistributionConditions>
+        <ReviewTriggers>
+          <ReviewTrigger>ReviewTrigger1</ReviewTrigger>
+          <ReviewTrigger>ReviewTrigger2</ReviewTrigger>
+          <ReviewTrigger>ReviewTrigger3</ReviewTrigger>
+        </ReviewTriggers>
+        <DistributorReporting>
+          <AcquisitionOutsideTM>true</AcquisitionOutsideTM>
+          <SFCDDOStandardRequired>true</SFCDDOStandardRequired>
+          <SFCDDOStandardVersionRequired>1.0</SFCDDOStandardVersionRequired>
+          <AlternativeDataStandard>AlternativeDataStandard1</AlternativeDataStandard>
+          <OutsideTMDFrequencyOfReport>OnEvent</OutsideTMDFrequencyOfReport>
+          <OutsideTMDReportDeadlineDays>1</OutsideTMDReportDeadlineDays>
+          <ComplaintsReporting>ComplaintsReporting1</ComplaintsReporting>
+          <ComplaintsFrequencyOfReport>OnEvent</ComplaintsFrequencyOfReport>
+          <ComplaintsReportDeadlineDays>1</ComplaintsReportDeadlineDays>
+          <RequireSignificantDealingsReport>true</RequireSignificantDealingsReport>
+          <Appropriateness>Appropriateness1</Appropriateness>
+        </DistributorReporting>
       </TMD>
       <TMD>
         <ProductPrimaryIdentifier>
@@ -178,12 +293,126 @@
             <Characteristic>InvestmentObjective_CapitalGuaranteed</Characteristic>
             <Value>Potentially</Value>
           </InvestmentObjective_CapitalGuaranteed>
+          <InvestmentObjective_RegularIncome>
+            <Characteristic>InvestmentObjective_RegularIncome</Characteristic>
+            <Value>Potentially</Value>
+          </InvestmentObjective_RegularIncome>
+          <InvestmentObjective_Specialist>
+            <Characteristic>InvestmentObjective_Specialist</Characteristic>
+            <Value>Potentially</Value>
+          </InvestmentObjective_Specialist>
+          <ProductUse_SolutionStandalone>
+            <Characteristic>ProductUse_SolutionStandalone</Characteristic>
+            <Value>Potentially</Value>
+          </ProductUse_SolutionStandalone>
+          <ProductUse_CoreComponent>
+            <Characteristic>ProductUse_CoreComponent</Characteristic>
+            <Value>Potentially</Value>
+          </ProductUse_CoreComponent>
+          <ProductUse_Satellite>
+            <Characteristic>ProductUse_Satellite</Characteristic>
+            <Value>Potentially</Value>
+          </ProductUse_Satellite>
+          <InvestmentTimeframe_Short>
+            <Characteristic>InvestmentTimeframe_Short</Characteristic>
+            <Value>Potentially</Value>
+          </InvestmentTimeframe_Short>
+          <InvestmentTimeframe_Medium>
+            <Characteristic>InvestmentTimeframe_Medium</Characteristic>
+            <Value>Potentially</Value>
+          </InvestmentTimeframe_Medium>
+          <InvestmentTimeframe_Long>
+            <Characteristic>InvestmentTimeframe_Long</Characteristic>
+            <Value>Potentially</Value>
+          </InvestmentTimeframe_Long>
+          <RiskAndReturn_VeryHigh>
+            <Characteristic>RiskAndReturn_VeryHigh</Characteristic>
+            <Value>Potentially</Value>
+          </RiskAndReturn_VeryHigh>
+          <RiskAndReturn_High>
+            <Characteristic>RiskAndReturn_High</Characteristic>
+            <Value>Potentially</Value>
+          </RiskAndReturn_High>
+          <RiskAndReturn_Medium>
+            <Characteristic>RiskAndReturn_Medium</Characteristic>
+            <Value>Potentially</Value>
+          </RiskAndReturn_Medium>
+          <RiskAndReturn_Low>
+            <Characteristic>RiskAndReturn_Low</Characteristic>
+            <Value>Potentially</Value>
+          </RiskAndReturn_Low>
+          <RiskAndReturn_CapitalGuaranteed>
+            <Characteristic>RiskAndReturn_CapitalGuaranteed</Characteristic>
+            <Value>Potentially</Value>
+          </RiskAndReturn_CapitalGuaranteed>
+          <RedemptionFrequency_Daily>
+            <Characteristic>RedemptionFrequency_Daily</Characteristic>
+            <Value>Potentially</Value>
+          </RedemptionFrequency_Daily>
+          <RedemptionFrequency_Weekly>
+            <Characteristic>RedemptionFrequency_Weekly</Characteristic>
+            <Value>Potentially</Value>
+          </RedemptionFrequency_Weekly>
+          <RedemptionFrequency_Monthly>
+            <Characteristic>RedemptionFrequency_Monthly</Characteristic>
+            <Value>Potentially</Value>
+          </RedemptionFrequency_Monthly>
+          <RedemptionFrequency_Quarterly>
+            <Characteristic>RedemptionFrequency_Quarterly</Characteristic>
+            <Value>Potentially</Value>
+          </RedemptionFrequency_Quarterly>
+          <RedemptionFrequency_AnnuallyPlus>
+            <Characteristic>RedemptionFrequency_AnnuallyPlus</Characteristic>
+            <Value>Potentially</Value>
+          </RedemptionFrequency_AnnuallyPlus>
+          <Liquidity_Low>
+            <Characteristic>Liquidity_Low</Characteristic>
+            <Value>Potentially</Value>
+          </Liquidity_Low>
+          <Liquidity_Moderate>
+            <Characteristic>Liquidity_Moderate</Characteristic>
+            <Value>Potentially</Value>
+          </Liquidity_Moderate>
+          <Liquidity_High>
+            <Characteristic>Liquidity_High</Characteristic>
+            <Value>Potentially</Value>
+          </Liquidity_High>
+          <Liquidity_VeryHigh>
+            <Characteristic>Liquidity_VeryHigh</Characteristic>
+            <Value>Potentially</Value>
+          </Liquidity_VeryHigh>
           <ProductUseDescription>ProductUseDescription2</ProductUseDescription>
           <InvestmentTimeframeDescription>InvestmentTimeframeDescription2</InvestmentTimeframeDescription>
           <RiskAndReturnDescription>RiskAndReturnDescription2</RiskAndReturnDescription>
           <RedemptionFrequencyDescription>RedemptionFrequencyDescription2</RedemptionFrequencyDescription>
           <LiquidityDescription>LiquidityDescription2</LiquidityDescription>
         </TMDCharacteristics>
+        <DistributionConditions>
+          <AvailableDirect>false</AvailableDirect>
+          <DirectConditions>DirectConditions2</DirectConditions>
+          <AvailableOnPlatform>false</AvailableOnPlatform>
+          <PlatformConditions>PlatformConditions2</PlatformConditions>
+          <AvailableAdvised>false</AvailableAdvised>
+          <AdvisedConditions>AdvisedConditions2</AdvisedConditions>
+        </DistributionConditions>
+        <ReviewTriggers>
+          <ReviewTrigger>ReviewTrigger4</ReviewTrigger>
+          <ReviewTrigger>ReviewTrigger5</ReviewTrigger>
+          <ReviewTrigger>ReviewTrigger6</ReviewTrigger>
+        </ReviewTriggers>
+        <DistributorReporting>
+          <AcquisitionOutsideTM>false</AcquisitionOutsideTM>
+          <SFCDDOStandardRequired>false</SFCDDOStandardRequired>
+          <SFCDDOStandardVersionRequired>1.0</SFCDDOStandardVersionRequired>
+          <AlternativeDataStandard>AlternativeDataStandard2</AlternativeDataStandard>
+          <OutsideTMDFrequencyOfReport>EndOfMonth</OutsideTMDFrequencyOfReport>
+          <OutsideTMDReportDeadlineDays>79228162514264337593543950335</OutsideTMDReportDeadlineDays>
+          <ComplaintsReporting>ComplaintsReporting2</ComplaintsReporting>
+          <ComplaintsFrequencyOfReport>EndOfMonth</ComplaintsFrequencyOfReport>
+          <ComplaintsReportDeadlineDays>79228162514264337593543950335</ComplaintsReportDeadlineDays>
+          <RequireSignificantDealingsReport>true</RequireSignificantDealingsReport>
+          <Appropriateness>Appropriateness2</Appropriateness>
+        </DistributorReporting>
       </TMD>
       <TMD>
         <ProductPrimaryIdentifier>
@@ -257,12 +486,126 @@
             <Characteristic>InvestmentObjective_CapitalGuaranteed</Characteristic>
             <Value>NotConsidered</Value>
           </InvestmentObjective_CapitalGuaranteed>
+          <InvestmentObjective_RegularIncome>
+            <Characteristic>InvestmentObjective_RegularIncome</Characteristic>
+            <Value>NotConsidered</Value>
+          </InvestmentObjective_RegularIncome>
+          <InvestmentObjective_Specialist>
+            <Characteristic>InvestmentObjective_Specialist</Characteristic>
+            <Value>NotConsidered</Value>
+          </InvestmentObjective_Specialist>
+          <ProductUse_SolutionStandalone>
+            <Characteristic>ProductUse_SolutionStandalone</Characteristic>
+            <Value>NotConsidered</Value>
+          </ProductUse_SolutionStandalone>
+          <ProductUse_CoreComponent>
+            <Characteristic>ProductUse_CoreComponent</Characteristic>
+            <Value>NotConsidered</Value>
+          </ProductUse_CoreComponent>
+          <ProductUse_Satellite>
+            <Characteristic>ProductUse_Satellite</Characteristic>
+            <Value>NotConsidered</Value>
+          </ProductUse_Satellite>
+          <InvestmentTimeframe_Short>
+            <Characteristic>InvestmentTimeframe_Short</Characteristic>
+            <Value>NotConsidered</Value>
+          </InvestmentTimeframe_Short>
+          <InvestmentTimeframe_Medium>
+            <Characteristic>InvestmentTimeframe_Medium</Characteristic>
+            <Value>NotConsidered</Value>
+          </InvestmentTimeframe_Medium>
+          <InvestmentTimeframe_Long>
+            <Characteristic>InvestmentTimeframe_Long</Characteristic>
+            <Value>NotConsidered</Value>
+          </InvestmentTimeframe_Long>
+          <RiskAndReturn_VeryHigh>
+            <Characteristic>RiskAndReturn_VeryHigh</Characteristic>
+            <Value>NotConsidered</Value>
+          </RiskAndReturn_VeryHigh>
+          <RiskAndReturn_High>
+            <Characteristic>RiskAndReturn_High</Characteristic>
+            <Value>NotConsidered</Value>
+          </RiskAndReturn_High>
+          <RiskAndReturn_Medium>
+            <Characteristic>RiskAndReturn_Medium</Characteristic>
+            <Value>NotConsidered</Value>
+          </RiskAndReturn_Medium>
+          <RiskAndReturn_Low>
+            <Characteristic>RiskAndReturn_Low</Characteristic>
+            <Value>NotConsidered</Value>
+          </RiskAndReturn_Low>
+          <RiskAndReturn_CapitalGuaranteed>
+            <Characteristic>RiskAndReturn_CapitalGuaranteed</Characteristic>
+            <Value>NotConsidered</Value>
+          </RiskAndReturn_CapitalGuaranteed>
+          <RedemptionFrequency_Daily>
+            <Characteristic>RedemptionFrequency_Daily</Characteristic>
+            <Value>NotConsidered</Value>
+          </RedemptionFrequency_Daily>
+          <RedemptionFrequency_Weekly>
+            <Characteristic>RedemptionFrequency_Weekly</Characteristic>
+            <Value>NotConsidered</Value>
+          </RedemptionFrequency_Weekly>
+          <RedemptionFrequency_Monthly>
+            <Characteristic>RedemptionFrequency_Monthly</Characteristic>
+            <Value>NotConsidered</Value>
+          </RedemptionFrequency_Monthly>
+          <RedemptionFrequency_Quarterly>
+            <Characteristic>RedemptionFrequency_Quarterly</Characteristic>
+            <Value>NotConsidered</Value>
+          </RedemptionFrequency_Quarterly>
+          <RedemptionFrequency_AnnuallyPlus>
+            <Characteristic>RedemptionFrequency_AnnuallyPlus</Characteristic>
+            <Value>NotConsidered</Value>
+          </RedemptionFrequency_AnnuallyPlus>
+          <Liquidity_Low>
+            <Characteristic>Liquidity_Low</Characteristic>
+            <Value>NotConsidered</Value>
+          </Liquidity_Low>
+          <Liquidity_Moderate>
+            <Characteristic>Liquidity_Moderate</Characteristic>
+            <Value>NotConsidered</Value>
+          </Liquidity_Moderate>
+          <Liquidity_High>
+            <Characteristic>Liquidity_High</Characteristic>
+            <Value>NotConsidered</Value>
+          </Liquidity_High>
+          <Liquidity_VeryHigh>
+            <Characteristic>Liquidity_VeryHigh</Characteristic>
+            <Value>NotConsidered</Value>
+          </Liquidity_VeryHigh>
           <ProductUseDescription>ProductUseDescription3</ProductUseDescription>
           <InvestmentTimeframeDescription>InvestmentTimeframeDescription3</InvestmentTimeframeDescription>
           <RiskAndReturnDescription>RiskAndReturnDescription3</RiskAndReturnDescription>
           <RedemptionFrequencyDescription>RedemptionFrequencyDescription3</RedemptionFrequencyDescription>
           <LiquidityDescription>LiquidityDescription3</LiquidityDescription>
         </TMDCharacteristics>
+        <DistributionConditions>
+          <AvailableDirect>true</AvailableDirect>
+          <DirectConditions>DirectConditions3</DirectConditions>
+          <AvailableOnPlatform>true</AvailableOnPlatform>
+          <PlatformConditions>PlatformConditions3</PlatformConditions>
+          <AvailableAdvised>true</AvailableAdvised>
+          <AdvisedConditions>AdvisedConditions3</AdvisedConditions>
+        </DistributionConditions>
+        <ReviewTriggers>
+          <ReviewTrigger>ReviewTrigger7</ReviewTrigger>
+          <ReviewTrigger>ReviewTrigger8</ReviewTrigger>
+          <ReviewTrigger>ReviewTrigger9</ReviewTrigger>
+        </ReviewTriggers>
+        <DistributorReporting>
+          <AcquisitionOutsideTM>true</AcquisitionOutsideTM>
+          <SFCDDOStandardRequired>true</SFCDDOStandardRequired>
+          <SFCDDOStandardVersionRequired>1.0</SFCDDOStandardVersionRequired>
+          <AlternativeDataStandard>AlternativeDataStandard3</AlternativeDataStandard>
+          <OutsideTMDFrequencyOfReport>EndOfQuarter</OutsideTMDFrequencyOfReport>
+          <OutsideTMDReportDeadlineDays>2</OutsideTMDReportDeadlineDays>
+          <ComplaintsReporting>ComplaintsReporting3</ComplaintsReporting>
+          <ComplaintsFrequencyOfReport>EndOfQuarter</ComplaintsFrequencyOfReport>
+          <ComplaintsReportDeadlineDays>2</ComplaintsReportDeadlineDays>
+          <RequireSignificantDealingsReport>true</RequireSignificantDealingsReport>
+          <Appropriateness>Appropriateness3</Appropriateness>
+        </DistributorReporting>
       </TMD>
     </TMDs>
   </Body>
