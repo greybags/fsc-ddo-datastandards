@@ -10,6 +10,36 @@
 | | Reporting Entity AFSL | Reporting entity AFSL. Must be used if reporting entity holds and AFSL | | M if available | |
 | | Reporting Entity ABN | Reporting entity ABN. Must be used if reporting entity holds an ABN | | M if available | |
 
+**Distributor identifier**
+
+| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/ conditional** | **Outstanding items** |
+| --- | --- | --- | --- | --- | --- |
+| | Distributor Type | Identifies the type of distributor included in this subrecord | Single choice of { Advice AFSL / Platform / non-advice AFSL/ACL} | M | |
+| --- | --- | --- | --- | --- | --- |
+| | **If distributor is advice AFSL:** || | AFSL | AFSL of distributor included in subrecord Must be included | AFSL # | M | |
+| | ABN | ABN of distributor included in subrecord Must be included | ABN # | M | |
+| | Business Name | Not for machine analysis | Free text | M | |
+| | _Contact details (for advice AFSL) – refer standard data items_ |
+| | _For each business under above AFSL: (for transactions report, only include businesses involved in transaction)_ |
+| | ABN | | | M | |
+| | Business Name | Free text. Not for machine analysis | | M | |
+| | _For each adviser under each business: (for transactions report, only include advisers involved in transaction)_ |
+| | FAR | | | M | |
+| | _Contact details (for adviser) – refer standard data items –_ _do we need to include for every adviser?_ |
+| | **If distributor is non-Advice AFSL (fund managers, platforms, online stockbrokers, insurance aggregators, mortgage brokers)** |
+| | ACL | Australian Credit License (ACL) number of entity included in this subrecord. Must be used if entity holds an ACL | | M if available | |
+| | AFSL | AFSL of distributor included in subrecord Must be included | | M | |
+| | ABN | ABN of distributor included in subrecord Must be included | | M | |
+| | Business Name | Not for machine analysis | | M | |
+| | _Contact details (for non-advice AFSL) – refer standard data items_ |
+| | _For each promoter under non-advice AFSL (for transactions report, only include promoters involved in transaction)_ |
+| | AFSL | | | M | |
+| | ABN | | | M | |
+| | Business Name | | | M | |
+| | _Contact details (for promoter) – refer standard data items_ |
+
+
+
 ## _Copyright &amp; Disclaimer for data standard_
 
 _© 2021 Financial Services Council Limited ABN 82 080 744 163._
@@ -24,4 +54,4 @@ _While steps have been taken to ensure the accuracy of the information contained
 
 ![](RackMultipart20210316-4-8lfz9_html_b01c81e2b01acfb2.jpg)
 
-© 2021 Financial Services Council Limited Page 1
+© 2021 Financial Services Council Limited

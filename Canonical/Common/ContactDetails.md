@@ -1,32 +1,13 @@
-# FSC Data Standards for DDO
-
-This document provides assistance in relation to the data required to implement the Design and Distribution Obligations (DDO) under the _Corporations Act 2001_ (Cth). It is a matter for each user of this guidance to consider their individual situation and to comply with the new regime. Whether a business uses this template, in whole or in part, is a decision for each business. The FSC does not require any business or organisation to use these standards.
-
-## Common data items
-[Product Identifier](Common/ProductIdentifier.md)
-
-[Entity Identifier](Common/EntityIdentifier.md)
-
-[Distributor Identifier](Common/EntityIdentifier.md)
-
 **Contact details**
 
-[Contact Details](Common/ContactDetails.md)
-
-##
-
-
-## Data standard for DDO – TMDs for Investment Management
-
-[Target Market Determinations](TargetMarketDeterminations.md)
-
-## Data Standard for DDO – Complaints
-
-[Complaints](Complaints.md)
-
-## Data standard for DDO – Transactions/Dealings
-
-[Dealings / Transactions](Dealings.md)
+| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
+| --- | --- | --- | --- | --- | --- |
+| | Contact name | Contact details for this record - name | Free text | M | |
+| --- | --- | --- | --- | --- | --- |
+| | Contact title | Contact position title (eg Senior Product Manager; Compliance Manager). | Free text | O | |
+| | Contact phone | Phone for contact person | Full international number format | M | |
+| | Contact email | Email for contact person | XXX@XXX | M | |
+| | Contact address | Address for contact person | Free text | O | |
 
 ## _Copyright &amp; Disclaimer for data standard_
 
