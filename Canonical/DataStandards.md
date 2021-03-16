@@ -101,9 +101,9 @@ This data standard allows product issuers (under the DDO regime) to provide prod
 | --- |
 | **TMD Characteristic** | **TMD Values** |
 | --- | --- |
-| **1: Investment Objective** | 1.1: Investment Objective Description | A description of the investment objective of the product, including growth/ defensive split | Free-text field
- | O | Revisit issues with mandatory/optional sections. EG if one part of a section is filled in, all of section must be filled in. |
- |
+
+
+| **1: Investment Objective** | 1.1: Investment Objective Description | A description of the investment objective of the product, including growth/ defensive split | Free-text field | O | Revisit issues with mandatory/optional sections. EG if one part of a section is filled in, all of section must be filled in. | |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1.2: Capital Growth | Do the product investment objectives align with those of an investor seeking Capital Growth | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | Use key instead of text | |
 | 1.3: Capital Preservation | Do the product investment objectives align with those of an investor seeking Capital Preservation | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M || |
