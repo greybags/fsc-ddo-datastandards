@@ -78,15 +78,11 @@ public partial class ReportHeaderType {
     
     private ReportSelectionRangeType reportSelectionRangeField;
     
-    private string standardVersionField;
+    private CurrentStandardVersion standardVersionField;
     
     private DealingsSelectionType reportTypeField;
     
     private bool reportTypeFieldSpecified;
-    
-    public ReportHeaderType() {
-        this.standardVersionField = "1.0";
-    }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -122,8 +118,8 @@ public partial class ReportHeaderType {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string StandardVersion {
+    [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
+    public CurrentStandardVersion StandardVersion {
         get {
             return this.standardVersionField;
         }
@@ -302,6 +298,57 @@ public enum TMDCharacteristicEnum {
     
     /// <remarks/>
     ProductUse_Satellite,
+    
+    /// <remarks/>
+    InvestmentTimeframe_Short,
+    
+    /// <remarks/>
+    InvestmentTimeframe_Medium,
+    
+    /// <remarks/>
+    InvestmentTimeframe_Long,
+    
+    /// <remarks/>
+    RiskAndReturn_VeryHigh,
+    
+    /// <remarks/>
+    RiskAndReturn_High,
+    
+    /// <remarks/>
+    RiskAndReturn_Medium,
+    
+    /// <remarks/>
+    RiskAndReturn_Low,
+    
+    /// <remarks/>
+    RiskAndReturn_CapitalGuaranteed,
+    
+    /// <remarks/>
+    RedemptionFrequency_Daily,
+    
+    /// <remarks/>
+    RedemptionFrequency_Weekly,
+    
+    /// <remarks/>
+    RedemptionFrequency_Monthly,
+    
+    /// <remarks/>
+    RedemptionFrequency_Quarterly,
+    
+    /// <remarks/>
+    RedemptionFrequency_AnnuallyPlus,
+    
+    /// <remarks/>
+    Liquidity_Low,
+    
+    /// <remarks/>
+    Liquidity_Moderate,
+    
+    /// <remarks/>
+    Liquidity_High,
+    
+    /// <remarks/>
+    Liquidity_VeryHigh,
 }
 
 /// <remarks/>
@@ -423,7 +470,7 @@ public partial class DealingDetailType {
     
     private TMDProductTypeEnum dataStandardTypeField;
     
-    private string dataStandardVersionUsedField;
+    private DataStandardVersionEnum dataStandardVersionUsedField;
     
     private TMDCharacteristicAssessmentType[] assessmentsField;
     
@@ -550,7 +597,7 @@ public partial class DealingDetailType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Order=11)]
-    public string DataStandardVersionUsed {
+    public DataStandardVersionEnum DataStandardVersionUsed {
         get {
             return this.dataStandardVersionUsedField;
         }
@@ -675,6 +722,17 @@ public enum TMDProductTypeEnum {
     
     /// <remarks/>
     LifeInsurance,
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
+public enum DataStandardVersionEnum {
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("1.0")]
+    Item10,
 }
 
 /// <remarks/>
@@ -929,6 +987,17 @@ public partial class ReportBodyType {
             this.dealingsField = value;
         }
     }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="urn://www.fsc.org.au/DDO/Common/1.0")]
+public enum CurrentStandardVersion {
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlEnumAttribute("1.0")]
+    Item10,
 }
 
 /// <remarks/>
