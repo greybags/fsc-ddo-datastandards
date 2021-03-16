@@ -137,7 +137,7 @@
   <xs:complexType name="EntityIdentifierType">
     <xs:annotation>
       <xs:documentation>
-        A resuseable typoe for identifying entityins involved in the DDO data standards
+        A re-useable type for identifying entities involved in the DDO data standards
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -214,7 +214,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  
+
   <!-- Simple Types-->
   <xs:simpleType name="MajorMinorVersion">
     <xs:restriction base="xs:string">
@@ -225,14 +225,30 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="CurrentStandardVersion">
+    <xs:restriction base="mstns:DataStandardVersionEnum">
+      <xs:annotation>
+        <xs:documentation>Note: the fixed value must align to the Target Namespace version</xs:documentation>
+      </xs:annotation>
+      <xs:enumeration value="1.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="TMDVersionType">
     <xs:annotation>
       <xs:documentation>Consistent type for storing TMD Versions. Version number of the TMD. CHECK: Data standard allows minor versions</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:positiveInteger">
-
     </xs:restriction>
   </xs:simpleType>
+
+  <!-- Attributes -->
+  <xs:attribute name="StandardVersion"
+                type="mstns:CurrentStandardVersion">
+    <xs:annotation>
+      <xs:documentation>Will pick up the Current Standard Version</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
 
   <!-- Enums -->
   <xs:simpleType name="EntityTypeEnum">
@@ -490,6 +506,26 @@
       <xs:enumeration value="UnderReview"/>
       <xs:enumeration value="StopDistribution"/>
       <xs:enumeration value="Closed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DataStandardVersionEnum">
+    <xs:annotation>
+      <xs:documentation>Provides a history of versions of the DDO Data Standard issued by the FSC</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="mstns:MajorMinorVersion">
+      <!--
+      <xs:enumeration value="0.1">
+        <xs:annotation>
+          <xs:documentation>Alpha version, not to be used</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      -->
+      <xs:enumeration value="1.0">
+        <xs:annotation>
+          <xs:documentation>Initial Release</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
