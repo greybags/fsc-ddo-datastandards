@@ -3,31 +3,9 @@
 This document provides assistance in relation to the data required to implement the Design and Distribution Obligations (DDO) under the _Corporations Act 2001_ (Cth). It is a matter for each user of this guidance to consider their individual situation and to comply with the new regime. Whether a business uses this template, in whole or in part, is a decision for each business. The FSC does not require any business or organisation to use these standards.
 
 ## Common data items
+[Product Identifer](Common/ProductIdentifer.md)
 
-**Product identifier**
-
-| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
-| --- | --- | --- | --- | --- | --- |
-| | Product APIR code | The product&#39;s APIR code. Must include if available | | M if available | |
-| --- | --- | --- | --- | --- | --- |
-| | Product ISIN code | The product&#39;s ISIN code. Must include if available | | M if available | |
-| | Listing exchange | Code of exchange the product is listed on, using ISO Market Identifier Code (MIC). Must include if product is listed.If | ISO MIC – 4 character alpha | M if available | |
-| | Product exchange code | The product&#39;s exchange code (for listed products). Must include if available. | | M if available | |
-| | Product ARSN | Product ARSN. Must include if available | Nine-digit numeric | M if available | |
-| | Product name | Financial instrument (Product) name. Note name is subject to change over time – not for machine analysis | Free text | M | |
-| | Issuer product code | Issuer determined product code – should be the type of last resort.Don&#39;t reuse industry wide codes. | Combination of code for issuer plus internal issuer determined product code? | M only if previous fields blank | |
-
-**Reporting entity identifier**
-
-| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/ conditional** | **Outstanding items** |
-| --- | --- | --- | --- | --- | --- |
-| | Reporting Entity Name | The name of the entity providing the report to the Issuer. May or may not be a product distributor. Not for machine analysis | Free text | ? | |
-| --- | --- | --- | --- | --- | --- |
-| | Reporting Entity Type | Identifies the type of the entity providing the report to the Issuer | Single choice of {Adviser / Advice AFSL / non-advice AFSL / credit licensee / Other} | M | |
-| | Reporting Entity FAR | Financial Advice Register number of reporting entity. Must be used if reporting entity holds a FAR number. | FAR # | M if available/applicable | |
-| | Reporting Entity ACL | Australian Credit License (ACL) number of reporting entity. Must be used if reporting entity holds an ACL | | M if available | |
-| | Reporting Entity AFSL | Reporting entity AFSL. Must be used if reporting entity holds and AFSL | | M if available | |
-| | Reporting Entity ABN | Reporting entity ABN. Must be used if reporting entity holds an ABN | | M if available | |
+[Entity Identifer](Common/EntityIdentifer.md)
 
 **Distributor identifier**
 
