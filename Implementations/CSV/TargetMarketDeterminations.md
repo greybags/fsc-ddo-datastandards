@@ -3,7 +3,15 @@
 ## DDO machine readable fund data template	
 
 
-<table border="0" cellspacing="0" cellpadding="0" >
+<table border="1" cellspacing="0" cellpadding="1" >
+    <colgroup>
+       <col span="1" style="width: 5%;">
+       <col span="1" style="width: 5%;">
+       <col span="1" style="width: 40%;">
+       <col span="1" style="width: 20%;">
+       <col span="1" style="width: 10%;">
+       <col span="1" style="width: 10%;">
+    </colgroup>
 <thead>
         <tr>
             <th>
@@ -11,7 +19,7 @@
                     <strong>NUM</strong>
                 </p>
             </th>
-            <th width="10%">
+            <th >
                 <p align="center">
                     <strong>DATA</strong>
                 </p>
@@ -2207,7 +2215,7 @@
             <td >
                 <p>
                     <strong>
-                        _Report_On_Some_Acquisitions_Outside_TM_Reporting_Standard_FSC
+                        _Report_On_Some_Acquisitions_Outside_<br/>TM_Reporting_Standard_FSC
                     </strong>
                     <strong></strong>
                 </p>
@@ -2241,7 +2249,7 @@
             <td >
                 <p>
                     <strong>
-                        _Report_On_Some_Acquisitions_Outside_TM_Reporting_Standard_FSC_If_N
+                        _Report_On_Some_Acquisitions_Outside_<br/>TM_Reporting_Standard_FSC_If_N
                     </strong>
                     <strong></strong>
                 </p>
