@@ -20,8 +20,8 @@ This data standard allows product issuers (under the DDO regime) to provide prod
 
 ##Data items specific to TMD##
 
-| | **TMD Characteristic** | **TMD Values** |
-| --- | --- |
+| | **TMD Characteristic** | **TMD Values** | | | | |
+|---|---|---|---|---|---|---|
 | **1: Investment Objective** | 1.1: Investment Objective Description | A description of the investment objective of the product, including growth/ defensive split | Free-text field | O | Revisit issues with mandatory/optional sections. EG if one part of a section is filled in, all of section must be filled in. | |
 | 1.2: Capital Growth | Do the product investment objectives align with those of an investor seeking Capital Growth | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | Use key instead of text | |
 | 1.3: Capital Preservation | Do the product investment objectives align with those of an investor seeking Capital Preservation | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M || |
@@ -53,15 +53,27 @@ This data standard allows product issuers (under the DDO regime) to provide prod
 | 6.3: Moderate | Are the assets predominantly moderate liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
 | 6.4: High | Are the assets predominantly high liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
 | 6.5: Very high | Are the assets predominantly very high liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
-| **Distribution conditions** | Available Direct? | Is product available direct (non intermediated) retail? | Y/N | M | | |
-| | Direct conditions | Additional conditions on direct (non intermediated) retail. Only complete if previous is Y. | Free text | C | | |
-| | Available on broad based platform? | Is product available on platforms? | Y/N | M | | |
-| | Platform conditions | Additional conditions on distribution to platforms. Only complete if previous is Y. | Free text | C | | |
-| | Available advised? | Is product available to clients subject to personal advice?[row for general advice?] | Y/N | M | | |
-| | Advised distribution conditions | Additional conditions on distribution to clients subject to personal advice. Only complete if previous is Y. | Free text | C | | |
+
+  
+**Distribution conditions**  
+
+| Label | Description  | Type | Mandatory / Optional |
+| --- | --- | --- | --- |
+| Available Direct? | Is product available direct (non intermediated) retail? | Y/N | M |
+| Direct conditions | Additional conditions on direct (non intermediated) retail. Only complete if previous is Y. | Free text | C |
+| Available on broad based platform? | Is product available on platforms? | Y/N | M |
+| Platform conditions | Additional conditions on distribution to platforms. Only complete if previous is Y. | Free text | C |
+| Available advised? | Is product available to clients subject to personal advice?[row for general advice?] | Y/N | M |
+| Advised distribution conditions | Additional conditions on distribution to clients subject to personal advice. Only complete if previous is Y. | Free text | C |
+
 | **Review triggers** | _ **The following one field can be multivalued** _ | |
+|---|---|---|
 | | Review triggers | List one trigger per subrecord. As distributors don&#39;t need to action review triggers, there is no need for standardisation/ validation of the text | Free text | OM | | |
-| | **Distributor reporting requirements** | |
+
+**Distributor reporting requirements** 
+
+| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | | How to send reports | Text indicating how distributors must send reports to issuer. Preference is for a URL link to instructions (must be permanent link) | | M | | |
 | | Acquisition outside TM | Is there requirement for distributors to report on ALL dealings outside target market? | Y/N | M | | |
 | | | If Y, should report follow FSC DDO data standard for transactions? Only complete if previous is Y | Y/N | C | | |
