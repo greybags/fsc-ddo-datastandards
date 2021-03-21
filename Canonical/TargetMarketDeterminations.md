@@ -94,8 +94,12 @@ This data standard allows product issuers (under the DDO regime) to provide prod
 | | | Required deadline for complaints report after end of relevant period (see previous field) – in number of days. Default is 10 days | XX | M | | |
 | | Significant dealing | As per statutory obligations s994F(6) | | M | Reporting on this is compulsory, with mandatory deadlines so unclear what to include in data standard | |
 | **Appropriateness** | | Explanation how issuer considers TMD performs against appropriateness test as required by ASIC RG | Free text | M | | |
-| **Footer record** | | | | | | |
-| | | Count of TMDs in report | | | | |
+
+
+| **Footer record** | | | | | |
+|---|---|---|---|---|---|
+| | | Count of TMDs in report | | | |
+
 
 ## _Copyright &amp; Disclaimer for data standard_
 
