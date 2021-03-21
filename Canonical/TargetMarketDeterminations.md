@@ -1,22 +1,24 @@
 ## Data standard for DDO – TMDs for Investment Management
 
 This data standard allows product issuers (under the DDO regime) to provide product distributors with the Target Market Determination(s) that issuers are required to make under the DDO regime.
+   
 
 | **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
-| --- | --- | --- | --- | --- | --- | --- | --- ||
-| Version of standard | Version number of data standard. Can be non-integer. Major versions should increment by 1. Minor changes (backwards compatible) can increment by less than 1. (eg 2.1, 2.2, 2.3) | XXX | M |
-| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | | |
-| | Date sent | Date that this TMD version report was sent | Format YYYY-MM-DD | OM | | |
+| --- | --- | --- | --- | --- | --- | 
+| | Version of standard | Version number of data standard. Can be non-integer. Major versions should increment by 1. Minor changes (backwards compatible) can increment by less than 1. (eg 2.1, 2.2, 2.3) | XXX | M |
+| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | |
+| | Date sent | Date that this TMD version report was sent | Format YYYY-MM-DD | OM | |
 | | Issuer AFSL | | | O | |
 | | Issuer ABN | | Nine-digit numeric | M | |
 | | Issuer name | | | | |
-| | _**Product TMD – Allow multiple subrecords, one for each product TMD (one TMD per product)**_ | |
+| | _**Product TMD – Allow multiple subrecords, one for each product TMD (one TMD per product)**_ | | | |
 | | _Product identifier – see common data items_ | |
-| | TMD Version | Version number of the TMD. Can be non-integer. Major versions increment by 1. Minor changes (backwards compatible) increment by less than 1 | XXX | M | | |
-| | TMD Status | The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing). | Single choice of {Available / Under review / Unavailable – stop distribution / closed} | M | Need to check rules about interaction with version number. | |
-| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | | |
-| | Mandatory review date | Next mandatory review date for this TMD version. A review can occur before this date. | Format YYYY-MM-DD | M | | |
-| | _Contact details (for TMD) – see common data items_ | |
+| | TMD Version | Version number of the TMD. Can be non-integer. Major versions increment by 1. Minor changes (backwards compatible) increment by less than 1 | XXX | M | |
+| | TMD Status | The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing). | Single choice of {Available / Under review / Unavailable – stop distribution / closed} | M | Need to check rules about interaction with version number. |
+| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | |
+| | Mandatory review date | Next mandatory review date for this TMD version. A review can occur before this date. | Format YYYY-MM-DD | M | |
+| | _Contact details (for TMD) – see common data items_ | | | |
+
 
 ##Data items specific to TMD##
 
