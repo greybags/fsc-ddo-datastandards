@@ -1,27 +1,29 @@
 ## Data standard for DDO – TMDs for Investment Management
 
 This data standard allows product issuers (under the DDO regime) to provide product distributors with the Target Market Determination(s) that issuers are required to make under the DDO regime.
+   
 
 | **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
-| --- | --- | --- | --- | --- | --- | --- | --- ||
-| Version of standard | Version number of data standard. Can be non-integer. Major versions should increment by 1. Minor changes (backwards compatible) can increment by less than 1. (eg 2.1, 2.2, 2.3) | XXX | M |
-| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | | |
-| | Date sent | Date that this TMD version report was sent | Format YYYY-MM-DD | OM | | |
+| --- | --- | --- | --- | --- | --- | 
+| | Version of standard | Version number of data standard. Can be non-integer. Major versions should increment by 1. Minor changes (backwards compatible) can increment by less than 1. (eg 2.1, 2.2, 2.3) | XXX | M |
+| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | |
+| | Date sent | Date that this TMD version report was sent | Format YYYY-MM-DD | OM | |
 | | Issuer AFSL | | | O | |
 | | Issuer ABN | | Nine-digit numeric | M | |
 | | Issuer name | | | | |
-| | _**Product TMD – Allow multiple subrecords, one for each product TMD (one TMD per product)**_ | |
+| | _**Product TMD – Allow multiple subrecords, one for each product TMD (one TMD per product)**_ | | | |
 | | _Product identifier – see common data items_ | |
-| | TMD Version | Version number of the TMD. Can be non-integer. Major versions increment by 1. Minor changes (backwards compatible) increment by less than 1 | XXX | M | | |
-| | TMD Status | The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing). | Single choice of {Available / Under review / Unavailable – stop distribution / closed} | M | Need to check rules about interaction with version number. | |
-| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | | |
-| | Mandatory review date | Next mandatory review date for this TMD version. A review can occur before this date. | Format YYYY-MM-DD | M | | |
-| | _Contact details (for TMD) – see common data items_ | |
+| | TMD Version | Version number of the TMD. Can be non-integer. Major versions increment by 1. Minor changes (backwards compatible) increment by less than 1 | XXX | M | |
+| | TMD Status | The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing). | Single choice of {Available / Under review / Unavailable – stop distribution / closed} | M | Need to check rules about interaction with version number. |
+| | Date approved | Date that this TMD version was approved | Format YYYY-MM-DD | M | |
+| | Mandatory review date | Next mandatory review date for this TMD version. A review can occur before this date. | Format YYYY-MM-DD | M | |
+| | _Contact details (for TMD) – see common data items_ | | | |
+
 
 ##Data items specific to TMD##
 
-| | **TMD Characteristic** | **TMD Values** |
-| --- | --- |
+| | **TMD Characteristic** | **TMD Values** | | | | |
+|---|---|---|---|---|---|---|
 | **1: Investment Objective** | 1.1: Investment Objective Description | A description of the investment objective of the product, including growth/ defensive split | Free-text field | O | Revisit issues with mandatory/optional sections. EG if one part of a section is filled in, all of section must be filled in. | |
 | 1.2: Capital Growth | Do the product investment objectives align with those of an investor seeking Capital Growth | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | Use key instead of text | |
 | 1.3: Capital Preservation | Do the product investment objectives align with those of an investor seeking Capital Preservation | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M || |
@@ -53,15 +55,27 @@ This data standard allows product issuers (under the DDO regime) to provide prod
 | 6.3: Moderate | Are the assets predominantly moderate liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
 | 6.4: High | Are the assets predominantly high liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
 | 6.5: Very high | Are the assets predominantly very high liquidity | Single choice of {In Target Market / Potentially in Target Market / Not considered in Target Market} | M | | |
-| **Distribution conditions** | Available Direct? | Is product available direct (non intermediated) retail? | Y/N | M | | |
-| | Direct conditions | Additional conditions on direct (non intermediated) retail. Only complete if previous is Y. | Free text | C | | |
-| | Available on broad based platform? | Is product available on platforms? | Y/N | M | | |
-| | Platform conditions | Additional conditions on distribution to platforms. Only complete if previous is Y. | Free text | C | | |
-| | Available advised? | Is product available to clients subject to personal advice?[row for general advice?] | Y/N | M | | |
-| | Advised distribution conditions | Additional conditions on distribution to clients subject to personal advice. Only complete if previous is Y. | Free text | C | | |
+
+  
+**Distribution conditions**  
+
+| Label | Description  | Type | Mandatory / Optional |
+| --- | --- | --- | --- |
+| Available Direct? | Is product available direct (non intermediated) retail? | Y/N | M |
+| Direct conditions | Additional conditions on direct (non intermediated) retail. Only complete if previous is Y. | Free text | C |
+| Available on broad based platform? | Is product available on platforms? | Y/N | M |
+| Platform conditions | Additional conditions on distribution to platforms. Only complete if previous is Y. | Free text | C |
+| Available advised? | Is product available to clients subject to personal advice?[row for general advice?] | Y/N | M |
+| Advised distribution conditions | Additional conditions on distribution to clients subject to personal advice. Only complete if previous is Y. | Free text | C |
+
 | **Review triggers** | _ **The following one field can be multivalued** _ | |
+|---|---|---|
 | | Review triggers | List one trigger per subrecord. As distributors don&#39;t need to action review triggers, there is no need for standardisation/ validation of the text | Free text | OM | | |
-| | **Distributor reporting requirements** | |
+
+**Distributor reporting requirements** 
+
+| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | | How to send reports | Text indicating how distributors must send reports to issuer. Preference is for a URL link to instructions (must be permanent link) | | M | | |
 | | Acquisition outside TM | Is there requirement for distributors to report on ALL dealings outside target market? | Y/N | M | | |
 | | | If Y, should report follow FSC DDO data standard for transactions? Only complete if previous is Y | Y/N | C | | |
@@ -80,8 +94,12 @@ This data standard allows product issuers (under the DDO regime) to provide prod
 | | | Required deadline for complaints report after end of relevant period (see previous field) – in number of days. Default is 10 days | XX | M | | |
 | | Significant dealing | As per statutory obligations s994F(6) | | M | Reporting on this is compulsory, with mandatory deadlines so unclear what to include in data standard | |
 | **Appropriateness** | | Explanation how issuer considers TMD performs against appropriateness test as required by ASIC RG | Free text | M | | |
-| **Footer record** | | | | | | |
-| | | Count of TMDs in report | | | | |
+
+
+| **Footer record** | | | | | |
+|---|---|---|---|---|---|
+| | | Count of TMDs in report | | | |
+
 
 ## _Copyright &amp; Disclaimer for data standard_
 
