@@ -1,0 +1,4 @@
+<links xmlns="http://titanium.dstc.edu.au/xml/xs3p">
+	<schema file-location="Common.xsd"
+			docfile-location="Common.html"></schema>
+</links>

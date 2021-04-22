@@ -1,0 +1,1456 @@
+﻿<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:js="urn:JScript">
+  <head>
+    <title>XML Schema Documentation</title>
+    <meta charset="UTF-8" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" charset="UTF-8" />
+    <style type="text/css">
+/* XS3P specific CSS */
+body {
+    background-color: #FFF;
+    padding-top: 50px;
+}
+
+.nav > li.active {
+    background-color: #FFF;
+}
+.nav > li > a:hover {
+    background-color: #CCC;
+}
+
+code {
+    color: #333;
+}
+
+.container-fluid {
+    padding: 15px 15px;
+}
+
+.nav-sub-item > a {
+    padding-left: 30px !important;
+}
+
+a.name {
+    padding-top: 65px;
+}
+
+h3.xs3p-subsection-heading {
+    margin-bottom: 30px;
+}
+
+section, #top {
+    margin-top: -65px;
+    padding-top: 65px;
+}
+
+pre {
+    padding: 5px;
+}
+
+.xs3p-sidenav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #EEE;
+    border-radius: 10px;
+}
+.xs3p-navbar-title {
+    color: #FFF !important;
+    font-weight: bold;
+}
+.xs3p-in-panel-table {
+    margin-bottom: 0px;
+}
+.xs3p-sidebar {
+    position: static;
+}
+.xs3p-collapse-button {
+    font-size: 8pt;
+}
+.panel-heading .xs3p-panel-title:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: left;
+    color: grey;
+    margin-right: 10px;
+}
+.panel-heading .xs3p-panel-title.collapsed:after {
+    content: "\e080";
+}
+.panel-info > .panel-heading .xs3p-panel-title:after {
+    color: white;
+}
+.xs3p-panel-help {
+    color: #CCCCCC;
+    cursor: pointer;
+}
+
+.panel-group {
+    margin-bottom: 20px;
+}
+
+.btn-doc {
+    padding: 0px;
+    border: 0px none;
+    background: none repeat scroll 0% 0% transparent;
+    line-height: 1;
+    font-size: 12px;
+}
+
+.unpre {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    white-space: normal;
+    word-break: normal;
+    word-wrap: normal;
+}
+
+.popover {
+    max-width: 400px;
+}
+
+// Syntax highlighting
+.codehilite .err {color: #FFF; background-color: #D2322D; font-weight: bold;} /* Error */
+.codehilite .c   {color: #999;}
+.codehilite .cs  {color: #999; font-style: italic;}
+.codehilite .nt  {color: #2F6F9F;}
+.codehilite .nn  {color: #39B3D7;}
+.codehilite .na  {color: #47A447;}
+.codehilite .s   {color: #D2322D;}
+.codehilite a       {color: inherit !important; text-decoration: underline !important;}
+.codehilite a:hover {opacity: 0.7 !important;}
+
+@media (min-width: 992px) {
+    .xs3p-sidebar {
+        position: fixed;
+        top: 65px;
+        width: 22%;
+    }
+}
+
+.built-date {
+  height: 50px;
+  padding: 15px 15px;
+  line-height: 20px;
+}
+</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.js" type="text/javascript" charset="UTF-8"> </script>
+  </head>
+  <body data-spy="scroll" data-target=".xs3p-sidebar" data-offset="65">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+          </button>
+          <a class="navbar-brand xs3p-navbar-title">XML Schema Documentation</a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5">
+          <a class="built-date xs3p-navbar-title pull-right">built date: 2021-04-22</a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3" id="menu-cols">
+          <div class="xs3p-sidebar hidden-print" role="complementary">
+            <ul class="nav nav-list xs3p-sidenav">
+              <li>
+                <a href="#SchemaProperties">Schema Document Properties</a>
+              </li>
+              <li>
+                <a href="#SchemaDeclarations">Global Declarations</a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#attribute_StandardVersion">Attribute: <strong>StandardVersion</strong></a>
+              </li>
+              <li>
+                <a href="#SchemaDefinitions">Global Definitions</a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ContactDetailsType">Complex Type: <strong>ContactDetailsType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_EntityCollectionType">Complex Type: <strong>EntityCollectionType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_EntityDetailType">Complex Type: <strong>EntityDetailType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_EntityIdentifierCollectionType">Complex Type: <strong>EntityIdentifierCollectionType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_EntityIdentifierType">Complex Type: <strong>EntityIdentifierType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_EntityRelationshipCollectionType">Complex Type: <strong>EntityRelationshipCollectionType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_EntityRelationshipType">Complex Type: <strong>EntityRelationshipType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ExchageTradedIdentifierType">Complex Type: <strong>ExchageTradedIdentifierType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ProductIdentifierCollectionType">Complex Type: <strong>ProductIdentifierCollectionType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ProductIdentifierType">Complex Type: <strong>ProductIdentifierType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ReportSelectionRangeType">Complex Type: <strong>ReportSelectionRangeType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_CurrentStandardVersion">Simple Type: <strong>CurrentStandardVersion</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_DataStandardVersionEnum">Simple Type: <strong>DataStandardVersionEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_DistributorTypeEnum">Simple Type: <strong>DistributorTypeEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_EntityIdentifierTypeEnum">Simple Type: <strong>EntityIdentifierTypeEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_EntityTypeEnum">Simple Type: <strong>EntityTypeEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_MajorMinorVersion">Simple Type: <strong>MajorMinorVersion</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ProductIdentifierTypeEnum">Simple Type: <strong>ProductIdentifierTypeEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_TMDCharacteristicEnum">Simple Type: <strong>TMDCharacteristicEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_TMDIndicatorEnum">Simple Type: <strong>TMDIndicatorEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_TMDProductTypeEnum">Simple Type: <strong>TMDProductTypeEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_TMDStatusEnum">Simple Type: <strong>TMDStatusEnum</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_TMDVersionType">Simple Type: <strong>TMDVersionType</strong></a>
+              </li>
+              <li>
+                <a href="#Glossary">Glossary</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9 content" role="main" id="xs3p-content">
+          <div class="modal fade Disambiguation" id="ID0ECC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ECC-label">Element Disambiguation</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ECC-hidden">
+                    <div class="hidden" id="ID0ECC-hidden-doc-raw">Optional element to ensure global uniqueness i.e. the exchange on which a stock is traded if the IdentifierType is ExchangeTraded</div>
+                    <div class="xs3p-doc" id="ID0ECC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ExchangeIdentifier" id="ID0EYC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EYC-label">Element ExchangeIdentifier</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EYC-hidden">
+                    <div class="hidden" id="ID0EYC-hidden-doc-raw">Exchange standard code eg ASX, NZX etc</div>
+                    <div class="xs3p-doc" id="ID0EYC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ExchangeCode" id="ID0EBD-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EBD-label">Element ExchangeCode</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EBD-hidden">
+                    <div class="hidden" id="ID0EBD-hidden-doc-raw">Identifier of the exhange traded asset eg AMP, AGL</div>
+                    <div class="xs3p-doc" id="ID0EBD-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityIdentifierType" id="ID0ERH-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ERH-label">Element EntityIdentifierType</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ERH-hidden">
+                    <div class="hidden" id="ID0ERH-hidden-doc-raw">What source or form the identifier is</div>
+                    <div class="xs3p-doc" id="ID0ERH-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityIdentifierValue" id="ID0E2H-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E2H-label">Element EntityIdentifierValue</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E2H-hidden">
+                    <div class="hidden" id="ID0E2H-hidden-doc-raw">The Value of hte identifier</div>
+                    <div class="xs3p-doc" id="ID0E2H-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade SubUnit" id="ID0EGAAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EGAAC-label">Element SubUnit</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EGAAC-hidden">
+                    <div class="hidden" id="ID0EGAAC-hidden-doc-raw">a disambiguator for subunits or multiple business units within a larger entity</div>
+                    <div class="xs3p-doc" id="ID0EGAAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade Name" id="ID0E6AAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E6AAC-label">Element Name</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E6AAC-hidden">
+                    <div class="hidden" id="ID0E6AAC-hidden-doc-raw">Name of a person to contact</div>
+                    <div class="xs3p-doc" id="ID0E6AAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade Title" id="ID0EMBAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EMBAC-label">Element Title</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EMBAC-hidden">
+                    <div class="hidden" id="ID0EMBAC-hidden-doc-raw">Contact position title (eg Senior Product Manager; Compliance Manager).</div>
+                    <div class="xs3p-doc" id="ID0EMBAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade Phone" id="ID0EZBAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EZBAC-label">Element Phone</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EZBAC-hidden">
+                    <div class="hidden" id="ID0EZBAC-hidden-doc-raw">Phone for contact person</div>
+                    <div class="xs3p-doc" id="ID0EZBAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade Email" id="ID0EGCAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EGCAC-label">Element Email</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EGCAC-hidden">
+                    <div class="hidden" id="ID0EGCAC-hidden-doc-raw">Email for contact person</div>
+                    <div class="xs3p-doc" id="ID0EGCAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade Address" id="ID0ETCAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ETCAC-label">Element Address</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ETCAC-hidden">
+                    <div class="hidden" id="ID0ETCAC-hidden-doc-raw">Address for contact person. Street address or postal address</div>
+                    <div class="xs3p-doc" id="ID0ETCAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDVersionType" id="ID0EAEAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EAEAC-label">Simple Type TMDVersionType</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EAEAC-hidden">
+                    <div class="hidden" id="ID0EAEAC-hidden-doc-raw">Consistent type for storing TMD Versions. Version number of the TMD. CHECK: Data standard allows minor versions</div>
+                    <div class="xs3p-doc" id="ID0EAEAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade StandardVersion" id="ID0EQEAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EQEAC-label">Attribute StandardVersion</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EQEAC-hidden">
+                    <div class="hidden" id="ID0EQEAC-hidden-doc-raw">Will pick up the Current Standard Version</div>
+                    <div class="xs3p-doc" id="ID0EQEAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityTypeEnum" id="ID0E2EAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E2EAC-label">Simple Type EntityTypeEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E2EAC-hidden">
+                    <div class="hidden" id="ID0E2EAC-hidden-doc-raw">The Financial Services Provider type</div>
+                    <div class="xs3p-doc" id="ID0E2EAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityIdentifierTypeEnum" id="ID0EUFAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EUFAC-label">Simple Type EntityIdentifierTypeEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EUFAC-hidden">
+                    <div class="hidden" id="ID0EUFAC-hidden-doc-raw">The set of supported Entity Identifier type</div>
+                    <div class="xs3p-doc" id="ID0EUFAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityIdentifierTypeEnum" id="ID0ECGAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ECGAC-label">Enumuration EntityIdentifierTypeEnum.ABN</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ECGAC-hidden">
+                    <div class="hidden" id="ID0ECGAC-hidden-doc-raw">Australian Business Number (ABN)</div>
+                    <div class="xs3p-doc" id="ID0ECGAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityIdentifierTypeEnum" id="ID0ELGAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ELGAC-label">Enumuration EntityIdentifierTypeEnum.ASAL</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ELGAC-hidden">
+                    <div class="hidden" id="ID0ELGAC-hidden-doc-raw">Australian Finance Services Licence (AFSL)</div>
+                    <div class="xs3p-doc" id="ID0ELGAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityIdentifierTypeEnum" id="ID0EUGAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EUGAC-label">Enumuration EntityIdentifierTypeEnum.ACL</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EUGAC-hidden">
+                    <div class="hidden" id="ID0EUGAC-hidden-doc-raw">Australian Credit License (ACL)</div>
+                    <div class="xs3p-doc" id="ID0EUGAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityIdentifierTypeEnum" id="ID0E4GAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E4GAC-label">Enumuration EntityIdentifierTypeEnum.Bespoke</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E4GAC-hidden">
+                    <div class="hidden" id="ID0E4GAC-hidden-doc-raw">An alternative identifier agreed between recipients of this data</div>
+                    <div class="xs3p-doc" id="ID0E4GAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EIHAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EIHAC-label">Simple Type TMDCharacteristicEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EIHAC-hidden">
+                    <div class="hidden" id="ID0EIHAC-hidden-doc-raw">The list of TMD Characteristics that Products should be assessed against</div>
+                    <div class="xs3p-doc" id="ID0EIHAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EVHAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EVHAC-label">Enumuration TMDCharacteristicEnum.InvestmentObjective_CapitalGrowth</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EVHAC-hidden">
+                    <div class="hidden" id="ID0EVHAC-hidden-doc-raw">Do the product investment objectives align with those of an investor seeking Capital Growth </div>
+                    <div class="xs3p-doc" id="ID0EVHAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0E5HAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E5HAC-label">Enumuration TMDCharacteristicEnum.InvestmentObjective_CapitalPreservation</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E5HAC-hidden">
+                    <div class="hidden" id="ID0E5HAC-hidden-doc-raw">Do the product investment objectives align with those of an investor seeking Capital Preservation </div>
+                    <div class="xs3p-doc" id="ID0E5HAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EHIAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EHIAC-label">Enumuration TMDCharacteristicEnum.InvestmentObjective_CapitalGuaranteed</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EHIAC-hidden">
+                    <div class="hidden" id="ID0EHIAC-hidden-doc-raw">Do the product investment objectives align with those of an investor seeking Capital Guaranteed </div>
+                    <div class="xs3p-doc" id="ID0EHIAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EQIAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EQIAC-label">Enumuration TMDCharacteristicEnum.InvestmentObjective_RegularIncome</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EQIAC-hidden">
+                    <div class="hidden" id="ID0EQIAC-hidden-doc-raw">Do the product investment objectives align with those of an investor seeking Regular Income?</div>
+                    <div class="xs3p-doc" id="ID0EQIAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EZIAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EZIAC-label">Enumuration TMDCharacteristicEnum.InvestmentObjective_Specialist</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EZIAC-hidden">
+                    <div class="hidden" id="ID0EZIAC-hidden-doc-raw">Do the product investment objectives align with those of an investor with Specialist objectives?</div>
+                    <div class="xs3p-doc" id="ID0EZIAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EEJAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EEJAC-label">Enumuration TMDCharacteristicEnum.ProductUse_SolutionStandalone</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EEJAC-hidden">
+                    <div class="hidden" id="ID0EEJAC-hidden-doc-raw">Is the product intended to be used as a Solution / Standalone product</div>
+                    <div class="xs3p-doc" id="ID0EEJAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0ENJAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ENJAC-label">Enumuration TMDCharacteristicEnum.ProductUse_CoreComponent</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ENJAC-hidden">
+                    <div class="hidden" id="ID0ENJAC-hidden-doc-raw">Is the product intended to be used as a core component product</div>
+                    <div class="xs3p-doc" id="ID0ENJAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EWJAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EWJAC-label">Enumuration TMDCharacteristicEnum.ProductUse_Satellite</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EWJAC-hidden">
+                    <div class="hidden" id="ID0EWJAC-hidden-doc-raw">Is the product intended to be used as a satellite product</div>
+                    <div class="xs3p-doc" id="ID0EWJAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EBKAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EBKAC-label">Enumuration TMDCharacteristicEnum.InvestmentTimeframe_Short</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EBKAC-hidden">
+                    <div class="hidden" id="ID0EBKAC-hidden-doc-raw">Is it appropriate for investors to hold the product for 0-2 years before selling</div>
+                    <div class="xs3p-doc" id="ID0EBKAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EKKAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EKKAC-label">Enumuration TMDCharacteristicEnum.InvestmentTimeframe_Medium</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EKKAC-hidden">
+                    <div class="hidden" id="ID0EKKAC-hidden-doc-raw">Is it appropriate for investors to hold the product for 2-6 years before selling</div>
+                    <div class="xs3p-doc" id="ID0EKKAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0ETKAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ETKAC-label">Enumuration TMDCharacteristicEnum.InvestmentTimeframe_Long</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ETKAC-hidden">
+                    <div class="hidden" id="ID0ETKAC-hidden-doc-raw">Is it appropriate for investors to hold the product for more than 6 years before selling</div>
+                    <div class="xs3p-doc" id="ID0ETKAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0E5KAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E5KAC-label">Enumuration TMDCharacteristicEnum.RiskAndReturn_VeryHigh</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E5KAC-hidden">
+                    <div class="hidden" id="ID0E5KAC-hidden-doc-raw">Does the product have very high risk and return attributes</div>
+                    <div class="xs3p-doc" id="ID0E5KAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EHLAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EHLAC-label">Enumuration TMDCharacteristicEnum.RiskAndReturn_High</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EHLAC-hidden">
+                    <div class="hidden" id="ID0EHLAC-hidden-doc-raw">Does the product have high risk and return attributes</div>
+                    <div class="xs3p-doc" id="ID0EHLAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EQLAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EQLAC-label">Enumuration TMDCharacteristicEnum.RiskAndReturn_Medium</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EQLAC-hidden">
+                    <div class="hidden" id="ID0EQLAC-hidden-doc-raw">Does the product have medium risk and return attributes</div>
+                    <div class="xs3p-doc" id="ID0EQLAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EZLAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EZLAC-label">Enumuration TMDCharacteristicEnum.RiskAndReturn_Low</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EZLAC-hidden">
+                    <div class="hidden" id="ID0EZLAC-hidden-doc-raw">Does the product have low risk and return attributes</div>
+                    <div class="xs3p-doc" id="ID0EZLAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0ECMAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ECMAC-label">Enumuration TMDCharacteristicEnum.RiskAndReturn_CapitalGuaranteed</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ECMAC-hidden">
+                    <div class="hidden" id="ID0ECMAC-hidden-doc-raw">Does the product have capital guaranteed attributes</div>
+                    <div class="xs3p-doc" id="ID0ECMAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0ENMAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ENMAC-label">Enumuration TMDCharacteristicEnum.RedemptionFrequency_Daily</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ENMAC-hidden">
+                    <div class="hidden" id="ID0ENMAC-hidden-doc-raw">Product suitable for investors that redeem interests daily</div>
+                    <div class="xs3p-doc" id="ID0ENMAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EWMAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EWMAC-label">Enumuration TMDCharacteristicEnum.RedemptionFrequency_Weekly</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EWMAC-hidden">
+                    <div class="hidden" id="ID0EWMAC-hidden-doc-raw">Product suitable for investors that redeem interests weekly</div>
+                    <div class="xs3p-doc" id="ID0EWMAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0E6MAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E6MAC-label">Enumuration TMDCharacteristicEnum.RedemptionFrequency_Monthly</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E6MAC-hidden">
+                    <div class="hidden" id="ID0E6MAC-hidden-doc-raw">Product suitable for investors that redeem interests monthly</div>
+                    <div class="xs3p-doc" id="ID0E6MAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EINAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EINAC-label">Enumuration TMDCharacteristicEnum.RedemptionFrequency_Quarterly</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EINAC-hidden">
+                    <div class="hidden" id="ID0EINAC-hidden-doc-raw">Product suitable for investors that redeem interests quarterly</div>
+                    <div class="xs3p-doc" id="ID0EINAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0ERNAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ERNAC-label">Enumuration TMDCharacteristicEnum.RedemptionFrequency_AnnuallyPlus</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ERNAC-hidden">
+                    <div class="hidden" id="ID0ERNAC-hidden-doc-raw">Product suitable for investors that redeem interests annually or longer</div>
+                    <div class="xs3p-doc" id="ID0ERNAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0E3NAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E3NAC-label">Enumuration TMDCharacteristicEnum.Liquidity_Low</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E3NAC-hidden">
+                    <div class="hidden" id="ID0E3NAC-hidden-doc-raw">Are the assets predominantly low liquidity</div>
+                    <div class="xs3p-doc" id="ID0E3NAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EFOAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EFOAC-label">Enumuration TMDCharacteristicEnum.Liquidity_Moderate</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EFOAC-hidden">
+                    <div class="hidden" id="ID0EFOAC-hidden-doc-raw">Are the assets predominantly moderate liquidity</div>
+                    <div class="xs3p-doc" id="ID0EFOAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EOOAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EOOAC-label">Enumuration TMDCharacteristicEnum.Liquidity_High</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EOOAC-hidden">
+                    <div class="hidden" id="ID0EOOAC-hidden-doc-raw">Are the assets predominantly high liquidity</div>
+                    <div class="xs3p-doc" id="ID0EOOAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDCharacteristicEnum" id="ID0EXOAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EXOAC-label">Enumuration TMDCharacteristicEnum.Liquidity_VeryHigh</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EXOAC-hidden">
+                    <div class="hidden" id="ID0EXOAC-hidden-doc-raw">Are the assets predominantly very high liquidity</div>
+                    <div class="xs3p-doc" id="ID0EXOAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDIndicatorEnum" id="ID0ECPAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ECPAC-label">Simple Type TMDIndicatorEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ECPAC-hidden">
+                    <div class="hidden" id="ID0ECPAC-hidden-doc-raw">the list of TMD Characteristic's potentially assessed values</div>
+                    <div class="xs3p-doc" id="ID0ECPAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDIndicatorEnum" id="ID0ENPAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ENPAC-label">Enumuration TMDIndicatorEnum.In</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ENPAC-hidden">
+                    <div class="hidden" id="ID0ENPAC-hidden-doc-raw">In Target Market</div>
+                    <div class="xs3p-doc" id="ID0ENPAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDIndicatorEnum" id="ID0EWPAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EWPAC-label">Enumuration TMDIndicatorEnum.Potentially</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EWPAC-hidden">
+                    <div class="hidden" id="ID0EWPAC-hidden-doc-raw">Potentially In Target Market</div>
+                    <div class="xs3p-doc" id="ID0EWPAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDIndicatorEnum" id="ID0EAAAE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EAAAE-label">Enumuration TMDIndicatorEnum.NotConsidered</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EAAAE-hidden">
+                    <div class="hidden" id="ID0EAAAE-hidden-doc-raw">Not Considered In Target Market</div>
+                    <div class="xs3p-doc" id="ID0EAAAE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade DistributorTypeEnum" id="ID0ELAAE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ELAAE-label">Simple Type DistributorTypeEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ELAAE-hidden">
+                    <div class="hidden" id="ID0ELAAE-hidden-doc-raw"></div>
+                    <div class="xs3p-doc" id="ID0ELAAE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDProductTypeEnum" id="ID0EEBAE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EEBAE-label">Simple Type TMDProductTypeEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EEBAE-hidden">
+                    <div class="hidden" id="ID0EEBAE-hidden-doc-raw">The type of TMD Data standard required based on Financial Services entity type</div>
+                    <div class="xs3p-doc" id="ID0EEBAE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ProductIdentifierTypeEnum" id="ID0E1BAE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E1BAE-label">Simple Type ProductIdentifierTypeEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E1BAE-hidden">
+                    <div class="hidden" id="ID0E1BAE-hidden-doc-raw"></div>
+                    <div class="xs3p-doc" id="ID0E1BAE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ProductIdentifierTypeEnum" id="ID0ERCAE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ERCAE-label">Enumuration ProductIdentifierTypeEnum.IssuerProvided</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ERCAE-hidden">
+                    <div class="hidden" id="ID0ERCAE-hidden-doc-raw">Issuer determined product code – should be the type of last resort.</div>
+                    <div class="xs3p-doc" id="ID0ERCAE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade TMDStatusEnum" id="ID0E3CAE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E3CAE-label">Simple Type TMDStatusEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E3CAE-hidden">
+                    <div class="hidden" id="ID0E3CAE-hidden-doc-raw">The status of the TMD which indicates whether it should be distributed. A status of unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing).</div>
+                    <div class="xs3p-doc" id="ID0E3CAE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade DataStandardVersionEnum" id="ID0EVDAE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EVDAE-label">Simple Type DataStandardVersionEnum</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EVDAE-hidden">
+                    <div class="hidden" id="ID0EVDAE-hidden-doc-raw">Provides a history of versions of the DDO Data Standard issued by the FSC</div>
+                    <div class="xs3p-doc" id="ID0EVDAE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade DataStandardVersionEnum" id="ID0ECEAE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ECEAE-label">Enumuration DataStandardVersionEnum.1.0</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ECEAE-hidden">
+                    <div class="hidden" id="ID0ECEAE-hidden-doc-raw">Initial Release</div>
+                    <div class="xs3p-doc" id="ID0ECEAE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1>
+            <a id="top">XML Schema Documentation</a>
+          </h1>
+          <section id="SectionSchemaProperties">
+            <h2>
+              <a id="SchemaProperties">Schema Document Properties</a>
+            </h2>
+            <div class="panel-group" id="schema-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#schema-properties-table-panel-group" href="#schema-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="schema-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+                        </th>
+                        <td>
+                          <span class="targetNS">urn://www.fsc.org.au/DDO/Common/1.0</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Element and Attribute Namespaces</th>
+                        <td>
+                          <ul>
+                            <li>Global element and attribute declarations belong to this schema's target namespace.</li>
+                            <li>By default, local element declarations belong to this schema's target namespace.</li>
+                            <li>By default, local attribute declarations have no namespace.</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="schema-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#schema-doc-panel-panel-group" href="#schema-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="schema-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="&quot;panel-body">Application Data
+      &lt;dcterms:title&gt; DDO Data Standards' Common Elements&lt;/dcterms:title&gt;
+      &lt;dcterms:licence&gt; 
+        The intellectual property rights in this document, including the copyright in the document, are owned by and retained by the FSC and its licensors.
+        The FSC grants you a non-exclusive non-transferable licence for you and the organisation you represent (the User) to use this document internally within the User's business, including making copies, reproductions, and modifications of the document, and otherwise as expressly set out in the conditions below for so long as the User licenses this data standard.
+
+        You and the User acknowledge and agree that the information contained in this document has been collated and prepared by the FSC for the sole purpose of assisting Users to manage their compliance with Part 7.8A of the Corporations Act 2001.
+        The information contained in this document is based on current sources and practice as at 2021.
+        The information contained in this document may need to be updated and revised as new sources of information emerge or practices change over time.
+
+        Users should use their own judgment when making use of this material and should carefully evaluate its currency, completeness and relevance for their own purposes as well as the extent to which this material can or should be modified to suit the User's products.
+
+        While steps have been taken to ensure the accuracy of the information contained in this document, the FSC does not guarantee, and accepts no legal liability whatsoever or howsoever arising from or connected to, the accuracy, currency, completeness of any material contained in this document (including any liability that may flow directly or indirectly from the modification of the information contained in this document) and makes no warranties as to suitability for you or non-infringement or for compliance with the data requirements under Part 7.8A of the Act.
+      &lt;/dcterms:licence&gt;
+      &lt;dcterms:rightsholder&gt; Financial Services Council Limited ABN 82 080 744 163&lt;/dcterms:rightsholder&gt;
+      &lt;dcterms:copyright&gt; 
+        © 2021 Financial Services Council Limited ABN 82 080 744 163
+      &lt;/dcterms:copyright&gt;
+      &lt;dcterms:contributor&gt; Stephen Cox&lt;/dcterms:contributor&gt;
+    </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="schema-declared-namespaces-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#schema-declared-namespaces-panel-group" href="#schema-declared-namespaces-collapse">Declared Namespaces</a>
+                  </h4>
+                </div>
+                <div id="schema-declared-namespaces-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <thead>
+                      <tr>
+                        <th>Prefix</th>
+                        <th>Namespace</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <a id="ns_">Default namespace</a>
+                        </td>
+                        <td>
+                          <span class="targetNS">urn://www.fsc.org.au/DDO/Common/1.0</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a id="ns_xml">xml</a>
+                        </td>
+                        <td>http://www.w3.org/XML/1998/namespace</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a id="ns_mstns">mstns</a>
+                        </td>
+                        <td>
+                          <span class="targetNS">urn://www.fsc.org.au/DDO/Common/1.0</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a id="ns_xs">xs</a>
+                        </td>
+                        <td>http://www.w3.org/2001/XMLSchema</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="schema-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#schema-schemaComponent-panel-group" href="#schema-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="schema-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="&quot;panel-body">
+                    <pre
