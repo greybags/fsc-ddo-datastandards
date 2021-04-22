@@ -1,0 +1,1753 @@
+﻿<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:js="urn:JScript">
+  <head>
+    <title>XML Schema Documentation</title>
+    <meta charset="UTF-8" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" charset="UTF-8" />
+    <style type="text/css">
+/* XS3P specific CSS */
+body {
+    background-color: #FFF;
+    padding-top: 50px;
+}
+
+.nav > li.active {
+    background-color: #FFF;
+}
+.nav > li > a:hover {
+    background-color: #CCC;
+}
+
+code {
+    color: #333;
+}
+
+.container-fluid {
+    padding: 15px 15px;
+}
+
+.nav-sub-item > a {
+    padding-left: 30px !important;
+}
+
+a.name {
+    padding-top: 65px;
+}
+
+h3.xs3p-subsection-heading {
+    margin-bottom: 30px;
+}
+
+section, #top {
+    margin-top: -65px;
+    padding-top: 65px;
+}
+
+pre {
+    padding: 5px;
+}
+
+.xs3p-sidenav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #EEE;
+    border-radius: 10px;
+}
+.xs3p-navbar-title {
+    color: #FFF !important;
+    font-weight: bold;
+}
+.xs3p-in-panel-table {
+    margin-bottom: 0px;
+}
+.xs3p-sidebar {
+    position: static;
+}
+.xs3p-collapse-button {
+    font-size: 8pt;
+}
+.panel-heading .xs3p-panel-title:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: left;
+    color: grey;
+    margin-right: 10px;
+}
+.panel-heading .xs3p-panel-title.collapsed:after {
+    content: "\e080";
+}
+.panel-info > .panel-heading .xs3p-panel-title:after {
+    color: white;
+}
+.xs3p-panel-help {
+    color: #CCCCCC;
+    cursor: pointer;
+}
+
+.panel-group {
+    margin-bottom: 20px;
+}
+
+.btn-doc {
+    padding: 0px;
+    border: 0px none;
+    background: none repeat scroll 0% 0% transparent;
+    line-height: 1;
+    font-size: 12px;
+}
+
+.unpre {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    white-space: normal;
+    word-break: normal;
+    word-wrap: normal;
+}
+
+.popover {
+    max-width: 400px;
+}
+
+// Syntax highlighting
+.codehilite .err {color: #FFF; background-color: #D2322D; font-weight: bold;} /* Error */
+.codehilite .c   {color: #999;}
+.codehilite .cs  {color: #999; font-style: italic;}
+.codehilite .nt  {color: #2F6F9F;}
+.codehilite .nn  {color: #39B3D7;}
+.codehilite .na  {color: #47A447;}
+.codehilite .s   {color: #D2322D;}
+.codehilite a       {color: inherit !important; text-decoration: underline !important;}
+.codehilite a:hover {opacity: 0.7 !important;}
+
+@media (min-width: 992px) {
+    .xs3p-sidebar {
+        position: fixed;
+        top: 65px;
+        width: 22%;
+    }
+}
+
+.built-date {
+  height: 50px;
+  padding: 15px 15px;
+  line-height: 20px;
+}
+</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.js" type="text/javascript" charset="UTF-8"> </script>
+  </head>
+  <body data-spy="scroll" data-target=".xs3p-sidebar" data-offset="65">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+          </button>
+          <a class="navbar-brand xs3p-navbar-title">XML Schema Documentation</a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5">
+          <a class="built-date xs3p-navbar-title pull-right">built date: 2021-04-22</a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3" id="menu-cols">
+          <div class="xs3p-sidebar hidden-print" role="complementary">
+            <ul class="nav nav-list xs3p-sidenav">
+              <li>
+                <a href="#SchemaProperties">Schema Document Properties</a>
+              </li>
+              <li>
+                <a href="#SchemaDeclarations">Global Declarations</a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#element_ComplaintsReport">Element: <strong>ComplaintsReport</strong></a>
+              </li>
+              <li>
+                <a href="#SchemaDefinitions">Global Definitions</a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ComplaintDetailCollectionType">Complex Type: <strong>ComplaintDetailCollectionType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ComplaintDetailType">Complex Type: <strong>ComplaintDetailType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ComplaintsReportBodyType">Complex Type: <strong>ComplaintsReportBodyType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ComplaintsReportFooterType">Complex Type: <strong>ComplaintsReportFooterType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ComplaintsReportHeaderType">Complex Type: <strong>ComplaintsReportHeaderType</strong></a>
+              </li>
+              <li class="nav-sub-item">
+                <a href="#type_ComplaintsReportType">Complex Type: <strong>ComplaintsReportType</strong></a>
+              </li>
+              <li>
+                <a href="#Glossary">Glossary</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9 content" role="main" id="xs3p-content">
+          <div class="modal fade ComplaintsReport" id="ID0ECB-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ECB-label">Element ComplaintsReport</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ECB-hidden">
+                    <div class="hidden" id="ID0ECB-hidden-doc-raw">This element defines the root element of the report</div>
+                    <div class="xs3p-doc" id="ID0ECB-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ReportIdentifier" id="ID0ERC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ERC-label">Element ReportIdentifier</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ERC-hidden">
+                    <div class="hidden" id="ID0ERC-hidden-doc-raw">Report ID – unique to distributor. Can be combined with distributor ID to have industry-wide unique ID</div>
+                    <div class="xs3p-doc" id="ID0ERC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ReportExtractionDateTime" id="ID0E2C-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E2C-label">Element ReportExtractionDateTime</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E2C-hidden">
+                    <div class="hidden" id="ID0E2C-hidden-doc-raw">
+            Date that transaction report was made.
+            If report is reissued, the new information replaces any reports within the defined report start and end period.
+          </div>
+                    <div class="xs3p-doc" id="ID0E2C-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ReportSelectionRange" id="ID0EID-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EID-label">Element ReportSelectionRange</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EID-hidden">
+                    <div class="hidden" id="ID0EID-hidden-doc-raw">
+            Defines the range the complaints report covers
+          </div>
+                    <div class="xs3p-doc" id="ID0EID-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade " id="ID0EVD-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EVD-label">Attribute StandardVersion</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EVD-hidden">
+                    <div class="hidden" id="ID0EVD-hidden-doc-raw">Should automatically pick up the Standard's current version</div>
+                    <div class="xs3p-doc" id="ID0EVD-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ComplaintEntities" id="ID0EME-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EME-label">Element ComplaintEntities</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EME-hidden">
+                    <div class="hidden" id="ID0EME-hidden-doc-raw">List of all entities who are impacted by the Complaint report</div>
+                    <div class="xs3p-doc" id="ID0EME-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade EntityRelationships" id="ID0EYE-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EYE-label">Element EntityRelationships</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EYE-hidden">
+                    <div class="hidden" id="ID0EYE-hidden-doc-raw">List of key relationships between entities in order to build the entity hierarchy</div>
+                    <div class="xs3p-doc" id="ID0EYE-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ReportingEntityIdentifier" id="ID0ECF-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ECF-label">Element ReportingEntityIdentifier</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ECF-hidden">
+                    <div class="hidden" id="ID0ECF-hidden-doc-raw">Identifier from the listed Complaint Entities that is filing this report</div>
+                    <div class="xs3p-doc" id="ID0ECF-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade NilReportCount" id="ID0E4F-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0E4F-label">Attribute NilReportCount</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0E4F-hidden">
+                    <div class="hidden" id="ID0E4F-hidden-doc-raw">Number of nil complaint records included in this file. Sum of this field and the NonNilReportCount attribute must equal number of complaint records in this file.</div>
+                    <div class="xs3p-doc" id="ID0E4F-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade NonNilReportCount" id="ID0EHG-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EHG-label">Attribute NonNilReportCount</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EHG-hidden">
+                    <div class="hidden" id="ID0EHG-hidden-doc-raw">Number of non-nil complaint records included in this file.</div>
+                    <div class="xs3p-doc" id="ID0EHG-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ComplaintId" id="ID0EJH-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EJH-label">Element ComplaintId</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EJH-hidden">
+                    <div class="hidden" id="ID0EJH-hidden-doc-raw">Reporting entity internal code for complaint</div>
+                    <div class="xs3p-doc" id="ID0EJH-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade IssuerIdentifer" id="ID0ETH-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ETH-label">Element IssuerIdentifer</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ETH-hidden">
+                    <div class="hidden" id="ID0ETH-hidden-doc-raw">A primary identifier from one of the ComplaintEntities</div>
+                    <div class="xs3p-doc" id="ID0ETH-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade DistributorIdentifier" id="ID0ELAAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0ELAAC-label">Element DistributorIdentifier</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0ELAAC-hidden">
+                    <div class="hidden" id="ID0ELAAC-hidden-doc-raw">A Primary identifer from an entity in the ComplaintEntities</div>
+                    <div class="xs3p-doc" id="ID0ELAAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade HasFinancialImpact" id="ID0EMBAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EMBAC-label">Element HasFinancialImpact</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EMBAC-hidden">
+                    <div class="hidden" id="ID0EMBAC-hidden-doc-raw"></div>
+                    <div class="xs3p-doc" id="ID0EMBAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ComplaintDate" id="ID0EZBAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EZBAC-label">Element ComplaintDate</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EZBAC-hidden">
+                    <div class="hidden" id="ID0EZBAC-hidden-doc-raw">Date complaint was raised</div>
+                    <div class="xs3p-doc" id="ID0EZBAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ComplaintResolutionDate" id="ID0EGCAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EGCAC-label">Element ComplaintResolutionDate</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EGCAC-hidden">
+                    <div class="hidden" id="ID0EGCAC-hidden-doc-raw">Leave blank (ie use xs:Nil) if not resolved or unknown</div>
+                    <div class="xs3p-doc" id="ID0EGCAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade ComplaintContent" id="ID0EQCAC-popup" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog unpre">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="ID0EQCAC-label">Element ComplaintContent</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="annotation documentation" id="wdoc-ID0EQCAC-hidden">
+                    <div class="hidden" id="ID0EQCAC-hidden-doc-raw">This should include all the relevant details so that the issuer can understand the nature of the complaint</div>
+                    <div class="xs3p-doc" id="ID0EQCAC-hidden-doc"> </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1>
+            <a id="top">XML Schema Documentation</a>
+          </h1>
+          <section id="SectionSchemaProperties">
+            <h2>
+              <a id="SchemaProperties">Schema Document Properties</a>
+            </h2>
+            <div class="panel-group" id="schema-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#schema-properties-table-panel-group" href="#schema-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="schema-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+                        </th>
+                        <td>
+                          <span class="targetNS">urn://www.fsc.org.au/DDO/Complaints/1.0</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Element and Attribute Namespaces</th>
+                        <td>
+                          <ul>
+                            <li>Global element and attribute declarations belong to this schema's target namespace.</li>
+                            <li>By default, local element declarations belong to this schema's target namespace.</li>
+                            <li>By default, local attribute declarations have no namespace.</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Schema Composition</th>
+                        <td>
+                          <ul>
+                            <li>This schema imports schema(s) from the following namespace(s):<ul><li><em>urn://www.fsc.org.au/DDO/Common/1.0</em> (at <a title="Jump to schema documentation for 'Common.xsd'." href="Common.html">Common.xsd</a>)</li></ul></li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="schema-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#schema-doc-panel-panel-group" href="#schema-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="schema-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="annotation appinfo">
+                      <h4>Application Data</h4>
+      <code class="test">&lt;<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:title&gt; <div class="fakeclass3" style="margin-left: 3em">DDO Data Standards' Complaints' Elements</div>&lt;/<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:title&gt;</code>
+      <code class="test">&lt;<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:licence&gt; <div class="fakeclass3" style="margin-left: 3em">
+        The intellectual property rights in this document, including the copyright in the document, are owned by and retained by the FSC and its licensors.
+        The FSC grants you a non-exclusive non-transferable licence for you and the organisation you represent (the User) to use this document internally within the User's business, including making copies, reproductions, and modifications of the document, and otherwise as expressly set out in the conditions below for so long as the User licenses this data standard.
+
+        You and the User acknowledge and agree that the information contained in this document has been collated and prepared by the FSC for the sole purpose of assisting Users to manage their compliance with Part 7.8A of the Corporations Act 2001.
+        The information contained in this document is based on current sources and practice as at 2021.
+        The information contained in this document may need to be updated and revised as new sources of information emerge or practices change over time.
+
+        Users should use their own judgment when making use of this material and should carefully evaluate its currency, completeness and relevance for their own purposes as well as the extent to which this material can or should be modified to suit the User's products.
+
+        While steps have been taken to ensure the accuracy of the information contained in this document, the FSC does not guarantee, and accepts no legal liability whatsoever or howsoever arising from or connected to, the accuracy, currency, completeness of any material contained in this document (including any liability that may flow directly or indirectly from the modification of the information contained in this document) and makes no warranties as to suitability for you or non-infringement or for compliance with the data requirements under Part 7.8A of the Act.
+      </div>&lt;/<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:licence&gt;</code>
+      <code class="test">&lt;<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:rightsholder&gt; <div class="fakeclass3" style="margin-left: 3em">Financial Services Council Limited ABN 82 080 744 163</div>&lt;/<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:rightsholder&gt;</code>
+      <code class="test">&lt;<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:copyright&gt; <div class="fakeclass3" style="margin-left: 3em">
+        © 2021 Financial Services Council Limited ABN 82 080 744 163
+      </div>&lt;/<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:copyright&gt;</code>
+      <code class="test">&lt;<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:contributor&gt; <div class="fakeclass3" style="margin-left: 3em">Stephen Cox</div>&lt;/<a href="javascript:void(0)" onclick="alert('Unknown namespace prefix, dcterms.')" title="Unknown namespace prefix, dcterms.">dcterms</a>:contributor&gt;</code>
+    <br /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="schema-declared-namespaces-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#schema-declared-namespaces-panel-group" href="#schema-declared-namespaces-collapse">Declared Namespaces</a>
+                  </h4>
+                </div>
+                <div id="schema-declared-namespaces-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <thead>
+                      <tr>
+                        <th>Prefix</th>
+                        <th>Namespace</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <a id="ns_">Default namespace</a>
+                        </td>
+                        <td>
+                          <span class="targetNS">urn://www.fsc.org.au/DDO/Complaints/1.0</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a id="ns_xml">xml</a>
+                        </td>
+                        <td>http://www.w3.org/XML/1998/namespace</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a id="ns_mstns">mstns</a>
+                        </td>
+                        <td>
+                          <span class="targetNS">urn://www.fsc.org.au/DDO/Complaints/1.0</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a id="ns_ddoc">ddoc</a>
+                        </td>
+                        <td>urn://www.fsc.org.au/DDO/Common/1.0</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a id="ns_xs">xs</a>
+                        </td>
+                        <td>http://www.w3.org/2001/XMLSchema</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="schema-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#schema-schemaComponent-panel-group" href="#schema-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="schema-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:schema</span> <span class="na">targetNamespace=</span><span class="s">"urn://www.fsc.org.au/DDO/Complaints/1.0"</span> <span class="na">elementFormDefault=</span><span class="s">"qualified"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:import</span> <span class="na">namespace=</span><span class="s">"urn://www.fsc.org.au/DDO/Common/1.0"</span> <span class="na">schemaLocation=</span><span class="s">"Common.xsd"</span><span class="nt">/&gt;</span>
+<span class="scContent">...</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:schema&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+          </section>
+          <section id="SectionSchemaDeclarations">
+            <h2>
+              <a id="SchemaDeclarations">Global Declarations</a>
+            </h2>
+            <h3 class="xs3p-subsection-heading">Element: <a id="element_ComplaintsReport" class="name" data-html="true" data-placement="bottom" data-toggle="tooltip" title="Schema component name.">ComplaintsReport</a></h3>
+            <div class="panel-group" id="element_ComplaintsReport-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#element_ComplaintsReport-properties-table-panel-group" href="#element_ComplaintsReport-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="element_ComplaintsReport-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Name</th>
+                        <td>ComplaintsReport</td>
+                      </tr>
+                      <tr>
+                        <th>Type</th>
+                        <td>
+                          <span class="type">
+                            <a title="Jump to &quot;ComplaintsReportType&quot; type definition." href="#type_ComplaintsReportType">ComplaintsReportType</a>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Nillable' in glossary" href="#term_Nillable">Nillable</a>
+                        </th>
+                        <td>no</td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+                        </th>
+                        <td>no</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="element_ComplaintsReport-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#element_ComplaintsReport-doc-panel-panel-group" href="#element_ComplaintsReport-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="element_ComplaintsReport-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="annotation documentation" id="wdoc-ID0ECB">
+                      <div class="hidden" id="ID0ECB-doc-raw">This element defines the root element of the report</div>
+                      <div class="xs3p-doc" id="ID0ECB-doc"> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="element_ComplaintsReport-instance-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#element_ComplaintsReport-instance-table-panel-group" href="#element_ComplaintsReport-instance-table-collapse">XML Instance Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.&#xA;         &lt;ul&gt;&#xA;         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;&#xA;         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;&#xA;         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;&#xA;         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;&#xA;         &lt;li&gt;More stuff&lt;/li&gt;&#xA;         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;&#xA;         &lt;/ul&gt;&#xA;      ">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="element_ComplaintsReport-instance-table-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;ComplaintsReport</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;Header&gt;</span> <span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportHeaderType&quot; type definition." href="#type_ComplaintsReportHeaderType">ComplaintsReportHeaderType</a></span> <span class="nt">&lt;/Header&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;Body&gt;</span> <span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportBodyType&quot; type definition." href="#type_ComplaintsReportBodyType">ComplaintsReportBodyType</a></span> <span class="nt">&lt;/Body&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;Footer&gt;</span> <span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportFooterType&quot; type definition." href="#type_ComplaintsReportFooterType">ComplaintsReportFooterType</a></span> <span class="nt">&lt;/Footer&gt;</span> <span class="cs">[1]</span>
+<span class="nt">&lt;/ComplaintsReport&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="element_ComplaintsReport-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#element_ComplaintsReport-schemaComponent-panel-group" href="#element_ComplaintsReport-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="element_ComplaintsReport-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ComplaintsReport"</span> <span class="na">type=</span><span class="s">"<span class="type"><a title="Jump to &quot;ComplaintsReportType&quot; type definition." href="#type_ComplaintsReportType">ComplaintsReportType</a></span>"</span><span class="nt">/&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+          </section>
+          <section id="SectionSchemaDefinitions">
+            <h2>
+              <a id="SchemaDefinitions">Global Definitions</a>
+            </h2>
+            <h3 class="xs3p-subsection-heading">Complex Type: <a id="type_ComplaintDetailCollectionType" class="name" data-html="true" data-placement="bottom" data-toggle="tooltip" title="Schema component name.">ComplaintDetailCollectionType</a></h3>
+            <div class="panel-group" id="type_ComplaintDetailCollectionType-type-hierarchy-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailCollectionType-type-hierarchy-panel-group" href="#type_ComplaintDetailCollectionType-type-hierarchy-collapse">Type hierarchy</a>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailCollectionType-type-hierarchy-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Super-types:</th>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <th>Sub-types:</th>
+                        <td>None</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintDetailCollectionType-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailCollectionType-properties-table-panel-group" href="#type_ComplaintDetailCollectionType-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailCollectionType-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Name</th>
+                        <td>ComplaintDetailCollectionType</td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+                        </th>
+                        <td>no</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintDetailCollectionType-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailCollectionType-doc-panel-panel-group" href="#type_ComplaintDetailCollectionType-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailCollectionType-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">No documentation provided.</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintDetailCollectionType-instance-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailCollectionType-instance-table-panel-group" href="#type_ComplaintDetailCollectionType-instance-table-collapse">XML Instance Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.&#xA;         &lt;ul&gt;&#xA;         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;&#xA;         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;&#xA;         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;&#xA;         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;&#xA;         &lt;li&gt;More stuff&lt;/li&gt;&#xA;         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;&#xA;         &lt;/ul&gt;&#xA;      ">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailCollectionType-instance-table-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;...</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;Complaint&gt;</span> <span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintDetailType&quot; type definition." href="#type_ComplaintDetailType">ComplaintDetailType</a></span> <span class="nt">&lt;/Complaint&gt;</span> <span class="cs">[0..*]</span>
+<span class="nt">&lt;/...&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintDetailCollectionType-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailCollectionType-schemaComponent-panel-group" href="#type_ComplaintDetailCollectionType-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailCollectionType-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span> <span class="na">name=</span><span class="s">"ComplaintDetailCollectionType"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"Complaint"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintDetailType&quot; type definition." href="#type_ComplaintDetailType">ComplaintDetailType</a></span>"</span> <span class="na">minOccurs=</span><span class="s">"0"</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+            <h3 class="xs3p-subsection-heading">Complex Type: <a id="type_ComplaintDetailType" class="name" data-html="true" data-placement="bottom" data-toggle="tooltip" title="Schema component name.">ComplaintDetailType</a></h3>
+            <div class="panel-group" id="type_ComplaintDetailType-type-hierarchy-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailType-type-hierarchy-panel-group" href="#type_ComplaintDetailType-type-hierarchy-collapse">Type hierarchy</a>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailType-type-hierarchy-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Super-types:</th>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <th>Sub-types:</th>
+                        <td>None</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintDetailType-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailType-properties-table-panel-group" href="#type_ComplaintDetailType-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailType-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Name</th>
+                        <td>ComplaintDetailType</td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+                        </th>
+                        <td>no</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintDetailType-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailType-doc-panel-panel-group" href="#type_ComplaintDetailType-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailType-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">No documentation provided.</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintDetailType-instance-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailType-instance-table-panel-group" href="#type_ComplaintDetailType-instance-table-collapse">XML Instance Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.&#xA;         &lt;ul&gt;&#xA;         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;&#xA;         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;&#xA;         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;&#xA;         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;&#xA;         &lt;li&gt;More stuff&lt;/li&gt;&#xA;         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;&#xA;         &lt;/ul&gt;&#xA;      ">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailType-instance-table-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;...</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;ComplaintId&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> <span class="nt">&lt;/ComplaintId&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ComplaintId" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EJH-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;IssuerIdentifer&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityIdentifierType" class="externalLink">EntityIdentifierType</a></span> <span class="nt">&lt;/IssuerIdentifer&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for IssuerIdentifer" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0ETH-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;IssuerProductIdentifier&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ProductIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_ProductIdentifierType" class="externalLink">ProductIdentifierType</a></span> <span class="nt">&lt;/IssuerProductIdentifier&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;IssuerProductAlternativeIdentifiers&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ProductIdentifierCollectionType&quot; type definition(located in external schema documentation)." href="Common.html#type_ProductIdentifierCollectionType" class="externalLink">ProductIdentifierCollectionType</a></span> <span class="nt">&lt;/IssuerProductAlternativeIdentifiers&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;ProductName&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> <span class="nt">&lt;/ProductName&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;DistributorIdentifier&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityIdentifierType" class="externalLink">EntityIdentifierType</a></span> <span class="nt">&lt;/DistributorIdentifier&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for DistributorIdentifier" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0ELAAC-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;DistributorProductIdentifier&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ProductIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_ProductIdentifierType" class="externalLink">ProductIdentifierType</a></span> <span class="nt">&lt;/DistributorProductIdentifier&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;DistributorProductAlternativeIdentifiers&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ProductIdentifierCollectionType&quot; type definition(located in external schema documentation)." href="Common.html#type_ProductIdentifierCollectionType" class="externalLink">ProductIdentifierCollectionType</a></span> <span class="nt">&lt;/DistributorProductAlternativeIdentifiers&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;ComplaintType&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> <span class="nt">&lt;/ComplaintType&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;IsSalesDistributionComplaint&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span> <span class="nt">&lt;/IsSalesDistributionComplaint&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;IsProductIssuerComplaint&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span> <span class="nt">&lt;/IsProductIssuerComplaint&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;HasFinancialImpact&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span> <span class="nt">&lt;/HasFinancialImpact&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for HasFinancialImpact" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EMBAC-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;ComplaintDate&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:date</span> <span class="nt">&lt;/ComplaintDate&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ComplaintDate" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EZBAC-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;ComplaintResolutionDate&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:date</span> <span class="nt">&lt;/ComplaintResolutionDate&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ComplaintResolutionDate" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EGCAC-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;ComplaintContent&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> <span class="nt">&lt;/ComplaintContent&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ComplaintContent" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EQCAC-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+<span class="nt">&lt;/...&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintDetailType-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintDetailType-schemaComponent-panel-group" href="#type_ComplaintDetailType-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintDetailType-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span> <span class="na">name=</span><span class="s">"ComplaintDetailType"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ComplaintId"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"IssuerIdentifer"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityIdentifierType" class="externalLink">EntityIdentifierType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"IssuerProductIdentifier"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ProductIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_ProductIdentifierType" class="externalLink">ProductIdentifierType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"IssuerProductAlternativeIdentifiers"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ProductIdentifierCollectionType&quot; type definition(located in external schema documentation)." href="Common.html#type_ProductIdentifierCollectionType" class="externalLink">ProductIdentifierCollectionType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ProductName"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"DistributorIdentifier"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityIdentifierType" class="externalLink">EntityIdentifierType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"DistributorProductIdentifier"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ProductIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_ProductIdentifierType" class="externalLink">ProductIdentifierType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"DistributorProductAlternativeIdentifiers"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ProductIdentifierCollectionType&quot; type definition(located in external schema documentation)." href="Common.html#type_ProductIdentifierCollectionType" class="externalLink">ProductIdentifierCollectionType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ComplaintType"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"IsSalesDistributionComplaint"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"IsProductIssuerComplaint"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"HasFinancialImpact"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ComplaintDate"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:date</span>"</span> <span class="na">nillable=</span><span class="s">"false"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ComplaintResolutionDate"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:date</span>"</span> <span class="na">nillable=</span><span class="s">"true"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ComplaintContent"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+            <h3 class="xs3p-subsection-heading">Complex Type: <a id="type_ComplaintsReportBodyType" class="name" data-html="true" data-placement="bottom" data-toggle="tooltip" title="Schema component name.">ComplaintsReportBodyType</a></h3>
+            <div class="panel-group" id="type_ComplaintsReportBodyType-type-hierarchy-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportBodyType-type-hierarchy-panel-group" href="#type_ComplaintsReportBodyType-type-hierarchy-collapse">Type hierarchy</a>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportBodyType-type-hierarchy-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Super-types:</th>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <th>Sub-types:</th>
+                        <td>None</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportBodyType-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportBodyType-properties-table-panel-group" href="#type_ComplaintsReportBodyType-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportBodyType-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Name</th>
+                        <td>ComplaintsReportBodyType</td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+                        </th>
+                        <td>no</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportBodyType-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportBodyType-doc-panel-panel-group" href="#type_ComplaintsReportBodyType-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportBodyType-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">No documentation provided.</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportBodyType-instance-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportBodyType-instance-table-panel-group" href="#type_ComplaintsReportBodyType-instance-table-collapse">XML Instance Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.&#xA;         &lt;ul&gt;&#xA;         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;&#xA;         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;&#xA;         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;&#xA;         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;&#xA;         &lt;li&gt;More stuff&lt;/li&gt;&#xA;         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;&#xA;         &lt;/ul&gt;&#xA;      ">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportBodyType-instance-table-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;...</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;ComplaintEntities&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityCollectionType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityCollectionType" class="externalLink">EntityCollectionType</a></span> <span class="nt">&lt;/ComplaintEntities&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ComplaintEntities" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EME-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;EntityRelationships&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityRelationshipCollectionType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityRelationshipCollectionType" class="externalLink">EntityRelationshipCollectionType</a></span> <span class="nt">&lt;/EntityRelationships&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for EntityRelationships" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EYE-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;ReportingEntityIdentifier&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityIdentifierType" class="externalLink">EntityIdentifierType</a></span> <span class="nt">&lt;/ReportingEntityIdentifier&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ReportingEntityIdentifier" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0ECF-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;Complaints&gt;</span> <span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintDetailCollectionType&quot; type definition." href="#type_ComplaintDetailCollectionType">ComplaintDetailCollectionType</a></span> <span class="nt">&lt;/Complaints&gt;</span> <span class="cs">[1]</span>
+<span class="nt">&lt;/...&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportBodyType-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportBodyType-schemaComponent-panel-group" href="#type_ComplaintsReportBodyType-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportBodyType-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span> <span class="na">name=</span><span class="s">"ComplaintsReportBodyType"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ComplaintEntities"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityCollectionType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityCollectionType" class="externalLink">EntityCollectionType</a></span>"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"EntityRelationships"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityRelationshipCollectionType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityRelationshipCollectionType" class="externalLink">EntityRelationshipCollectionType</a></span>"</span> <span class="na">minOccurs=</span><span class="s">"1"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ReportingEntityIdentifier"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;EntityIdentifierType&quot; type definition(located in external schema documentation)." href="Common.html#type_EntityIdentifierType" class="externalLink">EntityIdentifierType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"Complaints"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintDetailCollectionType&quot; type definition." href="#type_ComplaintDetailCollectionType">ComplaintDetailCollectionType</a></span>"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+            <h3 class="xs3p-subsection-heading">Complex Type: <a id="type_ComplaintsReportFooterType" class="name" data-html="true" data-placement="bottom" data-toggle="tooltip" title="Schema component name.">ComplaintsReportFooterType</a></h3>
+            <div class="panel-group" id="type_ComplaintsReportFooterType-type-hierarchy-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportFooterType-type-hierarchy-panel-group" href="#type_ComplaintsReportFooterType-type-hierarchy-collapse">Type hierarchy</a>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportFooterType-type-hierarchy-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Super-types:</th>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <th>Sub-types:</th>
+                        <td>None</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportFooterType-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportFooterType-properties-table-panel-group" href="#type_ComplaintsReportFooterType-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportFooterType-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Name</th>
+                        <td>ComplaintsReportFooterType</td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+                        </th>
+                        <td>no</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportFooterType-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportFooterType-doc-panel-panel-group" href="#type_ComplaintsReportFooterType-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportFooterType-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">No documentation provided.</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportFooterType-instance-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportFooterType-instance-table-panel-group" href="#type_ComplaintsReportFooterType-instance-table-collapse">XML Instance Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.&#xA;         &lt;ul&gt;&#xA;         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;&#xA;         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;&#xA;         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;&#xA;         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;&#xA;         &lt;li&gt;More stuff&lt;/li&gt;&#xA;         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;&#xA;         &lt;/ul&gt;&#xA;      ">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportFooterType-instance-table-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;...</span>
+ <span class="na">NilReportCount=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:positiveInteger</span>"</span> <span class="cs">[0..1]</span> <button title="Show documentation for NilReportCount" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0E4F-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+ <span class="na">NonNilReportCount=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:positiveInteger</span>"</span> <span class="cs">[0..1]</span> <button title="Show documentation for NonNilReportCount" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EHG-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+<span class="nt">/&gt; </span>
+
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportFooterType-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportFooterType-schemaComponent-panel-group" href="#type_ComplaintsReportFooterType-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportFooterType-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span> <span class="na">name=</span><span class="s">"ComplaintsReportFooterType"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:attribute</span> <span class="na">name=</span><span class="s">"NilReportCount"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:positiveInteger</span>"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:attribute</span> <span class="na">name=</span><span class="s">"NonNilReportCount"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:positiveInteger</span>"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+            <h3 class="xs3p-subsection-heading">Complex Type: <a id="type_ComplaintsReportHeaderType" class="name" data-html="true" data-placement="bottom" data-toggle="tooltip" title="Schema component name.">ComplaintsReportHeaderType</a></h3>
+            <div class="panel-group" id="type_ComplaintsReportHeaderType-type-hierarchy-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportHeaderType-type-hierarchy-panel-group" href="#type_ComplaintsReportHeaderType-type-hierarchy-collapse">Type hierarchy</a>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportHeaderType-type-hierarchy-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Super-types:</th>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <th>Sub-types:</th>
+                        <td>None</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportHeaderType-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportHeaderType-properties-table-panel-group" href="#type_ComplaintsReportHeaderType-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportHeaderType-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Name</th>
+                        <td>ComplaintsReportHeaderType</td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+                        </th>
+                        <td>no</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportHeaderType-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportHeaderType-doc-panel-panel-group" href="#type_ComplaintsReportHeaderType-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportHeaderType-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="annotation documentation" id="wdoc-ID0EFC">
+                      <div class="hidden" id="ID0EFC-doc-raw">This type provides the header data for a Complaints report</div>
+                      <div class="xs3p-doc" id="ID0EFC-doc"> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportHeaderType-instance-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportHeaderType-instance-table-panel-group" href="#type_ComplaintsReportHeaderType-instance-table-collapse">XML Instance Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.&#xA;         &lt;ul&gt;&#xA;         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;&#xA;         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;&#xA;         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;&#xA;         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;&#xA;         &lt;li&gt;More stuff&lt;/li&gt;&#xA;         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;&#xA;         &lt;/ul&gt;&#xA;      ">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportHeaderType-instance-table-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;...</span>
+ <span class="na"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;StandardVersion&quot; attribute declaration(located in external schema documentation)." href="Common.html#attribute_StandardVersion" class="externalLink">StandardVersion</a>=</span><span class="s">"" <span class="cs">[1]</span> <button title="Show documentation for " class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EVD-popup"><span class="glyphicon glyphicon-info-sign"> </span></button></span>
+<span class="nt">&gt;</span>
+   <span class="nt">&lt;ReportIdentifier&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> <span class="nt">&lt;/ReportIdentifier&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ReportIdentifier" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0ERC-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;ReportExtractionDateTime&gt;</span> <span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span> <span class="nt">&lt;/ReportExtractionDateTime&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ReportExtractionDateTime" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0E2C-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+   <span class="nt">&lt;ReportSelectionRange&gt;</span> <span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ReportSelectionRangeType&quot; type definition(located in external schema documentation)." href="Common.html#type_ReportSelectionRangeType" class="externalLink">ReportSelectionRangeType</a></span> <span class="nt">&lt;/ReportSelectionRange&gt;</span> <span class="cs">[1]</span> <button title="Show documentation for ReportSelectionRange" class="btn btn-link btn-doc" data-toggle="modal" data-target="#ID0EID-popup"><span class="glyphicon glyphicon-info-sign"> </span></button>
+<span class="nt">&lt;/...&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportHeaderType-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportHeaderType-schemaComponent-panel-group" href="#type_ComplaintsReportHeaderType-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportHeaderType-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span> <span class="na">name=</span><span class="s">"ComplaintsReportHeaderType"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ReportIdentifier"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>"</span> <span class="na">nillable=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ReportExtractionDateTime"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"ReportSelectionRange"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;ReportSelectionRangeType&quot; type definition(located in external schema documentation)." href="Common.html#type_ReportSelectionRangeType" class="externalLink">ReportSelectionRangeType</a></span>"</span> <span class="na">nillable=</span><span class="s">"false"</span> <span class="na">maxOccurs=</span><span class="s">"1"</span> <span class="na">minOccurs=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+<span class="comment" style="margin-left: 3em">&lt;-- Attributes --&gt;</span>   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:attribute</span> <span class="na">ref=</span><span class="s">"<a href="#ns_ddoc" title="Find out namespace of 'ddoc' prefix">ddoc</a>:<a title="Jump to &quot;StandardVersion&quot; attribute declaration(located in external schema documentation)." href="Common.html#attribute_StandardVersion" class="externalLink">StandardVersion</a>"</span> <span class="na">use=</span><span class="s">"required"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+            <h3 class="xs3p-subsection-heading">Complex Type: <a id="type_ComplaintsReportType" class="name" data-html="true" data-placement="bottom" data-toggle="tooltip" title="Schema component name.">ComplaintsReportType</a></h3>
+            <div class="panel-group" id="type_ComplaintsReportType-type-hierarchy-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportType-type-hierarchy-panel-group" href="#type_ComplaintsReportType-type-hierarchy-collapse">Type hierarchy</a>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportType-type-hierarchy-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Super-types:</th>
+                        <td>None</td>
+                      </tr>
+                      <tr>
+                        <th>Sub-types:</th>
+                        <td>None</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportType-properties-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportType-properties-table-panel-group" href="#type_ComplaintsReportType-properties-table-collapse">Properties</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This table displays the properties of the schema component.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportType-properties-table-collapse" class="panel-collapse collapse in">
+                  <table class="table table-striped xs3p-in-panel-table">
+                    <tbody>
+                      <tr>
+                        <th>Name</th>
+                        <td>ComplaintsReportType</td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+                        </th>
+                        <td>no</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportType-doc-panel-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportType-doc-panel-panel-group" href="#type_ComplaintsReportType-doc-panel-collapse">Documentation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="This panel contains the schema components documentation.">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportType-doc-panel-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="annotation documentation" id="wdoc-ID0ENB">
+                      <div class="hidden" id="ID0ENB-doc-raw">This type defines the report body structure</div>
+                      <div class="xs3p-doc" id="ID0ENB-doc"> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportType-instance-table-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportType-instance-table-panel-group" href="#type_ComplaintsReportType-instance-table-collapse">XML Instance Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The XML Instance Representation table shows the schema component's content as an XML instance.&#xA;         &lt;ul&gt;&#xA;         &lt;li&gt;The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].&lt;/li&gt;&#xA;         &lt;li&gt;Model group information are shown in gray, e.g. Start Choice ... End Choice.&lt;/li&gt;&#xA;         &lt;li&gt;For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in &lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;&#xA;         &lt;li&gt;If an element/attribute has a fixed value, the fixed value is shown in green.&lt;/li&gt;&#xA;         &lt;li&gt;More stuff&lt;/li&gt;&#xA;         &lt;li&gt;If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked.&lt;/li&gt;&#xA;         &lt;/ul&gt;&#xA;      ">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportType-instance-table-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;...</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;Header&gt;</span> <span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportHeaderType&quot; type definition." href="#type_ComplaintsReportHeaderType">ComplaintsReportHeaderType</a></span> <span class="nt">&lt;/Header&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;Body&gt;</span> <span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportBodyType&quot; type definition." href="#type_ComplaintsReportBodyType">ComplaintsReportBodyType</a></span> <span class="nt">&lt;/Body&gt;</span> <span class="cs">[1]</span>
+   <span class="nt">&lt;Footer&gt;</span> <span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportFooterType&quot; type definition." href="#type_ComplaintsReportFooterType">ComplaintsReportFooterType</a></span> <span class="nt">&lt;/Footer&gt;</span> <span class="cs">[1]</span>
+<span class="nt">&lt;/...&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="type_ComplaintsReportType-schemaComponent-panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="xs3p-panel-title" data-toggle="collapse" data-parent="#type_ComplaintsReportType-schemaComponent-panel-group" href="#type_ComplaintsReportType-schemaComponent-collapse">Schema Component Representation</a>
+                    <span class="pull-right xs3p-panel-help">
+                      <button type="button" class="btn btn-doc" data-container="body" data-toggle="popover" data-placement="left" data-html="true" data-content="The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)">
+                        <span class="glyphicon glyphicon-question-sign"> </span>
+                      </button>
+                    </span>
+                  </h4>
+                </div>
+                <div id="type_ComplaintsReportType-schemaComponent-collapse" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <pre class="codehilite">
+<code><span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType</span> <span class="na">name=</span><span class="s">"ComplaintsReportType"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"Header"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportHeaderType&quot; type definition." href="#type_ComplaintsReportHeaderType">ComplaintsReportHeaderType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"Body"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportBodyType&quot; type definition." href="#type_ComplaintsReportBodyType">ComplaintsReportBodyType</a></span>"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:element</span> <span class="na">name=</span><span class="s">"Footer"</span> <span class="na">type=</span><span class="s">"<span class="type"><a href="#ns_mstns" title="Find out namespace of 'mstns' prefix">mstns</a>:<a title="Jump to &quot;ComplaintsReportFooterType&quot; type definition." href="#type_ComplaintsReportFooterType">ComplaintsReportFooterType</a></span>"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:sequence&gt;</span>
+<span class="nt">&lt;/<a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:complexType&gt;</span>
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+          </section>
+          <div id="glossary">
+            <h2>
+              <a id="Glossary">Glossary</a>
+            </h2>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_Abstract">Abstract</a> </span>(Applies to complex type definitions and element declarations). An abstract element or complex type cannot used to validate an element instance. If there is a reference to an abstract element, only element declarations that can substitute the abstract element can be used to validate the instance. For references to abstract type definitions, only derived types can be used.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_All">All Model Group</a> </span>Child elements can be provided <em>in any order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-all" href="http://www.w3.org/TR/xmlschema-1/#element-all">http://www.w3.org/TR/xmlschema-1/#element-all</a>.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_Choice">Choice Model Group</a> </span>
+              <em>Only one</em> from the list of child elements and model groups can be provided in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-choice" href="http://www.w3.org/TR/xmlschema-1/#element-choice">http://www.w3.org/TR/xmlschema-1/#element-choice</a>.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_CollapseWS">Collapse Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32). Then, collapse contiguous sequences of space characters into single space character, and remove leading and trailing space characters.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_ElemBlock">Disallowed Substitutions</a> </span>(Applies to element declarations). If <em>substitution</em> is specified, then <a title="Look up 'substitution group' in glossary" href="#term_SubGroup">substitution group</a> members cannot be used in place of the given element declaration to validate element instances. If <em>derivation methods</em>, e.g. extension, restriction, are specified, then the given element declaration will not validate element instances that have types derived from the element declaration's type using the specified derivation methods. Normally, element instances can override their declaration's type by specifying an <code>xsi:type</code> attribute.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_Key">Key Constraint</a> </span>Like <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>, but additionally requires that the specified value(s) must be provided. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_KeyRef">Key Reference Constraint</a> </span>Ensures that the specified value(s) must match value(s) from a <a title="Look up 'Key Constraint' in glossary" href="#term_Key">Key Constraint</a> or <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_ModelGroup">Model Group</a> </span>Groups together element content, specifying the order in which the element content can occur and the number of times the group of element content may be repeated. See: <a title="http://www.w3.org/TR/xmlschema-1/#Model_Groups" href="http://www.w3.org/TR/xmlschema-1/#Model_Groups">http://www.w3.org/TR/xmlschema-1/#Model_Groups</a>.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_Nillable">Nillable</a> </span>(Applies to element declarations). If an element declaration is nillable, instances can use the <code>xsi:nil</code> attribute. The <code>xsi:nil</code> attribute is the boolean attribute, <em>nil</em>, from the <em>http://www.w3.org/2001/XMLSchema-instance</em> namespace. If an element instance has an <code>xsi:nil</code> attribute set to true, it can be left empty, even though its element declaration may have required content.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_Notation">Notation</a> </span>A notation is used to identify the format of a piece of data. Values of elements and attributes that are of type, NOTATION, must come from the names of declared notations. See: <a title="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations" href="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations">http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations</a>.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_PreserveWS">Preserve Whitespace Policy</a> </span>Preserve whitespaces exactly as they appear in instances.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_TypeFinal">Prohibited Derivations</a> </span>(Applies to type definitions). Derivation methods that cannot be used to create sub-types from a given type definition.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_TypeBlock">Prohibited Substitutions</a> </span>(Applies to complex type definitions). Prevents sub-types that have been derived using the specified derivation methods from validating element instances in place of the given type definition.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_ReplaceWS">Replace Whitespace Policy</a> </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32).</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_Sequence">Sequence Model Group</a> </span>Child elements and model groups must be provided <em>in the specified order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-sequence" href="http://www.w3.org/TR/xmlschema-1/#element-sequence">http://www.w3.org/TR/xmlschema-1/#element-sequence</a>.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_SubGroup">Substitution Group</a> </span>Elements that are <em>members</em> of a substitution group can be used wherever the <em>head</em> element of the substitution group is referenced.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_ElemFinal">Substitution Group Exclusions</a> </span>(Applies to element declarations). Prohibits element declarations from nominating themselves as being able to substitute a given element declaration, if they have types that are derived from the original element's type using the specified derivation methods.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_TargetNS">Target Namespace</a> </span>The target namespace identifies the namespace that components in this schema belongs to. If no target namespace is provided, then the schema components do not belong to any namespace.</p>
+            <p>
+              <span class="glossaryTerm">
+                <a id="term_Unique">Uniqueness Constraint</a> </span>Ensures uniqueness of an element/attribute value, or a combination of values, within a specified scope. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions" href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+            <div style="text-align: right; clear: both;">
+              <a href="#top" title="Go to top of page">
+                <span class="glyphicon glyphicon-chevron-up"> </span>
+              </a>
+            </div>
+            <hr />
+          </div>
+          <p class="footer">Generated by <a href="http://github.com/bitfehler/xs3p">xs3p-ch</a> (fork of <a href="http://xml.fiforms.org/xs3p/">xs3p</a>)
+                . Last Modified: <script type="text/javascript">
+<!--
+document.write(document.lastModified);
+// -->
+</script></p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" type="text/javascript" charset="UTF-8"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript" charset="UTF-8"> </script>
+    <script>
+
+               $(function () { $("[data-toggle='tooltip']").tooltip(); });
+               $(function () { $("[data-toggle='popover']").popover(); });
+
+               var c = new Markdown.Converter();
+               $('.xs3p-doc').each(function(i, obj) {
+                  var rawDocID = '#' + $(this).attr('id') + '-raw';
+                  var indent = $(rawDocID).html().match("^\\n[\\t ]*");
+                  if (!(indent === null)) {
+                     normalized = $(rawDocID).html().replace(new RegExp(indent[0], "gm"), "\n");
+                  } else {
+                     normalized = $(rawDocID).html();
+                  }
+                  $(this).html(c.makeHtml(normalized));
+                  $(this).find('code,pre').each(function(i, block) {
+                     $(this).html($(this).text());
+                  });
+               });
+
+               $(window).scroll(function() {
+                  if ($(".xs3p-sidebar").css("position") == "fixed" && $(window).height() < $(".xs3p-sidebar").height()) {
+                     var perc = $(window).scrollTop() / $("#xs3p-content").height();
+                     var overflow = $(".xs3p-sidebar").height() + 105 - $(window).height();
+                     $(".xs3p-sidebar").css("top", (65 - Math.round(overflow * perc)) + "px");
+                  }
+               });
+               $(window).resize(function() {
+                  if ($(".xs3p-sidebar").css("position") == "fixed") {
+                     $(".xs3p-sidebar").css("top", "65px");
+                  }
+               });
+               </script>
+  </body>
+</html>
