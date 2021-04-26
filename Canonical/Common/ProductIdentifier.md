@@ -1,16 +1,285 @@
 **Product identifier**
 
-| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/conditional** | **Outstanding items** |
-| --- | --- | --- | --- | --- | --- |
-| | Product APIR code | The product&#39;s APIR code. Must include if available | | M if available | |
-| --- | --- | --- | --- | --- | --- |
-| | Product ISIN code | The product&#39;s ISIN code. Must include if available | | M if available | |
-| | Listing exchange | Code of exchange the product is listed on, using ISO Market Identifier Code (MIC). Must include if product is listed.If | ISO MIC – 4 character alpha | M if available | |
-| | Product exchange code | The product&#39;s exchange code (for listed products). Must include if available. | | M if available | |
-| | Product ARSN | Product ARSN. Must include if available | Nine-digit numeric | M if available | |
-| | Product name | Financial instrument (Product) name. Note name is subject to change over time – not for machine analysis | Free text | M | |
-| | Issuer product code | Issuer determined product code – should be the type of last resort.Don&#39;t reuse industry wide codes. | Combination of code for issuer plus internal issuer determined product code? | M only if previous fields blank | |
-
+<table border="1" cellspacing="0" cellpadding="0" width="1086">
+    <thead>
+        <tr>
+            <td width="66" valign="top">
+                <p>
+                    <strong>#</strong>
+                </p>
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    <strong>Data Item </strong>
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    <strong>Definition/description</strong>
+                </p>
+            </td>
+            <td width="200" valign="top">
+                <p>
+                    <strong>Comment/coding</strong>
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    <strong>Mandatory/ optional/conditional</strong>
+                </p>
+            </td>
+            <td width="193" valign="top">
+                <p>
+                    <strong>Outstanding items</strong>
+                </p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Primary product identifier type
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    Which of the following types of IDs has been determined to
+                    be the primary ID of the product. The primary ID is used in
+                    the rest of the standard to identify the product uniquely.
+                </p>
+            </td>
+            <td width="200" valign="top">
+                <p>
+                    Single choice of {APIR/Exchange code/ISIN/USI/Issuer code}
+                </p>
+            </td>
+            <td width="156" valign="top">
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Product APIR code
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    The product’s APIR code. Must include if available
+                </p>
+            </td>
+            <td width="200" valign="top">
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Listing exchange
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    Code of exchange the product is listed on, using ISO Market
+                    Identifier Code (MIC). Must include if product is listed.
+                </p>
+                <p>
+                    If a product is listed in Australia and another country,
+                    prefer the Australian listing.
+                </p>
+            </td>
+            <td width="200" valign="top">
+                <p>
+                    ISO MIC – 4 character alpha
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Product exchange code
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    The product’s exchange code (for listed products). Must
+                    include if available.
+                </p>
+            </td>
+            <td width="200" valign="top">
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Product ISIN code
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    The product’s ISIN code. Must include if available
+                </p>
+            </td>
+            <td width="200" valign="top">
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    O if available
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    USI
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    For super funds: 9 digit APIR code or 14 digit numeric code
+                </p>
+            </td>
+            <td width="200" valign="top">
+                <p>
+                    Will be either 9 or 14 digits
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Issuer product code
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    Issuer determined product code – should be the type of last
+                    resort.
+                </p>
+                <p>
+                    Don’t reuse industry wide codes in this field.
+                </p>
+                <p>
+                    (platforms, insurance products)
+                </p>
+            </td>
+            <td width="200" valign="top">
+                <p>
+                    Combination of code for issuer plus internal issuer
+                    determined product code?
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    M only if previous fields blank
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Product name
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    Financial instrument (Product) name. Note name is subject
+                    to change over time – not for machine analysis
+                </p>
+            </td>
+            <td width="200" valign="top">
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Product ARSN
+                </p>
+            </td>
+            <td width="302" valign="top">
+                <p>
+                    Product ARSN. Must include if available.
+                </p>
+                <p>
+                    Do not use this field as primary product identifier
+                </p>
+            </td>
+            <td width="200" valign="top">
+                <p>
+                    Nine-digit numeric
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
 ## _Copyright &amp; Disclaimer for data standard_
 
 _© 2021 Financial Services Council Limited ABN 82 080 744 163._
