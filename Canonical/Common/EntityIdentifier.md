@@ -1,44 +1,962 @@
 **Reporting entity identifier**
 
-| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/ conditional** | **Outstanding items** |
-| --- | --- | --- | --- | --- | --- |
-| | Reporting Entity Name | The name of the entity providing the report to the Issuer. May or may not be a product distributor. Not for machine analysis | Free text | ? | |
-| --- | --- | --- | --- | --- | --- |
-| | Reporting Entity Type | Identifies the type of the entity providing the report to the Issuer | Single choice of {Adviser / Advice AFSL / non-advice AFSL / credit licensee / Other} | M | |
-| | Reporting Entity FAR | Financial Advice Register number of reporting entity. Must be used if reporting entity holds a FAR number. | FAR # | M if available/applicable | |
-| | Reporting Entity ACL | Australian Credit License (ACL) number of reporting entity. Must be used if reporting entity holds an ACL | | M if available | |
-| | Reporting Entity AFSL | Reporting entity AFSL. Must be used if reporting entity holds and AFSL | | M if available | |
-| | Reporting Entity ABN | Reporting entity ABN. Must be used if reporting entity holds an ABN | | M if available | |
-
+<table border="1" cellspacing="0" cellpadding="0" width="1050">
+    <thead>
+        <tr>
+            <td width="47" valign="top">
+                <p>
+                    <strong>#</strong>
+                </p>
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    <strong>Data Item </strong>
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    <strong>Definition/description</strong>
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    <strong>Comment/coding</strong>
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    <strong>Mandatory/ optional/ conditional</strong>
+                </p>
+            </td>
+            <td width="114" valign="top">
+                <p>
+                    <strong>Outstanding items</strong>
+                </p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Entity Name
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    The name of the entity included in this data item. May or
+                    may not be a product distributor.
+                </p>
+                <p>
+                    Not for machine analysis
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    ?
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Entity ABN
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Entity ABN. Must be used if reporting holds an ABN
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Entity Type
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Identifies the type of the entity
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    Single choice of {Corporation / Adviser / Advice AFSL /
+                    non-advice AFSL / credit licensee / Other}
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+                <p>
+                    How to deal with IDPS – maybe just issuing entity?
+                    (MIML/NMMT)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Entity Participant APIR
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    For fund managers, can also be used for platforms, insurers
+                    etc.
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Entity FAR
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Financial Advice Register number of entity. Must be used if
+                    reporting entity holds a FAR number.
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    FAR #
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M if available/applicable
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Entity ACL
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Australian Credit License (ACL) number of entity. Must be
+                    used if reporting entity holds an ACL
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Entity AFSL
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Reporting entity AFSL. Must be used if entity holds and
+                    AFSL
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
 **Distributor identifier**
 
-| **#** | **Data Item** | **Definition/description** | **Comment/coding** | **Mandatory/ optional/ conditional** | **Outstanding items** |
-| --- | --- | --- | --- | --- | --- |
-| | Distributor Type | Identifies the type of distributor included in this subrecord | Single choice of { Advice AFSL / Platform / non-advice AFSL/ACL} | M | |
-| --- | --- | --- | --- | --- | --- |
-| | **If distributor is advice AFSL:** || | AFSL | AFSL of distributor included in subrecord Must be included | AFSL # | M | |
-| | ABN | ABN of distributor included in subrecord Must be included | ABN # | M | |
-| | Business Name | Not for machine analysis | Free text | M | |
-| | _Contact details (for advice AFSL) – refer standard data items_ |
-| | _For each business under above AFSL: (for transactions report, only include businesses involved in transaction)_ |
-| | ABN | | | M | |
-| | Business Name | Free text. Not for machine analysis | | M | |
-| | _For each adviser under each business: (for transactions report, only include advisers involved in transaction)_ |
-| | FAR | | | M | |
-| | _Contact details (for adviser) – refer standard data items –_ _do we need to include for every adviser?_ |
-| | **If distributor is non-Advice AFSL (fund managers, platforms, online stockbrokers, insurance aggregators, mortgage brokers)** |
-| | ACL | Australian Credit License (ACL) number of entity included in this subrecord. Must be used if entity holds an ACL | | M if available | |
-| | AFSL | AFSL of distributor included in subrecord Must be included | | M | |
-| | ABN | ABN of distributor included in subrecord Must be included | | M | |
-| | Business Name | Not for machine analysis | | M | |
-| | _Contact details (for non-advice AFSL) – refer standard data items_ |
-| | _For each promoter under non-advice AFSL (for transactions report, only include promoters involved in transaction)_ |
-| | AFSL | | | M | |
-| | ABN | | | M | |
-| | Business Name | | | M | |
-| | _Contact details (for promoter) – refer standard data items_ |
+<table border="1" cellspacing="0" cellpadding="0" width="1050">
+    <thead>
+        <tr>
+            <td width="47" valign="top">
+                <p>
+                    <strong>#</strong>
+                </p>
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    <strong>Data Item </strong>
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    <strong>Definition/description</strong>
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    <strong>Comment/coding</strong>
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    <strong>Mandatory/ optional/ conditional</strong>
+                </p>
+            </td>
+            <td width="114" valign="top">
+                <p>
+                    <strong>Outstanding items</strong>
+                </p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Distributor Type
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Identifies the type of distributor included in this
+                    subrecord
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    Single choice of { Advice AFSL / Platform / non-advice
+                    AFSL/ACL}
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <strong>If distributor is advice AFSL:</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    AFSL
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    AFSL of distributor included in subrecord Must be included
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    AFSL #
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    ABN
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    ABN of distributor included in subrecord Must be included
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    ABN #
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Business Name
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Not for machine analysis
+                </p>
+            </td>
+            <td width="214" valign="top">
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <em>
+                        Contact details (for advice AFSL) – refer standard data
+                        items
+                    </em>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <em>
+                        For each business under above AFSL: (for transactions
+                        report, only include businesses involved in
+                        transaction)
+                    </em>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    ABN
+                </p>
+            </td>
+            <td width="350" valign="top">
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Business Name
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Free text. Not for machine analysis
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <em>
+                        For each adviser under each business: (for transactions
+                        report, only include advisers involved in transaction)
+                    </em>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    FAR
+                </p>
+            </td>
+            <td width="350" valign="top">
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <em>
+                        Contact details (for adviser) – refer standard data
+                        items – do we need to include for every adviser?
+                    </em>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <strong>
+                        If distributor is non-Advice AFSL (fund managers,
+                        platforms, online stockbrokers, insurance aggregators,
+                        mortgage brokers)
+                    </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    <strong> </strong>
+                    ACL
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Australian Credit License (ACL) number of entity included
+                    in this subrecord. Must be used if entity holds an ACL
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M if available
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    AFSL
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    AFSL of distributor included in subrecord Must be included
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    ABN
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    ABN of distributor included in subrecord Must be included
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Business Name
+                </p>
+            </td>
+            <td width="350" valign="top">
+                <p>
+                    Not for machine analysis
+                </p>
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <em>
+                        Contact details (for non-advice AFSL) – refer standard
+                        data items
+                    </em>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <em>
+                        For each promoter under non-advice AFSL (for
+                        transactions report, only include promoters involved in
+                        transaction)
+                    </em>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    AFSL
+                </p>
+            </td>
+            <td width="350" valign="top">
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    ABN
+                </p>
+            </td>
+            <td width="350" valign="top">
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="170" valign="top">
+                <p>
+                    Business Name
+                </p>
+            </td>
+            <td width="350" valign="top">
+            </td>
+            <td width="214" valign="top">
+            </td>
+            <td width="155" valign="top">
+                <p>
+                    M
+                </p>
+            </td>
+            <td width="114" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="47" valign="top">
+            </td>
+            <td width="1003" colspan="5" valign="top">
+                <p>
+                    <em>
+                        Contact details (for promoter) – refer standard data
+                        items
+                    </em>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
+## Contact details
+<table border="1" cellspacing="0" cellpadding="0" width="1086">
+    <thead>
+        <tr>
+            <td width="66" valign="top">
+                <p>
+                    <strong>#</strong>
+                </p>
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    <strong>Data Item </strong>
+                </p>
+            </td>
+            <td width="318" valign="top">
+                <p>
+                    <strong>Definition/description</strong>
+                </p>
+            </td>
+            <td width="227" valign="top">
+                <p>
+                    <strong>Comment/coding</strong>
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    <strong>Mandatory/ optional/conditional</strong>
+                </p>
+            </td>
+            <td width="193" valign="top">
+                <p>
+                    <strong>Outstanding items</strong>
+                </p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Contact name
+                </p>
+            </td>
+            <td width="318" valign="top">
+                <p>
+                    Contact details for this record - name
+                </p>
+            </td>
+            <td width="227" valign="top">
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p align="center">
+                    M
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Contact title
+                </p>
+            </td>
+            <td width="318" valign="top">
+                <p>
+                    Contact position title (eg Senior Product Manager;
+                    Compliance Manager).
+                </p>
+            </td>
+            <td width="227" valign="top">
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p align="center">
+                    O
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Contact phone
+                </p>
+            </td>
+            <td width="318" valign="top">
+                <p>
+                    Phone for contact person
+                </p>
+            </td>
+            <td width="227" valign="top">
+                <p>
+                    Full international number format
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p align="center">
+                    M
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Contact email
+                </p>
+            </td>
+            <td width="318" valign="top">
+                <p>
+                    Email for contact person
+                </p>
+            </td>
+            <td width="227" valign="top">
+                <p>
+                    XXX@XXX
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p align="center">
+                    M
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Contact address
+                </p>
+            </td>
+            <td width="318" valign="top">
+                <p>
+                    Address for contact person
+                </p>
+            </td>
+            <td width="227" valign="top">
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p align="center">
+                    O
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
 
+## Parent-child relationships – for further discussion/consideration
+<table border="1" cellspacing="0" cellpadding="0" width="1086">
+    <thead>
+        <tr>
+            <td width="66" valign="top">
+                <p>
+                    <strong>#</strong>
+                </p>
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    <strong>Data Item </strong>
+                </p>
+            </td>
+            <td width="318" valign="top">
+                <p>
+                    <strong>Definition/description</strong>
+                </p>
+            </td>
+            <td width="227" valign="top">
+                <p>
+                    <strong>Comment/coding</strong>
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p>
+                    <strong>Mandatory/ optional/conditional</strong>
+                </p>
+            </td>
+            <td width="193" valign="top">
+                <p>
+                    <strong>Outstanding items</strong>
+                </p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Parent primary ID
+                </p>
+            </td>
+            <td width="318" valign="top">
+            </td>
+            <td width="227" valign="top">
+            </td>
+            <td width="156" valign="top">
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Child primary ID
+                </p>
+            </td>
+            <td width="318" valign="top">
+            </td>
+            <td width="227" valign="top">
+            </td>
+            <td width="156" valign="top">
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Relationship type
+                </p>
+            </td>
+            <td width="318" valign="top">
+            </td>
+            <td width="227" valign="top">
+            </td>
+            <td width="156" valign="top">
+            </td>
+            <td width="193" valign="top">
+                <p>
+                    TBC
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## _Copyright &amp; Disclaimer for data standard_
 
