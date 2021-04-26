@@ -1,10 +1,21 @@
 # Xml
 
 This folder defines the technical implementation of the FSC DDO Data Standards in an Xml Representation.   
-It consists of three Data Standards
- - TMD distribution
- - Dealings transactions
- - Complaints
+
+It consists of three Data Standards:
+- **[Target Market Determinations](/Canonical/TargetMarketDeterminations.md)**
+    - [Target Market Determination Schema Documentation](https://financialservicescouncilau.github.io/fsc-ddo-datastandards/xml/TargetMarketDeterminations.html)
+    - [Schema Definition](/Implementations/Xml/TargetMarketDeterminations.xsd)
+- **[Complaints](/Canonical/Complaints.md)**
+    - [Complaints Schema Documentation](https://financialservicescouncilau.github.io/fsc-ddo-datastandards/xml/Complaints.html)
+    - [Complaints Schema Definition](/Implementations/Xml/Complaints.xsd)
+- **[Dealings](/Canonical/Dealings.md)**
+    - [Dealings Schema Documentation](https://financialservicescouncilau.github.io/fsc-ddo-datastandards/xml/Dealings.html)
+    - [Dealings Schema Definition](/Implementations/Xml/Dealings.xsd)
+
+There are also **Common Data Items**, shared by all Data Standards
+    - [Common Schema Documentation](https://financialservicescouncilau.github.io/fsc-ddo-datastandards/xml/Common.html)
+    - [Common Schema Definition](/Implementations/Xml/Common.xsd)
 
  ## Releasing a new version
   - Create a new target branch referencing to the new version
