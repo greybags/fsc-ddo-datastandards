@@ -3,2797 +3,2405 @@
 ## DDO machine readable fund data template	
 
 
-<table border="1" cellspacing="0" cellpadding="1" >
-    <colgroup>
-       <col span="1" style="width: 5%;">
-       <col span="1" style="width: 5%;">
-       <col span="1" style="width: 40%;">
-       <col span="1" style="width: 20%;">
-       <col span="1" style="width: 10%;">
-       <col span="1" style="width: 10%;">
-    </colgroup>
-<thead>
+<table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
         <tr>
-            <th>
+            <td>
                 <p align="center">
                     <strong>NUM</strong>
                 </p>
-            </th>
-            <th >
+            </td>
+            <td>
                 <p align="center">
                     <strong>DATA</strong>
                 </p>
-            </th>
-            <th >
+            </td>
+            <td>
                 <p align="center">
                     <strong>DEFINITION</strong>
                 </p>
-            </th>
-            <th >
+            </td>
+            <td>
                 <p align="center">
                     <strong>CODIFICATION</strong>
                 </p>
-            </th>
-            <th >
+            </td>
+            <td>
                 <p align="center">
                     <strong>COMMENT</strong>
                 </p>
-            </th>
-            <th >
+            </td>
+            <td>
                 <p align="center">
                     <strong>
                         Mandatory / Optional / Conditional / Indicative
                     </strong>
                 </p>
-            </th>
-        </th>
-</thead>    
-<tbody>
+            </td>
+        </tr>
         <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>TMD Data Set Information</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
-                    <strong>Financial Instrument - general information</strong>
+                    <strong>Product Idenifitiers </strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
                     00010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Version_Of_Data_Standard</strong>
+                    <strong>_Primary_Product_Identifier_Type</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Version number of data standard
+                    Which of the following types of IDs has been determined to
+                    be the primary ID of the product. The primary ID is used in
+                    the rest of the standard to identify the product uniquely.
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    1.0
+                    APIR/Exchange code/ISIN/USI/Issuer code
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
                     00020
                 </p>
             </td>
-            <td >
-                <p>
-                    <strong>_Date_Approved</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Date that this TMD data template version was approved
-                </p>
-            </td>
-            <td >
-                <p>
-                    DD-MM-YYYY
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00030
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Date_Sent</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Date that this TMD data template version was sent
-                </p>
-            </td>
-            <td >
-                <p>
-                    DD-MM-YYYY
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00040
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Issuer_AFSL</strong>
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00050
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Issuer_ABN</strong>
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00060
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Product_APIR_Code</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    APIR code
+                    The product’s APIR code. Must include if available
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M if available </strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    00070
+                    00030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Product_ISIN_Code</strong>
+                    <strong>_Listing_Exchange </strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    ISIN code
+                    Code of exchange the product is listed on, using ISO Market
+                    Identifier Code (MIC). Must include if product is listed.
+                    <br/>
+                    If a product is listed in Australia and another country,
+                    prefer the Australian listing.
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    ISO MIC – 4 character alpha
+                </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M if available </strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    00080
+                    00040
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Product_Exchange_Code</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Exchange code
+                    The product’s exchange code (for listed products). Must
+                    include if available
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    Alphanumeric
+                </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M if available </strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    00090
+                    00050
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Product_ARSN_Code</strong>
+                    <strong>_Product_ISIN_Code</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    ARSN code
+                    The product’s ISIN code. Must include if available
                 </p>
             </td>
-            <td >
-                <p>
-                    Nine-digit numeric
-                </p>
+            <td>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>O if avaibable</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    00100
+                    00060
                 </p>
             </td>
-            <td >
-                <p>
-                    <strong>_Product_Name</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Financial instrument (Product) name
-                </p>
-            </td>
-            <td >
-                <p>
-                    Free text
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00110
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Issuer_Product_Code</strong>
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00120
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Product_Issuers_Name</strong>
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00130
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Product_ Type</strong>
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p>
-                    One of the options in the following closed list to be used:
+                    Issuer determined product code – should be the type of last
+                    resort. Don’t reuse industry wide codes in this field.
                     <br/>
-                    1 - Fund
-                    <br/>
-                    2 - Managed Account
+                    (platforms, insurance products)
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
+            </td>
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M only if previous fields blank</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    00140
+                    00070
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_TMD_Version</strong>
+                    <strong>_Product_Name</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Version number of the TMD. Can be non-integer. Major
-                    versions increment by 1. Minor changes (backwards
-                    compatible) increment by less than 1
+                    Financial instrument (Product) name
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    00080
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Product_ARSN</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Product ARSN. Must include if available.
+                    <br/>
+                    Do not use this field as primary product identifier
+                </p>
+            </td>
+            <td>
+                <p>
+                    Nine-digit numeric
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M if available </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <p>
+                    <strong>Contact Details</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    01010
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Contact_Name</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Contact details for this record - name
+                </p>
+            </td>
+            <td>
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    01020
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Contact_Title</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Contact position title (eg Senior Product Manager;
+                    Compliance Manager).
+                </p>
+            </td>
+            <td>
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>O</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    01030
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Contact_Phone</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Phone for contact person
+                </p>
+            </td>
+            <td>
+                <p>
+                    Full international number format
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    01040
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Contact_Email</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Email for contact person
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    01050
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Contact_Address</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Address for contact person
+                </p>
+            </td>
+            <td>
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>O</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <p>
+                    <strong>
+                        Data standard for DDO – TMDs for Investment Management
+                    </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    02010
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Version_Of_Data_Standard</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Version number of data standard. Can be non-integer. Major
+                    versions should increment by 1. Minor changes (backwards
+                    compatible) can increment by less than 1. (eg 2.1, 2.2,
+                    2.3)
+                </p>
+            </td>
+            <td>
                 <p>
                     1.0
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    02020
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Date_Sent</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Date that this TMD data template version was sent
+                </p>
+            </td>
+            <td>
+                <p>
+                    DD-MM-YYYY
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    02030
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Issuer_AFSL</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Issuer AFSL
+                </p>
+            </td>
+            <td>
+                <p>
+                    Nine-digit numeric
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>O</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    02040
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Issuer_ABN</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Issuer ABN
+                </p>
+            </td>
+            <td>
+                <p>
+                    Nine-digit numeric
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    02050
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Issuers_Name</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Name of product issuer
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p>
+                    <strong> </strong>
+                </p>
+            </td>
+            <td>
                 <p align="center">
                     <strong> </strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    00150
+                    02060
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    <strong>_TMD_Version</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Version number of the TMD (integers only).
+                </p>
+            </td>
+            <td>
+                <p>
+                    1.0
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    02070
+                </p>
+            </td>
+            <td>
                 <p>
                     <strong>_TMD_Status</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     The status of the TMD which indicates whether it should be
                     distributed. Available / Under review / Unavailable – stop
                     distribution / Closed
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     A / U / US / C
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    00160
+                    02080
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    <strong>_Date_Approved</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Date that this TMD data template version was approved
+                </p>
+            </td>
+            <td>
+                <p>
+                    DD-MM-YYYY
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    02090
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_TMD_PDF_Link</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    URL link to location of PDF version of the TMD
+                </p>
+            </td>
+            <td>
+                <p>
+                    www.link/TMD.com.au
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong> </strong>
+                </p>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>O</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    02100
+                </p>
+            </td>
+            <td>
                 <p>
                     <strong>_Mandatory_Review_Date</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Next mandatory review date for this TMD version. A review
                     can occur before this date.
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     DD-MM-YYYY
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
-                <p align="center">
-                    00170
-                </p>
-            </td>
-            <td >
+            <td colspan="6">
                 <p>
-                    <strong>_TMD_Contact_Name</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Contact details for this record - name
-                </p>
-            </td>
-            <td >
-                <p>
-                    Free text
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
+                    <strong>TMD Characteristics</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
-                <p align="center">
-                    00180
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_TMD_Contact_Title</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Contact position title (eg Senior Product Manager;
-                    Compliance Manager).
-                </p>
-            </td>
-            <td >
-                <p>
-                    Free text
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00190
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_TMD_Contact_Phone</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Phone for contact person
-                </p>
-            </td>
-            <td >
-                <p>
-                    Full international number format
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00200
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_TMD_Contact_Email</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Email for contact person
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00210
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_TMD_Contact_Address</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Address for contact person
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00220
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_TMD_Document_Date</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Effective date of TMD document
-                </p>
-            </td>
-            <td >
-                <p>
-                    DD-MM-YYYY
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00230
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_TMD_Document_Link</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Link to TMD document
-                </p>
-            </td>
-            <td >
-                <p>
-                    www.link/TMD.com.au
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    00240
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>
-                        _Additional_Information_In_Factsheet_For_TMD
-                    </strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Is the data in this sheet comprehensive or is there
-                    additional determination fields in the TMD document
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / N
-                </p>
-            </td>
-            <td >
-                <p>
-                    If yes, complete additional custom fields
-                </p>
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td  colspan="6">
-                <p>
-                    <strong>TARGET MARKET CONSUMER CLASS</strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>Investment objective</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    01010
+                    03010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Investment_Objective</strong>
+                    <strong>_Investment_Objective_Discription</strong>
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    The description of the investment objective of the product,
+                    including growth/ defensive split.
+                </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Free text
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
+            <td>
+                <p>
                     <strong> </strong>
-                    <strong></strong>
+                </p>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>O</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    01020
+                    03020
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Investor_Looking_For_Capital_Growth</strong>
-                    <strong></strong>
+                    <strong>_Capital_Growth</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Do the product investment objectives align with those of an
+                    investor seeking Capital Growth
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    01030
+                    03030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Investor_Looking_For_Regular_Income</strong>
-                    <strong></strong>
+                    <strong>_Capital_Preservation</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Do the product investment objectives align with those of an
+                    investor seeking Capital Preservation
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    01040
+                    03040
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Investor_Looking_For_Capital_Preservation</strong>
-                    <strong></strong>
+                    <strong>_Capital_Guaranteed</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Do the product investment objectives align with those of an
+                    investor seeking Capital Guaranteed
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    01050
+                    03050
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Investor_Looking_For_Specialist</strong>
-                    <strong></strong>
+                    <strong>_Regular_Income</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Sustainable / Ethical / Sharia / ESG:
-                    <br/>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Do the product investment objectives align with those of an
+                    investor seeking Regular Income
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
-                <p align="center">
-                    01060
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Investor_Looking_For_Capital_Guaranteed</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / Neutral / N / Negative
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>Product Use</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    02010
+                    04010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>
-                        _Product_Use_Standalone_more_than_75_percent
-                    </strong>
-                    <strong></strong>
+                    <strong>_Product_Use_Description</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    The description of the minimum suggested timeframe for
+                    holding the product
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Y / Neutral / N / Negative
+                    Free text
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    02020
+                    04020
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>
-                        _Product_Use_Core_Component_25_to_75_percent
-                    </strong>
-                    <strong></strong>
+                    <strong>_Standalone_more_than_75_percent</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Is the product intended to be used as a Solution /
+                    Standalone product
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    02030
+                    04030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>
-                        _Product_Use_Satellite_less_than_25_percent
-                    </strong>
-                    <strong></strong>
+                    <strong>_Core_Component_25_to_75_percent</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Is the product intended to be used as a core component of a
+                    portfolio
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td  colspan="6">
+            <td>
+                <p align="center">
+                    04040
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Satellite_less_than_25_percent</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Is the product intended to be used as a Satellite component
+                    of a portfolio
+                </p>
+            </td>
+            <td>
+                <p>
+                    Y / Neutral / N / Negative
+                </p>
+            </td>
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
                 <p>
                     <strong>Investment Timeframe</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    03010
+                    05010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Minimum_Suggested_Timframe</strong>
+                    <strong>_Investment_Timframe_Description</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    X years
+                    The description of the minimum suggested timeframe for
+                    holding the product
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Free text
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
+            <td>
                 <p align="center">
                     <strong> </strong>
                     <strong></strong>
                 </p>
             </td>
-        </tr>
-        <tr>
-            <td >
+            <td>
                 <p align="center">
-                    03020
+                    <strong>M</strong>
+                    <strong></strong>
                 </p>
             </td>
-            <td >
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    05020
+                </p>
+            </td>
+            <td>
                 <p>
                     <strong>
                         _Investment_Timeframe_Short_less_than_2_years
                     </strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Is it appropriate for investors to hold the product for 0-2
+                    years before selling
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
+                    <strong></strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    03030
+                    05030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Investment_Timeframe_Medium_2_to_6_years</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Is it appropriate for investors to hold the product for 2-6
+                    years before selling
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
+                    <strong></strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    03040
+                    05040
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>
                         _Investment_Timeframe_Long_more_than_6_years
                     </strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Is it appropriate for investors to hold the product for
+                    more than 6 years before selling
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
+                    <strong></strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>Risk and Return</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    04010
+                    06010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_SRM</strong>
+                    <strong>_Risk_Return_Description </strong>
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
+            <td>
                 <p>
-                    [Same as the existing SRM data field]
+                    The description of the product risk and return metrics,
+                    include risk band and the return hurdle rate
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    Free text
+                </p>
             </td>
-            <td >
-                <p align="center">
+            <td>
+                <p>
                     <strong> </strong>
-                    <strong></strong>
+                </p>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    04020
+                    06020
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>
                         _Return_Objective_Very_High_Risk_and_ Return
                     </strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Does the product have very high risk and return attributes
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    04030
+                    06030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Return_Objective_High_Risk_and_ Return</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Does the product have high risk and return attributes
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    04040
+                    06040
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Return_Objective_Medium_Risk_and_Return</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Does the product have medium risk and return attributes
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    04050
+                    06050
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Return_Objective_Low_Risk_and_Return</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Does the product have low risk and return attributes
                 </p>
             </td>
-            <td >
-                <p>
-                    Y / Neutral / N / Negative
-                </p>
-            </td>
-            <td  nowrap="" valign="bottom">
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    04060
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Return_Objective_Capital_Guaranteed</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>Redemption frequency</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    05010
+                    07010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Redemption_Frequency</strong>
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    A description of the intended redemption frequency, access
+                    constraints and other relevant liquidity considerations.
+                </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Free text
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
+            <td>
+                <p>
                     <strong> </strong>
-                    <strong></strong>
+                </p>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    05020
+                    07020
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Redemption_Frequency_Daily</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Product suitable for investors that redeem interests daily
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    05030
+                    07030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Redemption_Frequency_Weekly</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Product suitable for investors that redeem interests weekly
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    05040
+                    07040
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Redemption_Frequency_Monthly</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Product suitable for investors that redeem interests
+                    monthly
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    05050
+                    07050
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Redemption_Frequency_Quarterly</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Product suitable for investors that redeem interests
+                    quarterly
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    05060
+                    07060
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Redemption_Frequency_Annually_or_Longer</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
+                    Product suitable for investors that redeem interests
+                    annually or longer
                 </p>
             </td>
-            <td >
-                <p>
-                    Y / Neutral / N / Negative
-                </p>
-            </td>
-            <td  nowrap="" valign="bottom">
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td  colspan="6">
-                <p>
-                    <strong>Liquidity</strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    06010
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Liqudity_Profile</strong>
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p>
-                    Free text
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    06020
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Liquidity_Low</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
                     Y / Neutral / N / Negative
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td>
+                <p>
+                    In target market (Y) / Potentially in target market
+                    (Neutral) / Not considered in target market (N)
+                </p>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
-                <p align="center">
-                    06030
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Liquidity_Moderate</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / Neutral / N / Negative
-                </p>
-            </td>
-            <td  nowrap="" valign="bottom">
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    06040
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Liquidity_High</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / Neutral / N / Negative
-                </p>
-            </td>
-            <td  nowrap="" valign="bottom">
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    06050
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Liquidity_Very_High</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    In target market (green) / Potentially in target market
-                    (amber) / Not considered in target market (red)
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / Neutral / N / Negative
-                </p>
-            </td>
-            <td  nowrap="" valign="bottom">
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>DISTRIBUTION INFORMATION</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>Distribution Conditions / Restrictions</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    07010
+                    08010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Available_Direct</strong>
-                    <strong></strong>
+                    <strong>_No_Distribution_Conditions</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Yes / No
+                    Confirm if there are no distribution conditions
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / N
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
+            <td>
                 <p>
-                    <strong> </strong>
-                    <strong></strong>
+                    Select one of – Y - There are no distribution conditions /
+                    N - There are distribution conditions
+                </p>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    07020
+                    08020
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Distribution_Conditions_Direct_Retail</strong>
-                    <strong></strong>
+                    <strong>_Personal_Advice_Distribution_Only_1</strong>
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
+            <td>
                 <p>
-                    Free text
+                    Only suitable for distribution to consumers who have
+                    received personal advice – Confirm
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    07030
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Available_Advised</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Yes / No
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
                     Y / N
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    07040
+                    08030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Distribution_Conditions_Advised</strong>
-                    <strong></strong>
+                    <strong>_Personal_Advice_Distribution_Only_2</strong>
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    Only suitable for distribution to consumers who have
+                    received personal advice – set out rationale
+                </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Free Text
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>C</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    07050
+                    08040
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Available_Select_Platform</strong>
-                    <strong></strong>
+                    <strong>_Specified_Distributor_Channels_Only_1</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Yes / No
+                    Only suitable for distribution through specified
+                    distributors / specified channels - Confirm
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / N
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    07060
+                    08050
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Distribution_Conditions_Select_Platform</strong>
-                    <strong></strong>
+                    <strong>_Specified_Distributor_Channels_Only_2</strong>
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    Only suitable for distribution through specified
+                    distributors / specified channels - Specify
+                </p>
             </td>
-            <td >
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>C</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    08060
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Specified_Distributor_Channels_Only_3</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    Only suitable for distribution through specified
+                    distributors / specified channels – set out rationale
+                </p>
+            </td>
+            <td>
                 <p>
                     Free Text
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>C</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    07070
+                    08070
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Available_Broad_Based_Platform</strong>
-                    <strong></strong>
+                    <strong>_Other_Distributions_Conditions</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Yes / No
+                    Are there any other distribution conditions (ie sale via
+                    use of call script only)
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Y / N
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>C</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    07080
+                    08080
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>
-                        _Distribution_Conditions_Broad_Based_Platform
-                    </strong>
-                    <strong></strong>
+                    <strong>_Other_Distributions_Conditions_1</strong>
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    Specify and describe any other distribution conditions
+                </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Free Text
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>C</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>Review Triggers</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    08010
+                    09010
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    <strong>_Review_Triggers</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    List one trigger per subrecord. As distributors don’t need
+                    to action review triggers, there is no need for
+                    standardisation/ validation of the text
+                </p>
+            </td>
+            <td>
+                <p>
+                    Free Text
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>O</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    09020
+                </p>
+            </td>
+            <td>
                 <p>
                     <strong>_Initial_Review</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
-                <p>
-                    Y years, X months
-                </p>
+            <td>
             </td>
-            <td >
+            <td>
                 <p>
                     Free text
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>O</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    08020
+                    09030
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    <strong>_Maximum_Initial_Review_Date</strong>
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p>
+                    DD-MM-YYYY
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>O</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    09040
+                </p>
+            </td>
+            <td>
                 <p>
                     <strong>_Subsequent_Reviews</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
-                <p>
-                    Y years, X months
-                </p>
+            <td>
             </td>
-            <td >
+            <td>
                 <p>
                     Free text
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td nowrap="" valign="bottom">
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>O</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td  colspan="6">
+            <td>
+                <p align="center">
+                    09050
+                </p>
+            </td>
+            <td>
+                <p>
+                    <strong>_Maximum_Subsequent_Review_Date</strong>
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p>
+                    DD-MM-YYYY
+                </p>
+            </td>
+            <td nowrap="" valign="bottom">
+            </td>
+            <td>
+                <p align="center">
+                    <strong>O</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
                 <p>
                     <strong>Distributor Reporting Requirement</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    09010
+                    10010
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    <strong>_How_to_Send_Reports</strong>
+                </p>
+            </td>
+            <td>
+                <p>
+                    URL link to instructions (must be permanent link)
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>M</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="center">
+                    10020
+                </p>
+            </td>
+            <td>
                 <p>
                     <strong>_Acquisition_Outside_TMD</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Is there requirement for distributors to report on ALL
-                    dealings outside target market?
+                    Does issuer require reporting on transactions outside TMD
+                    that the Distributor is aware of?
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Yes / No
+                    Y / N
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    09020
+                    10030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Acquisitions_Outside_TMD_If_Y</strong>
-                    <strong></strong>
+                    <strong>_FSC_Data_Standard_Transactions</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    If Y, should report follow FSC DDO data standard for
-                    transactions? Only complete if previous is Y
+                    If previous field is answered Y, should report follow FSC
+                    DDO data standard for transactions?
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Yes / No
+                    Y / N
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
+            <td>
+                <p>
                     <strong> </strong>
-                    <strong></strong>
+                </p>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>C</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    09030
+                    10040
                 </p>
             </td>
-            <td >
-                <p>
-                    <strong>_Acquisitions_Outside_TMD_If_N</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    If N, name of alternative data standard
-                </p>
-            </td>
-            <td >
-                <p>
-                    Free text
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    09040
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Report_On_Some_Acquisitions_Outside_TM</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    If report not required on all dealings outside target
-                    market, is a report required on some dealings outside
-                    target market other than significant dealings?
-                </p>
-            </td>
-            <td >
-                <p>
-                    Yes / No
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    09050
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
                     <strong>
-                        _Report_On_Some_Acquisitions_Outside_TM_If_Y
+                        _Alternative_Data_Standard_for_Transactions
                     </strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    If Y, specify type of dealings outside target market
-                    requiring report
+                    If N, Link to alternative data standard if used
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Free text
+                    URL
                 </p>
             </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
+            <td>
+                <p>
                     <strong> </strong>
-                    <strong></strong>
+                </p>
+            </td>
+            <td>
+                <p align="center">
+                    <strong>C</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    09060
+                    10050
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>
-                        _Report_On_Some_Acquisitions_Outside_<br/>TM_Reporting_Standard_FSC
-                    </strong>
-                    <strong></strong>
+                    <strong>_Frequency_of_Report</strong>
                 </p>
             </td>
-            <td >
-                <p>
-                    Should report on some transactions follow FSC DDO data
-                    standard for transactions
-                </p>
-            </td>
-            <td >
-                <p>
-                    Yes / No
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    09070
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>
-                        _Report_On_Some_Acquisitions_Outside_<br/>TM_Reporting_Standard_FSC_If_N
-                    </strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    If N, name of alternative data standard
-                </p>
-            </td>
-            <td >
-                <p>
-                    Free text
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    09080
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Frequency_Of_Report</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
                     Required frequency of report by distributors on dealings
                     outside target market.
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    point of sale / end of calendar month / end of calendar
-                    quarter
+                    Select one of: [end of calendar month / end of calendar
+                    quarter]
                 </p>
             </td>
-            <td >
+            <td nowrap="" valign="bottom">
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>C</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    09090
+                    10060
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Required_Report_Deadline</strong>
-                    <strong></strong>
+                    <strong>_FSC_Data_Standard_for_Complaints</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Required deadline for dealings report after end of relevant
-                    period (see previous field) – in number of days. Default is
-                    10 days
+                    Is complaints reporting required to use FSC complaints
+                    standard
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    XX
+                    Y / N
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    09100
+                    10070
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Content_Of_Complaints</strong>
-                    <strong></strong>
+                    <strong>_Alternative_Data_Standard_for_Complaints</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Required content of complaints report by distributors
+                    If N, link to alternative data standard
                 </p>
             </td>
-            <td >
-                <p>
-                    Free text
-                </p>
+            <td>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>C</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    09110
+                    10080
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Complaint_Reporting_Frequency</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Required frequency of report on complaints. Default is at
                     time of complaint
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    time of complaint / end of calendar month / end of calendar
-                    quarter
+                    Select one of: [monthly/quarterly/half yearly/yearly]
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    09120
+                    10090
                 </p>
             </td>
-            <td >
-                <p>
-                    <strong>_Complaint_Reporting_Deadline</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    Required deadline for complaints report after end of
-                    relevant period (see previous field) – in number of days.
-                    Default is 10 days
-                </p>
-            </td>
-            <td >
-                <p>
-                    XX
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    09130
-                </p>
-            </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Significant_Dealings</strong>
-                    <strong></strong>
                 </p>
             </td>
-            <td >
+            <td>
+                <p>
+                    As per statutory obligations s994F(6)
+                </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Free text
                 </p>
             </td>
-            <td  nowrap="" valign="bottom">
+            <td nowrap="" valign="bottom">
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
+                    <strong>M</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>APPROPRIATENESS</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    10010
+                    11010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    <strong>_Appropriateness_of_Investment_Objective</strong>
+                    <strong>_Appropriateness</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    The Issuer has assessed and tested the product and formed
-                    the view that the product, including its key attributes, is
-                    likely to be consistent with the likely objectives,
-                    financial situation and needs of consumers in the target
-                    market as described within this TMD.
-                    <br/>
-                    <br/>
-                    Yes/No
+                    Explanation of how issuer considers TMD performs against
+                    appropriateness test as required by ASIC RG
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
-                    Y / N
+                    Free text
                 </p>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
-                    <strong> </strong>
+                    <strong>M</strong>
                     <strong></strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
-                <p align="center">
-                    10020
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Appropriateness_of_Product_Use</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    The Issuer has assessed and tested the product and formed
-                    the view that the product, including its key attributes, is
-                    likely to be consistent with the likely objectives,
-                    financial situation and needs of consumers in the target
-                    market as described within this TMD.
-                    <br/>
-                    <br/>
-                    Yes/No
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / N
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    10030
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Appropriateness_of_Investment_Timeframe</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    The Issuer has assessed and tested the product and formed
-                    the view that the product, including its key attributes, is
-                    likely to be consistent with the likely objectives,
-                    financial situation and needs of consumers in the target
-                    market as described within this TMD.
-                    <br/>
-                    <br/>
-                    Yes/No
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / N
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    10040
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Appropriateness_of_Risk_and_Return</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    The Issuer has assessed and tested the product and formed
-                    the view that the product, including its key attributes, is
-                    likely to be consistent with the likely objectives,
-                    financial situation and needs of consumers in the target
-                    market as described within this TMD.
-                    <br/>
-                    <br/>
-                    Yes/No
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / N
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    10050
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Appropriateness_of_Access_to_Capital</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    The Issuer has assessed and tested the product and formed
-                    the view that the product, including its key attributes, is
-                    likely to be consistent with the likely objectives,
-                    financial situation and needs of consumers in the target
-                    market as described within this TMD.
-                    <br/>
-                    <br/>
-                    Yes/No
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / N
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <p align="center">
-                    10060
-                </p>
-            </td>
-            <td >
-                <p>
-                    <strong>_Appropriateness_of_Liquidity</strong>
-                </p>
-            </td>
-            <td >
-                <p>
-                    The Issuer has assessed and tested the product and formed
-                    the view that the product, including its key attributes, is
-                    likely to be consistent with the likely objectives,
-                    financial situation and needs of consumers in the target
-                    market as described within this TMD.
-                    <br/>
-                    <br/>
-                    Yes/No
-                </p>
-            </td>
-            <td >
-                <p>
-                    Y / N
-                </p>
-            </td>
-            <td >
-            </td>
-            <td >
-                <p align="center">
-                    <strong> </strong>
-                    <strong></strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td  colspan="6">
+            <td colspan="6">
                 <p>
                     <strong>Additional Custom Fields</strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    11010
+                    12010
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Custom_Data_1</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Additional data used to define the target market not
                     included in the form above
                 </p>
             </td>
-            <td >
-                <p>
-                    Y / Neutral / N, Free Text
-                </p>
+            <td>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
                     <strong> </strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    11020
+                    12020
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Custom_Data_2</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Additional data used to define the target market not
                     included in the form above
                 </p>
             </td>
-            <td >
-                <p>
-                    Y / Neutral / N, Free Text
-                </p>
+            <td>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
                     <strong> </strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    11030
+                    12030
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     <strong>_Custom_Data_3</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Additional data used to define the target market not
                     included in the form above
                 </p>
             </td>
-            <td >
-                <p>
-                    Y / Neutral / N, Free Text
-                </p>
+            <td>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
                     <strong> </strong>
                 </p>
             </td>
         </tr>
         <tr>
-            <td >
+            <td>
                 <p align="center">
-                    11040
+                    12040
                 </p>
             </td>
             <td >
@@ -2801,20 +2409,17 @@
                     <strong>_Custom_Data_4</strong>
                 </p>
             </td>
-            <td >
+            <td>
                 <p>
                     Additional data used to define the target market not
                     included in the form above
                 </p>
             </td>
-            <td >
-                <p>
-                    Y / Neutral / N, Free Text
-                </p>
+            <td>
             </td>
-            <td >
+            <td>
             </td>
-            <td >
+            <td>
                 <p align="center">
                     <strong> </strong>
                 </p>
