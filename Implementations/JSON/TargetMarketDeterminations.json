@@ -1,0 +1,434 @@
+{
+    "$id": "http://test.apir.com.au/schema/tmd_update",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "Update target market determination details.",
+    "type": "object",
+    "properties": {
+        "type": "object",
+        "properties": {
+            "versionOfStandard": {
+                "type": "string",
+                "title": "Version of standard",
+                "description": "Version number of data standard. Can be non-integer. Major versions should increment by 1. Minor changes (backwards compatible) can increment by less than 1. (eg 2.1, 2.2, 2.3)."
+            },
+            "dateSent": {
+                "type": "string",
+                "title": "Date Sent",
+                "description": "Date that this report was sent."
+            },
+            "issuerAFSL": {
+                "type": "string",
+                "title": "AFSL"
+            },
+            "issuerABN": {
+                "type": "string",
+                "title": "ABN"
+            },
+            "issuerName": {
+                "type": "string",
+                "title": "Name"
+            },
+            "tmds": {
+                "type": "object",
+                "properties": {
+                    "product": {
+                        "type": "object",
+                        "properties": {
+                            "primaryIdentifier": {
+                                "type": "string",
+                                "description": "Which of the following types of IDs has been determined to be the primary ID of the product. The primary ID is used in the rest of the standard to identify the product uniquely."
+                            },
+                            "apirCode": {
+                                "type": "string",
+                                "title": "Product APIR Code",
+                                "description": "The product\u2019s APIR code. Must include if available."
+                            },
+                            "listingExchange": {
+                                "type": "string",
+                                "description": "Code of exchange the product is listed on, using ISO Market Identifier Code (MIC). Must include if product is listed.  If a product is listed in Australia and another country, prefer the Australian listing."
+                            },
+                            "exchangeCode": {
+                                "type": "string",
+                                "description": "The product\u2019s exchange code (for listed products). Must include if \u201clisting exchange\u201d is completed."
+                            },
+                            "isinCode": {
+                                "type": "string",
+                                "title": "ISIN",
+                                "description": "The product\u2019s ISIN code. Must include if available."
+                            },
+                            "usi": {
+                                "type": "string",
+                                "description": "For super funds: 9 digit APIR code or 14 digit numeric code."
+                            },
+                            "issuerCode": {
+                                "type": "string",
+                                "description": "Issuer determined product code \u2013 should be the type of last resort.  Don\u2019t reuse industry wide codes in this field.  (platforms, insurance products)."
+                            },
+                            "name": {
+                                "type": "string",
+                                "title": "Product Name",
+                                "description": "Financial instrument (Product) name. Note name is subject to change over time \u2013 not for machine analysis."
+                            },
+                            "arsn": {
+                                "type": "string",
+                                "title": "ARSN",
+                                "description": "Product ARSN. Must include if available.  Do not use this field as primary product identifier."
+                            }
+                        },
+                        "required": [
+                            "apirCode"
+                        ],
+                        "title": "Product Identifier"
+                    },
+                    "version": {
+                        "type": "string",
+                        "title": "Version Number",
+                        "description": "Version number of the TMD. Can be non-integer. Major versions increment by 1. Minor changes (backwards compatible) increment by less than 1."
+                    },
+                    "status": {
+                        "type": "integer",
+                        "title": "Status",
+                        "description": "The status of the TMD which indicates whether it should be distributed. A status of under review, unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing)."
+                    },
+                    "dateApproved": {
+                        "type": "string",
+                        "title": "Date Approved",
+                        "description": "Date that this TMD version was approved."
+                    },
+                    "mandatoryReviewDate": {
+                        "type": "string",
+                        "title": "Mandatory Review Date",
+                        "description": "Next mandatory review date for this TMD version. A review can occur before this date."
+                    },
+                    "contact": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "title": "Name",
+                                "description": "Contact details for this record - name."
+                            },
+                            "title": {
+                                "type": "string",
+                                "title": "Title",
+                                "description": "Contact position title (eg Senior Product Manager; Compliance Manager)."
+                            },
+                            "phone": {
+                                "type": "string",
+                                "title": "Phone",
+                                "description": "Phone for contact person."
+                            },
+                            "email": {
+                                "type": "string",
+                                "title": "Email",
+                                "description": "Email for contact person."
+                            },
+                            "address": {
+                                "type": "string",
+                                "title": "Address",
+                                "description": "Address for contact person."
+                            }
+                        },
+                        "title": "Contact Details"
+                    },
+                    "characteristics": {
+                        "type": "object",
+                        "properties": {
+                            "consumersInvestmentObjective": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "title": "1.1. Investment Objective Description - product description including key attributes",
+                                        "description": "A description of the investment objective of the product, including growth/defensive split."
+                                    },
+                                    "capitalGrowth": {
+                                        "type": "string",
+                                        "title": "1.2. Capital Growth",
+                                        "description": "Do the product investment objectives align with those of an investor seeking Capital Growth."
+                                    },
+                                    "capitalPreservation": {
+                                        "type": "string",
+                                        "title": "1.3. Capital Preservation",
+                                        "description": "Do the product investment objectives align with those of an investor seeking Capital Preservation."
+                                    },
+                                    "capitalGuaranteed": {
+                                        "type": "string",
+                                        "title": "1.4. Capital Guaranteed",
+                                        "description": "Do the product investment objectives align with those of an investor seeking Capital Guaranteed."
+                                    },
+                                    "regularIncome": {
+                                        "type": "string",
+                                        "title": "1.5. Regular Income",
+                                        "description": "Do the product investment objectives align with those of an investor seeking Regular Income?"
+                                    }
+                                },
+                                "title": "1. Consumer\u2019s Investment Objective"
+                            },
+                            "consumersIntendedProductUse": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "title": "2.1. Product Use Description - product description including key attributes",
+                                        "description": "A description of the investment objective of the product, including asset allocation and diversification information."
+                                    },
+                                    "solutionStandalone": {
+                                        "type": "string",
+                                        "title": "2.2. Solution / Standalone (75% - 100%)",
+                                        "description": "Is the product intended to be used as a Solution / Standalone product."
+                                    },
+                                    "coreComponent": {
+                                        "type": "string",
+                                        "title": "2.3. Core Component (25% -75%)",
+                                        "description": "Is the product intended to be used as a core component product."
+                                    },
+                                    "satellite": {
+                                        "type": "string",
+                                        "title": "2.4. Satellite (0% - 25%)",
+                                        "description": "Is the product intended to be used as a satellite product."
+                                    }
+                                },
+                                "title": "2. Consumer\u2019s Intended Product Use"
+                            },
+                            "consumersInvestmentTimeframe": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "title": "3.1. Investment Timeframe Description - product description including key attributes",
+                                        "description": "A description of the minimum suggested timeframe for holding the product."
+                                    },
+                                    "short": {
+                                        "type": "string",
+                                        "title": "3.2. Short (< 2 years)",
+                                        "description": "Is it appropriate for investors to hold the product for 0-2 years before selling."
+                                    },
+                                    "medium": {
+                                        "type": "string",
+                                        "title": "3.3. Medium (2 - 6 years)",
+                                        "description": "Is it appropriate for investors to hold the product for 2-6 years before selling."
+                                    },
+                                    "long": {
+                                        "type": "string",
+                                        "title": "3.4. Long (> 6 years)",
+                                        "description": "Is it appropriate for investors to hold the product for more than 6 years before selling."
+                                    }
+                                },
+                                "title": "3. Consumer\u2019s Investment Timeframe"
+                            },
+                            "consumersRiskAndReturnProfile": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "title": "4.1. Risk and Return description - product description including key attributes",
+                                        "description": "A description of the product risk and return metrics, include risk band and the return hurdle rate."
+                                    },
+                                    "veryHigh": {
+                                        "type": "string",
+                                        "title": "4.2. Very High",
+                                        "description": "Does the product have very high risk and return attributes."
+                                    },
+                                    "high": {
+                                        "type": "string",
+                                        "title": "4.3. High",
+                                        "description": "Does the product have high risk and return attributes."
+                                    },
+                                    "medium": {
+                                        "type": "string",
+                                        "title": "4.4. Medium",
+                                        "description": "Does the product have medium risk and return attributes."
+                                    },
+                                    "low": {
+                                        "type": "string",
+                                        "title": "4.5. Low",
+                                        "description": "Does the product have low risk and return attributes."
+                                    },
+                                    "capitalGuaranteed": {
+                                        "type": "string",
+                                        "title": "4.6. Capital Guaranteed",
+                                        "description": "Does the product have capital guaranteed attributes."
+                                    }
+                                },
+                                "title": "4. Consumer\u2019s Risk (ability to bear loss) and Return Profile"
+                            },
+                            "consumersNeedToWithdrawMoney": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "title": "5.1. Need to withdraw money description - product description including key attributes",
+                                        "description": "A description of the intended frequency and mechanism for which investors redeem interests in the product."
+                                    },
+                                    "daily": {
+                                        "type": "string",
+                                        "title": "5.2. Daily",
+                                        "description": "Product suitable for investors that redeem interests daily."
+                                    },
+                                    "weekly": {
+                                        "type": "string",
+                                        "title": "5.3. Weekly",
+                                        "description": "Product suitable for investors that redeem interests weekly."
+                                    },
+                                    "monthly": {
+                                        "type": "string",
+                                        "title": "5.4. Monthly",
+                                        "description": "Product suitable for investors that redeem interests weekly."
+                                    },
+                                    "quaterly": {
+                                        "type": "string",
+                                        "title": "5.5. Quarterly",
+                                        "description": "Product suitable for investors that redeem interests quarterly."
+                                    },
+                                    "annuallyOrLonger": {
+                                        "type": "string",
+                                        "title": "5.6. Annually or Longer",
+                                        "description": "Product suitable for investors that redeem interests annually or longer."
+                                    }
+                                },
+                                "title": "5. Customer\u2019s Need to Withdraw Money"
+                            }
+                        },
+                        "title": "TMD Characteristics"
+                    },
+                    "distributionConditions": {
+                        "type": "object",
+                        "properties": {
+                            "noDistributionConditions": {
+                                "type": "boolean",
+                                "title": "No distribution conditions",
+                                "description": "Confirm if there are no distribution conditions."
+                            },
+                            "personalAdviceDistributionOnly1": {
+                                "type": "boolean",
+                                "title": "Personal advice distribution only (1)",
+                                "description": "Only suitable for distribution to consumers who have received personal advice \u2013 Confirm."
+                            },
+                            "personalAdviceDistributionOnly2": {
+                                "type": "string",
+                                "title": "Personal advice distribution only (2)",
+                                "description": "Only suitable for distribution to consumers who have received personal advice \u2013 set out rationale."
+                            },
+                            "specifiedDistributorsOrChannelsOnly1": {
+                                "type": "boolean",
+                                "title": "Specified distributors/channels only (1)",
+                                "description": "Only suitable for distribution through specified distributors / specified channels - Confirm"
+                            },
+                            "specifiedDistributorsOrChannelsOnly2": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "title": "Specified distributors/channels only (2)",
+                                "description": "Only suitable for distribution through specified distributors / specified channels - Specify."
+                            },
+                            "specifiedDistributorsOrChannelsOnly3": {
+                                "type": "string",
+                                "title": "Specified distributors/channels only (3)",
+                                "description": "Only suitable for distribution through specified distributors / specified channels \u2013 set out rationale."
+                            },
+                            "otherDistributionConditions1": {
+                                "type": "boolean",
+                                "title": "Other distribution conditions (1)",
+                                "description": "Are there any other distribution conditions (ie sale via use of call script only)."
+                            },
+                            "otherDistributionConditions2": {
+                                "type": "string",
+                                "title": "Other distribution conditions (2)",
+                                "description": "Specify and describe any other distribution conditions."
+                            }
+                        },
+                        "title": "Distribution Conditions"
+                    },
+                    "reviewTriggers": {
+                        "type": "object",
+                        "properties": {
+                            "reviewTigger": {
+                                "type": "string",
+                                "description": "List one trigger per subrecord. As distributors don\u2019t need to action review triggers, there is no need for standardisation/validation of the text."
+                            },
+                            "initialReview": {
+                                "type": "string",
+                                "title": "Initial Review"
+                            },
+                            "maximumInitialReviewDate": {
+                                "type": "string",
+                                "title": "Maximum Initial Review Date"
+                            },
+                            "maximumSubsequentReviewDate": {
+                                "type": "string",
+                                "title": "Maximum Subsequent Review Date"
+                            }
+                        },
+                        "title": "Review Triggers"
+                    },
+                    "distributorReporting": {
+                        "type": "object",
+                        "properties": {
+                            "description": {
+                                "type": "string",
+                                "title": "How to send reports?",
+                                "description": "URL link to instructions (must be permanent link)."
+                            },
+                            "acquisitionOutsideTM": {
+                                "type": "boolean",
+                                "title": "Acquisition outside TM",
+                                "description": "Does issuer require reporting on transactions outside TMD that the Distributor is aware of?"
+                            },
+                            "FSCDataStandardForTransactions": {
+                                "type": "boolean",
+                                "title": "FSC data standard for transactions?",
+                                "description": "Should report follow FSC DDO data standard for transactions?"
+                            },
+                            "alternativeDataStandard": {
+                                "type": "string",
+                                "title": "Link to alternative data standard if used"
+                            },
+                            "frequencyOfReport": {
+                                "type": "string",
+                                "title": "Frequency of Report",
+                                "description": "Required frequency of report by distributors on dealings outside target market."
+                            },
+                            "FSCDataStandardForComplaints": {
+                                "type": "boolean",
+                                "title": "FSC data standard for complaints?",
+                                "description": "Is complaints reporting required to use FSC complaints standard?"
+                            },
+                            "complaintsAlternativeDataStandard": {
+                                "type": "string",
+                                "title": "Alternative data standard",
+                                "description": "link to alternative data standard."
+                            },
+                            "complaintsReportingFrequency": {
+                                "type": "string",
+                                "title": "Complaints reporting frequency"
+                            },
+                            "significantDealing": {
+                                "type": "string",
+                                "title": "Significant dealing",
+                                "description": "As per statutory obligations s994F(6)."
+                            }
+                        },
+                        "title": "Distributor Reporting Requirements"
+                    },
+                    "appropriateness": {
+                        "type": "string",
+                        "title": "Appropriateness",
+                        "description": "Explanation how issuer considers TMD performs against appropriateness test as required by ASIC RG."
+                    }
+                },
+                "required": [
+                    "version",
+                    "status",
+                    "dateApproved",
+                    "mandatoryReviewDate"
+                ]
+            }
+        },
+        "required": [
+            "versionOfStandard",
+            "dateSent"
+        ]
+    }
+}
