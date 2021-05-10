@@ -21,6 +21,34 @@
           "capitalPreservation": "NotConsidered",
           "regularIncome": "Potentially",
           "capitalGuaranteed": "NotConsidered"
+        },
+        "consumersIntendedProductUse": {
+          "description": "",
+          "coreComponent": "In",
+          "satellite": "NotConsidered",
+          "solutionStandalone": "Potentially"
+        },
+        "consumersInvestmentTimeframe": {
+          "description": "",
+          "long": "Potentially",
+          "medium": "NotConsidered",
+          "short": "In"
+        },
+        "consumersNeedToWithdrawMoney": {
+          "description": "",
+          "annuallyOrLonger": "In",
+          "daily": "NotConsidered",
+          "monthly": "Potentially",
+          "quaterly": "NotConsidered",
+          "weekly": "In"
+        },
+        "consumersRiskAndReturnProfile": {
+          "description": "",
+          "capitalGuaranteed": "In",
+          "high": "NotConsidered",
+          "medium": "Potentially",
+          "low": "NotConsidered",
+          "veryHigh": "In"
         }
       }
     },

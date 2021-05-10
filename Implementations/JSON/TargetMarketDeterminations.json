@@ -163,7 +163,13 @@
                   "description": "Do the product investment objectives align with those of an investor seeking Regular Income?"
                 }
               },
-              "required" : ["description", "capitalGrowth","capitalPreservation","capitalGuaranteed", "regularIncome" ],
+              "required": [
+                "description",
+                "capitalGrowth",
+                "capitalPreservation",
+                "capitalGuaranteed",
+                "regularIncome"
+              ],
               "title": "1. Consumer\u2019s Investment Objective"
             },
             "consumersIntendedProductUse": {
@@ -193,6 +199,12 @@
                   "description": "Is the product intended to be used as a satellite product."
                 }
               },
+              "required": [
+                "description",
+                "solutionStandalone",
+                "coreComponent",
+                "satellite"
+              ],
               "title": "2. Consumer\u2019s Intended Product Use"
             },
             "consumersInvestmentTimeframe": {
@@ -222,6 +234,12 @@
                   "description": "Is it appropriate for investors to hold the product for more than 6 years before selling."
                 }
               },
+              "required": [
+                "description",
+                "short",
+                "medium",
+                "long"
+              ],
               "title": "3. Consumer\u2019s Investment Timeframe"
             },
             "consumersRiskAndReturnProfile": {
@@ -263,6 +281,14 @@
                   "description": "Does the product have capital guaranteed attributes."
                 }
               },
+              "required": [
+                "description",
+                "veryHigh",
+                "high",
+                "medium",
+                "low",
+                "capitalGuaranteed"
+              ],
               "title": "4. Consumer\u2019s Risk (ability to bear loss) and Return Profile"
             },
             "consumersNeedToWithdrawMoney": {
@@ -304,9 +330,24 @@
                   "description": "Product suitable for investors that redeem interests annually or longer."
                 }
               },
+              "required": [
+                "description",
+                "daily",
+                "weekly",
+                "monthly",
+                "quaterly",
+                "annuallyOrLonger"
+              ],
               "title": "5. Customer\u2019s Need to Withdraw Money"
             }
           },
+          "required": [
+            "consumersInvestmentObjective",
+            "consumersIntendedProductUse",
+            "consumersInvestmentTimeframe",
+            "consumersRiskAndReturnProfile",
+            "consumersNeedToWithdrawMoney"
+          ],
           "title": "TMD Characteristics"
         },
         "distributionConditions": {
