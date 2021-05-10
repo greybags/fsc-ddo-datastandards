@@ -21,56 +21,59 @@
         "Closed"
       ]
     },
+    "Product": {
+      "type": "object",
+      "properties": {
+        "primaryIdentifier": {
+          "type": "string",
+          "description": "Which of the following types of IDs has been determined to be the primary ID of the product. The primary ID is used in the rest of the standard to identify the product uniquely."
+        },
+        "apirCode": {
+          "type": "string",
+          "title": "Product APIR Code",
+          "description": "The product\u2019s APIR code. Must include if available."
+        },
+        "listingExchange": {
+          "type": "string",
+          "description": "Code of exchange the product is listed on, using ISO Market Identifier Code (MIC). Must include if product is listed.  If a product is listed in Australia and another country, prefer the Australian listing."
+        },
+        "exchangeCode": {
+          "type": "string",
+          "description": "The product\u2019s exchange code (for listed products). Must include if \u201clisting exchange\u201d is completed."
+        },
+        "isinCode": {
+          "type": "string",
+          "title": "ISIN",
+          "description": "The product\u2019s ISIN code. Must include if available."
+        },
+        "usi": {
+          "type": "string",
+          "description": "For super funds: 9 digit APIR code or 14 digit numeric code."
+        },
+        "issuerCode": {
+          "type": "string",
+          "description": "Issuer determined product code \u2013 should be the type of last resort.  Don\u2019t reuse industry wide codes in this field.  (platforms, insurance products)."
+        },
+        "name": {
+          "type": "string",
+          "title": "Product Name",
+          "description": "Financial instrument (Product) name. Note name is subject to change over time \u2013 not for machine analysis."
+        },
+        "arsn": {
+          "type": "string",
+          "title": "ARSN",
+          "description": "Product ARSN. Must include if available.  Do not use this field as primary product identifier."
+        }
+      },
+      "required": [
+        "apirCode"
+      ]
+    },
     "TMD": {
       "type": "object",
       "properties": {
         "product": {
-          "type": "object",
-          "properties": {
-            "primaryIdentifier": {
-              "type": "string",
-              "description": "Which of the following types of IDs has been determined to be the primary ID of the product. The primary ID is used in the rest of the standard to identify the product uniquely."
-            },
-            "apirCode": {
-              "type": "string",
-              "title": "Product APIR Code",
-              "description": "The product\u2019s APIR code. Must include if available."
-            },
-            "listingExchange": {
-              "type": "string",
-              "description": "Code of exchange the product is listed on, using ISO Market Identifier Code (MIC). Must include if product is listed.  If a product is listed in Australia and another country, prefer the Australian listing."
-            },
-            "exchangeCode": {
-              "type": "string",
-              "description": "The product\u2019s exchange code (for listed products). Must include if \u201clisting exchange\u201d is completed."
-            },
-            "isinCode": {
-              "type": "string",
-              "title": "ISIN",
-              "description": "The product\u2019s ISIN code. Must include if available."
-            },
-            "usi": {
-              "type": "string",
-              "description": "For super funds: 9 digit APIR code or 14 digit numeric code."
-            },
-            "issuerCode": {
-              "type": "string",
-              "description": "Issuer determined product code \u2013 should be the type of last resort.  Don\u2019t reuse industry wide codes in this field.  (platforms, insurance products)."
-            },
-            "name": {
-              "type": "string",
-              "title": "Product Name",
-              "description": "Financial instrument (Product) name. Note name is subject to change over time \u2013 not for machine analysis."
-            },
-            "arsn": {
-              "type": "string",
-              "title": "ARSN",
-              "description": "Product ARSN. Must include if available.  Do not use this field as primary product identifier."
-            }
-          },
-          "required": [
-            "apirCode"
-          ],
+          "$ref": "#/$defs/Product",
           "title": "Product Identifier"
         },
         "version": {
@@ -79,7 +82,7 @@
           "description": "Version number of the TMD. Can be non-integer. Major versions increment by 1. Minor changes (backwards compatible) increment by less than 1."
         },
         "status": {
-          "$ref": "#/$defs/TMDStatusEnum" ,
+          "$ref": "#/$defs/TMDStatusEnum",
           "title": "Status",
           "description": "The status of the TMD which indicates whether it should be distributed. A status of under review, unavailable or closed will be a signal to distributor to stop retail distribution (unless the distribution is excluded dealing)."
         },
@@ -136,27 +139,31 @@
                   "description": "A description of the investment objective of the product, including growth/defensive split."
                 },
                 "capitalGrowth": {
-                  "$ref": "#/$defs/TMDIndicatorEnum" ,
+                  "$ref": "#/$defs/TMDIndicatorEnum",
                   "required": "true",
                   "title": "1.2. Capital Growth",
                   "description": "Do the product investment objectives align with those of an investor seeking Capital Growth."
                 },
                 "capitalPreservation": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "1.3. Capital Preservation",
                   "description": "Do the product investment objectives align with those of an investor seeking Capital Preservation."
                 },
                 "capitalGuaranteed": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "1.4. Capital Guaranteed",
                   "description": "Do the product investment objectives align with those of an investor seeking Capital Guaranteed."
                 },
                 "regularIncome": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "1.5. Regular Income",
                   "description": "Do the product investment objectives align with those of an investor seeking Regular Income?"
                 }
               },
+              "required" : ["description", "capitalGrowth","capitalPreservation","capitalGuaranteed", "regularIncome" ],
               "title": "1. Consumer\u2019s Investment Objective"
             },
             "consumersIntendedProductUse": {
@@ -168,17 +175,20 @@
                   "description": "A description of the investment objective of the product, including asset allocation and diversification information."
                 },
                 "solutionStandalone": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "2.2. Solution / Standalone (75% - 100%)",
                   "description": "Is the product intended to be used as a Solution / Standalone product."
                 },
                 "coreComponent": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "2.3. Core Component (25% -75%)",
                   "description": "Is the product intended to be used as a core component product."
                 },
                 "satellite": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "2.4. Satellite (0% - 25%)",
                   "description": "Is the product intended to be used as a satellite product."
                 }
@@ -194,17 +204,20 @@
                   "description": "A description of the minimum suggested timeframe for holding the product."
                 },
                 "short": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "3.2. Short (< 2 years)",
                   "description": "Is it appropriate for investors to hold the product for 0-2 years before selling."
                 },
                 "medium": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "3.3. Medium (2 - 6 years)",
                   "description": "Is it appropriate for investors to hold the product for 2-6 years before selling."
                 },
                 "long": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "3.4. Long (> 6 years)",
                   "description": "Is it appropriate for investors to hold the product for more than 6 years before selling."
                 }
@@ -220,27 +233,32 @@
                   "description": "A description of the product risk and return metrics, include risk band and the return hurdle rate."
                 },
                 "veryHigh": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "4.2. Very High",
                   "description": "Does the product have very high risk and return attributes."
                 },
                 "high": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "4.3. High",
                   "description": "Does the product have high risk and return attributes."
                 },
                 "medium": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "4.4. Medium",
                   "description": "Does the product have medium risk and return attributes."
                 },
                 "low": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "4.5. Low",
                   "description": "Does the product have low risk and return attributes."
                 },
                 "capitalGuaranteed": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "4.6. Capital Guaranteed",
                   "description": "Does the product have capital guaranteed attributes."
                 }
@@ -256,27 +274,32 @@
                   "description": "A description of the intended frequency and mechanism for which investors redeem interests in the product."
                 },
                 "daily": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "5.2. Daily",
                   "description": "Product suitable for investors that redeem interests daily."
                 },
                 "weekly": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "5.3. Weekly",
                   "description": "Product suitable for investors that redeem interests weekly."
                 },
                 "monthly": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "5.4. Monthly",
                   "description": "Product suitable for investors that redeem interests weekly."
                 },
                 "quaterly": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "5.5. Quarterly",
                   "description": "Product suitable for investors that redeem interests quarterly."
                 },
                 "annuallyOrLonger": {
-                  "type": "string",
+                  "$ref": "#/$defs/TMDIndicatorEnum",
+                  "required": "true",
                   "title": "5.6. Annually or Longer",
                   "description": "Product suitable for investors that redeem interests annually or longer."
                 }
@@ -446,7 +469,7 @@
     "tmds": {
       "type": "array",
       "items": {
-         "$ref": "#/$defs/TMD" 
+        "$ref": "#/$defs/TMD"
       }
     }
   },

@@ -6,21 +6,33 @@
   "issuerName": "",
   "versionOfStandard": "",
   "tmds": [
-      {
-        "version":"",
-        "status":"Available",
-        "product": {
-          "apirCode": ""
-        },
-        "dateApproved":"",
-        "mandatoryReviewDate":"",
-        "characteristics": {
-          "consumersInvestmentObjective": {
-              "capitalGrowth": "In",
-              "capitalPreservation": ""
-            }
-
+    {
+      "version": "",
+      "status": "Available",
+      "product": {
+        "apirCode": ""
+      },
+      "dateApproved": "",
+      "mandatoryReviewDate": "",
+      "characteristics": {
+        "consumersInvestmentObjective": {
+          "description": "Some text here",
+          "capitalGrowth": "In",
+          "capitalPreservation": "NotConsidered",
+          "regularIncome": "Potentially",
+          "capitalGuaranteed": "NotConsidered"
         }
       }
+    },
+    {
+      "version": "",
+      "status": "Closed",
+      "dateApproved": "",
+      "mandatoryReviewDate": "",
+      "product": {
+        "apirCode": "",
+        "arsn": ""
+      }
+    }
   ]
 }
