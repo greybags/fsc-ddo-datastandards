@@ -1,0 +1,26 @@
+{
+  "$schema": "../TargetMarketDeterminations.json",
+  "dateSent": "",
+  "issuerAFSL": "",
+  "issuerABN": "",
+  "issuerName": "",
+  "versionOfStandard": "",
+  "tmds": [
+      {
+        "version":"",
+        "status":"Available",
+        "product": {
+          "apirCode": ""
+        },
+        "dateApproved":"",
+        "mandatoryReviewDate":"",
+        "characteristics": {
+          "consumersInvestmentObjective": {
+              "capitalGrowth": "In",
+              "capitalPreservation": ""
+            }
+
+        }
+      }
+  ]
+}
