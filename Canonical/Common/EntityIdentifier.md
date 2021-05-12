@@ -115,7 +115,7 @@
             </td>
             <td width="114" valign="top">
                 <p>
-                    How to deal with IDPS – maybe just issuing entity?
+                    How to deal with IDPS â€“ maybe just issuing entity?
                     (MIML/NMMT)
                 </p>
             </td>
@@ -380,7 +380,7 @@
             <td width="1003" colspan="5" valign="top">
                 <p>
                     <em>
-                        Contact details (for advice AFSL) – refer standard data
+                        Contact details (for advice AFSL) â€“ refer standard data
                         items
                     </em>
                 </p>
@@ -480,8 +480,8 @@
             <td width="1003" colspan="5" valign="top">
                 <p>
                     <em>
-                        Contact details (for adviser) – refer standard data
-                        items – do we need to include for every adviser?
+                        Contact details (for adviser) â€“ refer standard data
+                        items â€“ do we need to include for every adviser?
                     </em>
                 </p>
             </td>
@@ -599,7 +599,7 @@
             <td width="1003" colspan="5" valign="top">
                 <p>
                     <em>
-                        Contact details (for non-advice AFSL) – refer standard
+                        Contact details (for non-advice AFSL) â€“ refer standard
                         data items
                     </em>
                 </p>
@@ -684,7 +684,7 @@
             <td width="1003" colspan="5" valign="top">
                 <p>
                     <em>
-                        Contact details (for promoter) – refer standard data
+                        Contact details (for promoter) â€“ refer standard data
                         items
                     </em>
                 </p>
@@ -861,10 +861,36 @@
             <td width="193" valign="top">
             </td>
         </tr>
+        <tr>
+            <td width="66" valign="top">
+            </td>
+            <td width="128" valign="top">
+                <p>
+                    Contact ASIC ID
+                </p>
+            </td>
+            <td width="318" valign="top">
+                <p>
+                    ASIC ID if registered financial adviser
+                </p>
+            </td>
+            <td width="227" valign="top">
+                <p>
+                    Free text
+                </p>
+            </td>
+            <td width="156" valign="top">
+                <p align="center">
+                    O
+                </p>
+            </td>
+            <td width="193" valign="top">
+            </td>
+        </tr>
     </tbody>
 </table>
 
-## Parent-child relationships – for further discussion/consideration
+## Parent-child relationships â€“ for further discussion/consideration
 <table border="1" cellspacing="0" cellpadding="0" width="1086">
     <thead>
         <tr>
@@ -960,7 +986,7 @@
 
 ## _Copyright &amp; Disclaimer for data standard_
 
-_© 2021 Financial Services Council Limited ABN 82 080 744 163._
+_Â© 2021 Financial Services Council Limited ABN 82 080 744 163._
 
 _The intellectual property rights in this document, including the copyright in the document, are owned by and retained by the FSC and its licensors. The FSC grants you a non-exclusive non-transferable licence for you and the organisation you represent (the User) to use this document internally within the User&#39;s business, including making copies, reproductions, and modifications of the document, and otherwise as expressly set out in the conditions below for so long as the User licenses this data standard._
 
@@ -972,4 +998,4 @@ _While steps have been taken to ensure the accuracy of the information contained
 
 ![](RackMultipart20210316-4-8lfz9_html_b01c81e2b01acfb2.jpg)
 
-© 2021 Financial Services Council Limited
+Â© 2021 Financial Services Council Limited
