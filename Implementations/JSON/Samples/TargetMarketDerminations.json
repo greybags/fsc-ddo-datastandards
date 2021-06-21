@@ -1,0 +1,66 @@
+{
+  "$schema": "../TargetMarketDeterminations.json",
+  "dateSent": "",
+  "issuerAFSL": "",
+  "issuerABN": "",
+  "issuerName": "",
+  "versionOfStandard": "",
+  "tmds": [
+    {
+      "version": "",
+      "status": "Available",
+      "product": {
+        "apirCode": ""
+      },
+      "dateApproved": "",
+      "mandatoryReviewDate": "",
+      "characteristics": {
+        "consumersInvestmentObjective": {
+          "description": "Some text here",
+          "capitalGrowth": "In",
+          "capitalPreservation": "NotConsidered",
+          "regularIncome": "Potentially",
+          "capitalGuaranteed": "NotConsidered"
+        },
+        "consumersIntendedProductUse": {
+          "description": "",
+          "coreComponent": "In",
+          "satellite": "NotConsidered",
+          "solutionStandalone": "Potentially"
+        },
+        "consumersInvestmentTimeframe": {
+          "description": "",
+          "long": "Potentially",
+          "medium": "NotConsidered",
+          "short": "In"
+        },
+        "consumersNeedToWithdrawMoney": {
+          "description": "",
+          "annuallyOrLonger": "In",
+          "daily": "NotConsidered",
+          "monthly": "Potentially",
+          "quaterly": "NotConsidered",
+          "weekly": "In"
+        },
+        "consumersRiskAndReturnProfile": {
+          "description": "",
+          "capitalGuaranteed": "In",
+          "high": "NotConsidered",
+          "medium": "Potentially",
+          "low": "NotConsidered",
+          "veryHigh": "In"
+        }
+      }
+    },
+    {
+      "version": "",
+      "status": "Closed",
+      "dateApproved": "",
+      "mandatoryReviewDate": "",
+      "product": {
+        "apirCode": "",
+        "arsn": ""
+      }
+    }
+  ]
+}
