@@ -10,13 +10,13 @@ To assist with industry acceptance of these Data Standards, they are being relea
 
 ## Defined Data Standards
 This repository defines three Data Standards:
- - [Target Market Determinataion (TMD)](Canonical/TargetMarketDeterminations.md)
+ - [Target Market Determination (TMD)](Canonical/TargetMarketDeterminations.md)
  - [Dealings (Transactions)](Canonical/Dealings.md)
  - [Complaints](Canonical/Complaints.md)
 
 ## Repo Structure
  - The "Canonical" Folder contains the logical data definitions:
-     - [Target Market Determinataion (TMD)](Canonical/TargetMarketDeterminations.md)
+     - [Target Market Determination (TMD)](Canonical/TargetMarketDeterminations.md)
      - [Dealings (Transactions)](Canonical/Dealings.md)
      - [Complaints](Canonical/Complaints.md)
  - The "Implementation" Folder contains the format specific implementations of the logical data definition:
